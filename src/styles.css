@@ -1,1 +1,53 @@
-/* You can add global styles to this file, and also import other style files */
+html, body {
+  position:relative;
+  height:100%;
+}
+
+*, *:before, *:after {
+  box-sizing:border-box;
+}
+
+app-root,
+app-basics-page,
+app-advanced-page,
+app-routing-page,
+app-route-page1,
+app-route-page2,
+app-route-page3,
+app-route-page4,
+app-builder-page,
+app-new-features-page,
+app-code-example {
+  display:block;
+}
+
+app-root {
+  position:relative;
+  height:100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  display:block;
+  padding:0;
+  margin:0;
+}
+
+ol, ul, li {
+  display:block;
+  padding:0;
+  margin:0;
+}
+
+.sections {
+  display:flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+.sections > section {
+  flex:1;
+}
+
+.sections > section > header {
+  text-align:center;
+}
