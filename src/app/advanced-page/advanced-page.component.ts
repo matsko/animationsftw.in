@@ -16,34 +16,37 @@ import { trigger, transition, animate, style, query, stagger } from '@angular/an
           ]),
         ])
       ]),
-      transition('3 => 2', [
+      transition('1 => 2', [
         query(':enter', [
-          style({ opacity: 0, transform: 'translateY(-100px)', position: 'absolute' }),
+          style({ position: 'absolute', opacity: 0, transform: 'translateX(-100px)' })
         ]),
         query(':leave', [
-          stagger(50, [
-            animate('300ms ease-out', style({ opacity: 0, transform: 'translateY(-100px)' })),
-          ]),
-        ]),
-        query(':leave', [
-          style({ position: 'absolute', opacity: 0 })
+          style({ opacity: 1, transform: 'translateX(0px)' }),
+          animate('300ms ease-out', style({ opacity: 0, transform: 'translateX(100px)' })),
+          style({ position: 'absolute' }),
         ]),
         query(':enter', [
           style({ position: 'static' }),
-          stagger(50, [
-            animate('300ms ease-out', style({ opacity: 1, transform: 'none' })),
-          ]),
+          animate('300ms ease-out', style({ opacity: 1, transform: 'none' })),
         ])
       ]),
-      transition('* => 1', [
+      transition('2 <=> 1', [
         query(':enter', [
-          style({ opacity: 0, transform: 'translateX(-100px)' }),
+          style({ position: 'absolute', opacity: 0, transform: 'translateX(100px)' })
+        ]),
+        query(':leave', [
+          style({ opacity: 1, transform: 'translateX(0px)' }),
+          animate('300ms ease-out', style({ opacity: 0, transform: 'translateX(-100px)' })),
+          style({ position: 'absolute' }),
+        ]),
+        query(':enter', [
+          style({ position: 'static' }),
           animate('300ms ease-out', style({ opacity: 1, transform: 'none' })),
         ])
       ]),
       transition('* => 1, * => 2', [
         query(':enter', [
-          style({ opacity: 0, transform: 'translateX(100px)' }),
+          style({ opacity: 0, transform: 'translateX(-100px)' }),
           animate('300ms ease-out', style({ opacity: 1, transform: 'none' })),
         ])
       ]),
