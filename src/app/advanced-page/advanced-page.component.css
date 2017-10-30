@@ -18,6 +18,14 @@
   height:200px;
   border:1px solid black;
   text-align:center;
+  transition:0.2s ease-out all;
+  cursor:pointer;
+}
+
+.gallery-area .photo-record:hover {
+  transform:scale(1.05);
+  position:relative;
+  z-index:100;
 }
 
 .photo-record .title {

@@ -1,0 +1,38 @@
+:host {
+  display:block;
+}
+
+.overlay {
+  position:fixed;
+  cursor:pointer;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background:rgba(0,0,0,0.5);
+}
+
+.frame {
+  color:black;
+  border:20px solid #ddd;
+  background:white;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translateX(-50%) translateY(-50%);
+  width:80%;
+}
+
+.frame > header {
+  padding:1rem;
+  background:#eee;
+}
+
+.frame > .body {
+  padding:1rem;
+}
+
+.frame > footer {
+  padding:1rem;
+  background:#eee;
+}

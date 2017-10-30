@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { trigger, transition, animate, style, query, stagger } from '@angular/animations';
+import { ModalService } from '../modal.service';
 
 @Component({
   selector: 'app-advanced-page',
@@ -112,7 +113,7 @@ export class AdvancedPageComponent {
     },
   ];
 
-  constructor() { }
+  constructor(private _modalService: ModalService) { }
 
   getPhotos(section: number) {
     const entries = this.photos.find(e => e.section == section);
@@ -121,5 +122,9 @@ export class AdvancedPageComponent {
 
   isActive(section: number) {
     return section == this.section;
+  }
+
+  showModalFor(item: any) {
+    this._modalService.show();
   }
 }

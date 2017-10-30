@@ -9,4 +9,6 @@
   <a href="" routerLink="/routing/page4/">4</a>
 </div>
 
-<router-outlet></router-outlet>
+<div class="router-contianer" [@routerAnimations]="prepRouteTransition(outlet)">
+  <router-outlet #outlet="outlet"></router-outlet>
+</div>

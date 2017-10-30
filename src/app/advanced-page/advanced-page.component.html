@@ -13,7 +13,7 @@
 
   <section class="gallery gallery-area" [@listAnimation]="section">
     <li *ngFor="let photo of getPhotos(section)" class="photo-record">
-      <span [class]="'title ' + photo.className">{{ photo.title }}</span>
+      <span [class]="'title ' + photo.className" (click)="showModalFor(photo)">{{ photo.title }}</span>
     </li>
   </section>
 </div>

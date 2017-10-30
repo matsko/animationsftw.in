@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router, RouterOutlet, NavigationStart } from '@angular/router';
 import { CodeExampleService } from './code-example.service';
 import { trigger, transition, animate, style, query, group, state, animateChild } from '@angular/animations';
+import { ModalService } from './modal.service';
 
 @Component({
   selector: 'app-root',
@@ -48,7 +49,7 @@ import { trigger, transition, animate, style, query, group, state, animateChild 
 export class AppComponent {
   showCodeExample = false;
 
-  constructor(private _router: Router, private _codeExampleService: CodeExampleService) {
+  constructor(private _router: Router, private _modalService: ModalService, private _codeExampleService: CodeExampleService) {
     this._codeExampleService.onChange(status => {
       status === 'open' ? this.openCloseExample() : this.closeCodeExample();
     });
@@ -58,6 +59,10 @@ export class AppComponent {
         this.closeCodeExample();
       }
     });
+  }
+
+  get modalVisible() {
+    return this._modalService.visible;
   }
 
   get activeRoutePath(): string {
@@ -76,6 +81,10 @@ export class AppComponent {
   }
 
   isActiveRoute(path: string) {
+    if (path.length > 1) {
+      const regex = new RegExp('^' + path);
+      return regex.test(this.activeRoutePath);
+    }
     return path == this.activeRoutePath;
   }
 

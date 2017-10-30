@@ -20,10 +20,10 @@ export const ROUTES = [
      animation: 'routing'
    },
    children: [
-     { path: '', component: RoutePage1Component },
-     { path: 'page2', component: RoutePage2Component },
-     { path: 'page3', component: RoutePage3Component },
-     { path: 'page4', component: RoutePage4Component }
+     { path: '', component: RoutePage1Component, data: { animation: 'page1' } },
+     { path: 'page2', component: RoutePage2Component, data: { animation: 'page2' } },
+     { path: 'page3', component: RoutePage3Component, data: { animation: 'page3' } },
+     { path: 'page4', component: RoutePage4Component, data: { animation: 'page4' } }
    ]
   },
   {path:'programmatic', component: BuilderPageComponent, data: {animation:'programmatic'}},

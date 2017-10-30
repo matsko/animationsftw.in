@@ -8,8 +8,7 @@
 </nav>
 
 <div class="main-stage" [@codeExampleAnimation]="showCodeExample">
-<div class="router-container" [@routerContainerAnimation]="showCodeExample" [@routeAnimation]="prepRouteAnimation(outlet)">
-    <button (click)="openCloseExample()">Show</button>
+  <div class="router-container" [@routerContainerAnimation]="showCodeExample" [@routeAnimation]="prepRouteAnimation(outlet)">
     <router-outlet #outlet="outlet"></router-outlet>
   </div>
   <div *ngIf="showCodeExample" (click)="closeCodeExample()" class="code-close-surface">
@@ -18,3 +17,4 @@
   <app-code-example class="code-container" *ngIf="showCodeExample"></app-code-example>
 </div>
 
+<app-modal *ngIf="modalVisible"></app-modal>

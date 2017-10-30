@@ -17,6 +17,10 @@ import { RoutePage2Component } from './route-page2/route-page2.component';
 import { RoutePage3Component } from './route-page3/route-page3.component';
 import { RoutePage4Component } from './route-page4/route-page4.component';
 import { IntroPageComponent } from './intro-page/intro-page.component';
+import { ModalComponent } from './modal/modal.component';
+
+import { ModalService } from './modal.service';
+import { CodeSnippetComponent } from './code-snippet/code-snippet.component';
 
 @NgModule({
   declarations: [
@@ -31,14 +35,17 @@ import { IntroPageComponent } from './intro-page/intro-page.component';
     RoutePage2Component,
     RoutePage3Component,
     RoutePage4Component,
-    IntroPageComponent
+    IntroPageComponent,
+    ModalComponent,
+    CodeSnippetComponent
   ],
   imports: [
     BrowserAnimationsModule,
     RouterModule.forRoot(ROUTES)
   ],
   providers: [
-    CodeExampleService
+    CodeExampleService,
+    ModalService
   ],
   bootstrap: [AppComponent]
 })
