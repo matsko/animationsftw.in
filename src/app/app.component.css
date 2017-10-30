@@ -1,20 +1,5 @@
-.main-navigation {
-  padding:20px;
-  border-bottom:1px solid #ddd;
-}
-
-.main-navigation > a {
-  display:inline-block;
-  padding:0 10px;
-}
-
-.main-navigation > a + a {
-  border-left:1px solid #ddd;
-}
-
 .main-stage {
   position:relative;
-  padding:20px;
   height:100%;
 }
 

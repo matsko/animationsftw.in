@@ -1,6 +1,7 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
+import { CodeExampleService } from './code-example.service';
 
 import { AppComponent } from './app.component';
 import { BasicsPageComponent } from './basics-page/basics-page.component';
@@ -15,6 +16,7 @@ import { RoutePage1Component } from './route-page1/route-page1.component';
 import { RoutePage2Component } from './route-page2/route-page2.component';
 import { RoutePage3Component } from './route-page3/route-page3.component';
 import { RoutePage4Component } from './route-page4/route-page4.component';
+import { IntroPageComponent } from './intro-page/intro-page.component';
 
 @NgModule({
   declarations: [
@@ -28,13 +30,15 @@ import { RoutePage4Component } from './route-page4/route-page4.component';
     RoutePage1Component,
     RoutePage2Component,
     RoutePage3Component,
-    RoutePage4Component
+    RoutePage4Component,
+    IntroPageComponent
   ],
   imports: [
     BrowserAnimationsModule,
     RouterModule.forRoot(ROUTES)
   ],
   providers: [
+    CodeExampleService
   ],
   bootstrap: [AppComponent]
 })

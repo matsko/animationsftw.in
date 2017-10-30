@@ -1,0 +1,23 @@
+.basics-intro {
+  display:table;
+  width:100%;
+}
+
+.content-area {
+  display:table-cell;
+  width:70%;
+  padding:1rem;
+}
+
+.content-area > div {
+  overflow:hidden;
+}
+
+.menu-area {
+  width:30%;
+}
+
+.content-area, .menu-area {
+  display:table-cell;
+  vertical-align:top;
+}

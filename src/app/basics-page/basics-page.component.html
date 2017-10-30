@@ -2,39 +2,70 @@
   <h1>Animation Basics</h1>
 </header>
 
-<section class="basics-intro">
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at placerat nulla. Curabitur gravida ullamcorper pulvinar. Nullam condimentum libero at maximus dictum. Nulla at ipsum justo. Phasellus condimentum risus ac laoreet posuere. Vestibulum id metus non elit semper pulvinar. In ac dolor porta, pulvinar magna sit amet, sagittis odio. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean gravida diam a mollis elementum. Ut malesuada eu sem nec fringilla. Maecenas congue rutrum quam at rutrum. Nulla sem ligula, malesuada id semper sed, euismod eget mauris. Etiam cursus justo quis semper fringilla. Nulla vehicula quam dolor. Suspendisse eget est eget urna ultrices dignissim et aliquam arcu.
-  </p>
-
-  <p>
-    Fusce eget arcu nisl. Ut placerat eu enim ut pretium. Phasellus venenatis, justo a fringilla ornare, nisl leo ultricies sapien, in tincidunt nisi est quis erat. Aenean at velit nibh. Suspendisse blandit sem enim, at fermentum lorem faucibus a. Phasellus tellus augue, lobortis non urna id, tincidunt tristique mauris. Duis quis nibh maximus, maximus sapien non, blandit risus. Proin vitae magna vel ante consectetur interdum. Donec posuere nisi sed rutrum faucibus. Donec bibendum arcu augue, quis sagittis leo interdum in. In hac habitasse platea dictumst. Sed a cursus nulla. Nullam mollis sapien elit, at ultricies lectus feugiat sit amet. Duis suscipit, risus id varius egestas, sapien orci ultrices risus, eu placerat dui purus eu erat.
-  </p>
-
-  <ol class="accordion">
-    <li>Section</li>
-    <li>Section</li>
-    <li>Section</li>
-    <li>Section</li>
-    <li>Section</li>
-  </ol>
-</section>
-
-<section class="basics-intro">
-  <ol class="images-list">
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-  </ol>
-
-  <div class="badges">
-    <div class="badge"></div>
-    <div class="badge"></div>
-    <div class="badge"></div>
+<section class="basics-intro stage">
+  <div [ngSwitch]="section" class="content-area">
+    <div *ngSwitchCase="sections.intro" @contentAnimation>
+      <h2>Intro</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nisl ipsum, sollicitudin at quam id, hendrerit semper sapien. Integer lectus dui, malesuada a tortor et, bibendum dignissim justo. Donec scelerisque lacus et sapien semper blandit. Donec id egestas orci. Quisque consequat tellus nunc, a accumsan neque molestie id. In risus nibh, euismod vitae arcu at, cursus rutrum est. Aliquam pulvinar enim non suscipit tincidunt. Suspendisse ac ante justo. Donec quis consequat ligula, et tincidunt lacus. Sed viverra vestibulum magna.
+      </p>
+      <p>
+        Fusce erat quam, malesuada cursus magna nec, tempus dictum turpis. Aenean ac ex dignissim ipsum molestie semper iaculis a ex. Quisque nec nisi in quam mollis fringilla. Aliquam fermentum sapien eu neque congue sollicitudin vehicula et sem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc ut sollicitudin erat, et tempus justo. Etiam erat dui, dapibus eu nisl eu, hendrerit euismod justo.
+      </p>
+      <p>
+        Fusce dignissim augue purus, at commodo nunc euismod ut. Aliquam erat volutpat. Curabitur lacinia nunc ac mauris egestas ullamcorper. Vivamus consequat commodo scelerisque. Mauris auctor justo in dui malesuada mattis. Nulla lacinia, magna vitae laoreet laoreet, dolor augue aliquam tellus, euismod tempus odio felis in tortor. Donec scelerisque mi a magna consequat sollicitudin. Nunc laoreet posuere tristique. Aliquam erat volutpat. Curabitur id vehicula augue. In tincidunt neque sed sollicitudin eleifend. Donec id orci et quam viverra ullamcorper in elementum quam.
+      </p>
+    </div>
+    <div *ngSwitchCase="sections.triggers" @contentAnimation>
+      <h2>Triggers</h2>
+      <p>
+        Fusce dignissim augue purus, at commodo nunc euismod ut. Aliquam erat volutpat. Curabitur lacinia nunc ac mauris egestas ullamcorper. Vivamus consequat commodo scelerisque. Mauris auctor justo in dui malesuada mattis. Nulla lacinia, magna vitae laoreet laoreet, dolor augue aliquam tellus, euismod tempus odio felis in tortor. Donec scelerisque mi a magna consequat sollicitudin. Nunc laoreet posuere tristique. Aliquam erat volutpat. Curabitur id vehicula augue. In tincidunt neque sed sollicitudin eleifend. Donec id orci et quam viverra ullamcorper in elementum quam.
+      </p>
+    </div>
+    <div *ngSwitchCase="sections.component" @contentAnimation>
+      <h2>Component Animations</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nisl ipsum, sollicitudin at quam id, hendrerit semper sapien. Integer lectus dui, malesuada a tortor et, bibendum dignissim justo. Donec scelerisque lacus et sapien semper blandit. Donec id egestas orci. Quisque consequat tellus nunc, a accumsan neque molestie id. In risus nibh, euismod vitae arcu at, cursus rutrum est. Aliquam pulvinar enim non suscipit tincidunt. Suspendisse ac ante justo. Donec quis consequat ligula, et tincidunt lacus. Sed viverra vestibulum magna.
+      </p>
+      <p>
+        Fusce erat quam, malesuada cursus magna nec, tempus dictum turpis. Aenean ac ex dignissim ipsum molestie semper iaculis a ex. Quisque nec nisi in quam mollis fringilla. Aliquam fermentum sapien eu neque congue sollicitudin vehicula et sem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc ut sollicitudin erat, et tempus justo. Etiam erat dui, dapibus eu nisl eu, hendrerit euismod justo.
+      </p>
+      <p>
+        Fusce dignissim augue purus, at commodo nunc euismod ut. Aliquam erat volutpat. Curabitur lacinia nunc ac mauris egestas ullamcorper. Vivamus consequat commodo scelerisque. Mauris auctor justo in dui malesuada mattis. Nulla lacinia, magna vitae laoreet laoreet, dolor augue aliquam tellus, euismod tempus odio felis in tortor. Donec scelerisque mi a magna consequat sollicitudin. Nunc laoreet posuere tristique. Aliquam erat volutpat. Curabitur id vehicula augue. In tincidunt neque sed sollicitudin eleifend. Donec id orci et quam viverra ullamcorper in elementum quam.
+      </p>
+    </div>
+    <div *ngSwitchCase="sections.transition" @contentAnimation>
+      <h2>The transition() function</h2>
+      <p>
+        Fusce dignissim augue purus, at commodo nunc euismod ut. Aliquam erat volutpat. Curabitur lacinia nunc ac mauris egestas ullamcorper. Vivamus consequat commodo scelerisque. Mauris auctor justo in dui malesuada mattis. Nulla lacinia, magna vitae laoreet laoreet, dolor augue aliquam tellus, euismod tempus odio felis in tortor. Donec scelerisque mi a magna consequat sollicitudin. Nunc laoreet posuere tristique. Aliquam erat volutpat. Curabitur id vehicula augue. In tincidunt neque sed sollicitudin eleifend. Donec id orci et quam viverra ullamcorper in elementum quam.
+      </p>
+    </div>
+    <div *ngSwitchCase="sections.fadeInFadeOut" @contentAnimation>
+      <h2>Fade In Fade Out</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nisl ipsum, sollicitudin at quam id, hendrerit semper sapien. Integer lectus dui, malesuada a tortor et, bibendum dignissim justo. Donec scelerisque lacus et sapien semper blandit. Donec id egestas orci. Quisque consequat tellus nunc, a accumsan neque molestie id. In risus nibh, euismod vitae arcu at, cursus rutrum est. Aliquam pulvinar enim non suscipit tincidunt. Suspendisse ac ante justo. Donec quis consequat ligula, et tincidunt lacus. Sed viverra vestibulum magna.
+      </p>
+      <p>
+        Fusce erat quam, malesuada cursus magna nec, tempus dictum turpis. Aenean ac ex dignissim ipsum molestie semper iaculis a ex. Quisque nec nisi in quam mollis fringilla. Aliquam fermentum sapien eu neque congue sollicitudin vehicula et sem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc ut sollicitudin erat, et tempus justo. Etiam erat dui, dapibus eu nisl eu, hendrerit euismod justo.
+      </p>
+      <p>
+        Fusce dignissim augue purus, at commodo nunc euismod ut. Aliquam erat volutpat. Curabitur lacinia nunc ac mauris egestas ullamcorper. Vivamus consequat commodo scelerisque. Mauris auctor justo in dui malesuada mattis. Nulla lacinia, magna vitae laoreet laoreet, dolor augue aliquam tellus, euismod tempus odio felis in tortor. Donec scelerisque mi a magna consequat sollicitudin. Nunc laoreet posuere tristique. Aliquam erat volutpat. Curabitur id vehicula augue. In tincidunt neque sed sollicitudin eleifend. Donec id orci et quam viverra ullamcorper in elementum quam.
+      </p>
+    </div>
+    <div *ngSwitchCase="sections.animationCallback" @contentAnimation>
+      <h2>(@animation.callback) code</h2>
+      <p>
+        Fusce dignissim augue purus, at commodo nunc euismod ut. Aliquam erat volutpat. Curabitur lacinia nunc ac mauris egestas ullamcorper. Vivamus consequat commodo scelerisque. Mauris auctor justo in dui malesuada mattis. Nulla lacinia, magna vitae laoreet laoreet, dolor augue aliquam tellus, euismod tempus odio felis in tortor. Donec scelerisque mi a magna consequat sollicitudin. Nunc laoreet posuere tristique. Aliquam erat volutpat. Curabitur id vehicula augue. In tincidunt neque sed sollicitudin eleifend. Donec id orci et quam viverra ullamcorper in elementum quam.
+      </p>
+    </div>
   </div>
 
-  <button>Git Tickets</button>
+  <ol class="menu menu-area">
+    <li [class.selected]="isActive(sections.intro)" (click)="section=sections.intro">How Animations Work</li>
+    <li [class.selected]="isActive(sections.triggers)" (click)="section=sections.triggers">Animation @Triggers</li>
+    <li [class.selected]="isActive(sections.component)" (click)="section=sections.component">Component Animations</li>
+    <li [class.selected]="isActive(sections.transition)" (click)="section=sections.transition">transition()</li>
+    <li [class.selected]="isActive(sections.fadeInFadeOut)" (click)="section=sections.fadeInFadeOut">fade in / fade out</li>
+    <li [class.selected]="isActive(sections.animationCallback)" (click)="section=sections.animationCallback">(@animation.callback)</li>
+  </ol>
 </section>

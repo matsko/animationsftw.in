@@ -1,0 +1,41 @@
+@import "./_colors";
+
+app-root,
+app-basics-page,
+app-advanced-page,
+app-routing-page,
+app-route-page1,
+app-route-page2,
+app-route-page3,
+app-route-page4,
+app-builder-page,
+app-new-features-page,
+app-code-example {
+  display:block;
+}
+
+app-root {
+  position:relative;
+  height:100%;
+}
+
+.stage {
+  background:#3c3c3c;
+}
+
+.menu > li {
+  cursor:pointer;
+  padding:1rem;
+  transition:0.25s ease-out all;
+  color:$greyColor;
+}
+
+.menu > li.selected, .menu > li:hover  {
+  padding-left:2rem;
+  background:#2c2c2c;
+  color:$redColor;
+}
+
+.menu > li + li {
+  border-top:1px solid #000;
+}

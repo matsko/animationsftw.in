@@ -1,0 +1,23 @@
+@import "../node_modules/normalize-scss/sass/_normalize.scss";
+@import "./styles/_reset";
+@import "./styles/_components";
+@import "./styles/_colors";
+
+$FontPathOpenSans: "/assets/fonts/open-sans";
+@import "../node_modules/npm-font-open-sans/open-sans.scss";
+
+@import "./styles/_navigation";
+
+.sections {
+  display:flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+.sections > section {
+  flex:1;
+}
+
+.sections > section > header {
+  text-align:center;
+}

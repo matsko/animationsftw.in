@@ -2,23 +2,18 @@
   <h1>Advanced Animations</h1>
 </header>
 
-<aside>
-  <ol>
-    <li>
-      Section 1
-    </li>
-    <li>
-      Section 2
-    </li>
-    <li>
-      Section 3
-    </li>
-    <li>
-      Section 4
-    </li>
-  </ol>
-</aside>
+<div class="advanced-area">
+  <aside class="side-area">
+    <ol class="menu">
+      <li [class.selected]="isActive(sections.about)" (click)="section=sections.about">Advanced Stuff</li>
+      <li [class.selected]="isActive(sections.query)" (click)="section=sections.query">Querying</li>
+      <li [class.selected]="isActive(sections.stagger)" (click)="section=sections.stagger">Staggering</li>
+    </ol>
+  </aside>
 
-<section class="gallery">
-  <li *ngFor="let photo of photos" class="photo-record"></li>
-</section>
+  <section class="gallery gallery-area" [@listAnimation]="section">
+    <li *ngFor="let photo of getPhotos(section)" class="photo-record">
+      <span [class]="'title ' + photo.className">{{ photo.title }}</span>
+    </li>
+  </section>
+</div>

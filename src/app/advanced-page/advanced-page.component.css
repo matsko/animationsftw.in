@@ -1,0 +1,32 @@
+.advanced-area {
+  display:table;
+  width:100%;
+}
+
+.side-area, .gallery-area {
+  vertical-align: top;
+  display:table-cell;
+}
+
+.gallery-area {
+  width:80%;
+}
+
+.gallery-area .photo-record {
+  width:33%;
+  display:inline-block;
+  height:200px;
+  border:1px solid black;
+  text-align:center;
+}
+
+.photo-record .title {
+  font-size:4rem;
+  display:block;
+  line-height:200px;
+}
+
+.g0 { background:#444; }
+.g1 { background: #494949; }
+.g2 { background: #555; }
+.g3 { background: #595959; }

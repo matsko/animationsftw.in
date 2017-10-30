@@ -1,17 +1,18 @@
 <nav class="main-navigation">
-  <a href="" routerLink='/'>Basics</a>
-  <a href="" routerLink='/advanced'>Advanced</a>
-  <a href="" routerLink='/routing'>Routing</a>
-  <a href="" routerLink='/programmatic'>Programmatic Animations</a>
-  <a href="" routerLink='/new-features'>New Features</a>
+  <a href="" [class.active]="isActiveRoute('/')" routerLink='/'>Home</a>
+  <a href="" [class.active]="isActiveRoute('/basics')" routerLink='/basics'>Basics</a>
+  <a href="" [class.active]="isActiveRoute('/advanced')" routerLink='/advanced'>Advanced</a>
+  <a href="" [class.active]="isActiveRoute('/routing')" routerLink='/routing'>Routing</a>
+  <a href="" [class.active]="isActiveRoute('/programmatic')" routerLink='/programmatic'>Programmatic Animations</a>
+  <a href="" [class.active]="isActiveRoute('/new-features')" routerLink='/new-features'>New Features</a>
 </nav>
 
 <div class="main-stage" [@codeExampleAnimation]="showCodeExample">
-  <div class="router-container" [@routerContainerAnimation]="showCodeExample">
-    <button (click)="showCodeExample=true">Show</button>
-    <router-outlet></router-outlet>
+<div class="router-container" [@routerContainerAnimation]="showCodeExample" [@routeAnimation]="prepRouteAnimation(outlet)">
+    <button (click)="openCloseExample()">Show</button>
+    <router-outlet #outlet="outlet"></router-outlet>
   </div>
-  <div *ngIf="showCodeExample" (click)="showCodeExample=false" class="code-close-surface">
+  <div *ngIf="showCodeExample" (click)="closeCodeExample()" class="code-close-surface">
     <div class="trigger"></div>
   </div>
   <app-code-example class="code-container" *ngIf="showCodeExample"></app-code-example>
