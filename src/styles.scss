@@ -10,9 +10,18 @@ $FontPathOpenSans: "/assets/fonts/open-sans";
 
 @import "./styles/_navigation";
 
+.sections {
+  overflow-x:hidden;
+}
+
 .sections > section {
   display:inline-block;
   vertical-align: top;
+  min-height:1000px;
+}
+
+.sections > section > .data {
+  position:relative;
 }
 
 .sections > section + section {

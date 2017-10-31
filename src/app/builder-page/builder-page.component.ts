@@ -13,16 +13,31 @@ import { trigger, group, sequence, transition, state, style, animate, query, sta
       ]),
     ]),
     trigger('sectionAnimations', [
-      state('active', style({ width: '80%' })),
-      state('inactive', style({ width: '20%' })),
+      state('active', style({ width: '75%' })),
+      state('inactive', style({ width: '25%' })),
       state('default', style({ width: '50%' })),
       transition(':enter', []),
+      transition('* => inactive', [
+        animate('250ms ease-out', style({ width: '25%' })),
+      ]),
+      transition('* => default', [
+        animate('250ms ease-out', style({ width: '50%' })),
+      ]),
       transition('* => active', [
+        query(':enter, :leave', style({ position: 'absolute', top:0, left: 0, right: 0 })),
         query(':enter', style({ opacity: 0 })),
-        animate('500ms ease-out'), // bug here
-        query(':enter', [
-          stagger('100ms', [
-            animate('0.5s ease-out', style({ opacity: 1 }))
+        query(':enter > *', style({ opacity: 0, transform: 'translateY(-50px)' })),
+
+        group([
+          animate('250ms ease-out', style({ width: '75%' })),
+          query(':leave', [
+            animate('300ms', style({ opacity: 0 }))
+          ]),
+        ]),
+
+        query(':enter, :enter > *', [
+          stagger('50ms', [
+            animate('300ms', style('*'))
           ])
         ])
       ]),

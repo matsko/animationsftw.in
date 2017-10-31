@@ -4,41 +4,43 @@
       <h1 (click)="showDefaultOrSection(sections.programmatic)">Programmatic</h1>
     </header>
 
-    <div *ngIf="isDefault(sections.programmatic)" (click)="showSection(sections.programmatic)" class="intro-section">
-      <p>
-        Learn how the programmatic AnimationBuidler API works in Angular.
-      </p>
-      <p>
-        AnimationBuilder can be used within a component to manage the animations
-        dynamically.
-      </p>
-      <button (click)="showSection(sections.programmatic)">Learn More</button>
-    </div>
+    <div class="data">
+      <div *ngIf="isDefault(sections.programmatic)" (click)="showSection(sections.programmatic)" class="intro-section">
+        <p>
+          Learn how the programmatic AnimationBuidler API works in Angular.
+        </p>
+        <p>
+          AnimationBuilder can be used within a component to manage the animations
+          dynamically.
+        </p>
+        <button (click)="showSection(sections.programmatic)">Learn More</button>
+      </div>
 
-    <div *ngIf="isExpanded(sections.programmatic)">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla elementum nisi, id placerat sem. Nullam dapibus elit neque, ac maximus tellus cursus at. Etiam suscipit tristique facilisis. Etiam imperdiet, velit ut congue eleifend, ligula nisl ultricies urna, sed rhoncus risus dolor at mi. Vivamus vulputate tincidunt ex, nec blandit odio consectetur quis. Duis id lorem ut lacus sollicitudin vestibulum. Fusce at feugiat neque, ut blandit arcu. Suspendisse consectetur ac enim ac pulvinar. Integer varius pharetra purus, vel facilisis urna rhoncus et. Proin congue tempus neque ac fringilla. Nullam ullamcorper, augue nec cursus sodales, nulla elit sollicitudin quam, vel mollis turpis ligula non mi. Nunc ac enim pretium, dictum mauris eget, sagittis nibh. Curabitur neque urna, molestie a porttitor in, rhoncus at massa.
-      </p>
+      <div *ngIf="isExpanded(sections.programmatic)">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla elementum nisi, id placerat sem. Nullam dapibus elit neque, ac maximus tellus cursus at. Etiam suscipit tristique facilisis. Etiam imperdiet, velit ut congue eleifend, ligula nisl ultricies urna, sed rhoncus risus dolor at mi. Vivamus vulputate tincidunt ex, nec blandit odio consectetur quis. Duis id lorem ut lacus sollicitudin vestibulum. Fusce at feugiat neque, ut blandit arcu. Suspendisse consectetur ac enim ac pulvinar. Integer varius pharetra purus, vel facilisis urna rhoncus et. Proin congue tempus neque ac fringilla. Nullam ullamcorper, augue nec cursus sodales, nulla elit sollicitudin quam, vel mollis turpis ligula non mi. Nunc ac enim pretium, dictum mauris eget, sagittis nibh. Curabitur neque urna, molestie a porttitor in, rhoncus at massa.
+        </p>
 
-      <p>
-        Curabitur commodo justo consequat felis aliquet, sit amet ullamcorper enim venenatis. Ut a mauris et turpis vehicula placerat. Maecenas porta risus sed quam bibendum efficitur. Vestibulum augue elit, pharetra sit amet nibh sed, volutpat interdum ex. Pellentesque ut leo eros. Aenean a feugiat augue. Vivamus maximus imperdiet mattis. Sed vel sapien pulvinar, rutrum nulla id, fermentum turpis. Etiam lorem eros, scelerisque ut risus ut, rhoncus gravida turpis.
-      </p>
+        <p>
+          Curabitur commodo justo consequat felis aliquet, sit amet ullamcorper enim venenatis. Ut a mauris et turpis vehicula placerat. Maecenas porta risus sed quam bibendum efficitur. Vestibulum augue elit, pharetra sit amet nibh sed, volutpat interdum ex. Pellentesque ut leo eros. Aenean a feugiat augue. Vivamus maximus imperdiet mattis. Sed vel sapien pulvinar, rutrum nulla id, fermentum turpis. Etiam lorem eros, scelerisque ut risus ut, rhoncus gravida turpis.
+        </p>
 
-      <app-code-snippet>
-        alert('cool')
-      </app-code-snippet>
+        <app-code-snippet>
+          alert('cool')
+        </app-code-snippet>
 
-      <p>
-        Quisque sed orci cursus, vestibulum lorem consequat, molestie ligula. Morbi nec eros semper, molestie nisl a, cursus augue. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec consectetur enim at lorem gravida, sit amet interdum odio tincidunt. Nam lectus leo, cursus id tristique a, euismod non velit. Curabitur tincidunt nibh ac erat varius iaculis. Nunc tristique tortor sed faucibus mollis. Quisque in pretium neque, sit amet venenatis dolor. Quisque maximus, urna non gravida lobortis, elit ex maximus erat, vitae gravida erat dui eget orci. Donec nunc nisl, fermentum non accumsan sed, lacinia sit amet tellus. Duis commodo nulla nec sodales laoreet. Sed dignissim porttitor velit ut convallis. Pellentesque fringilla ligula sodales dictum venenatis.
-      </p>
+        <p>
+          Quisque sed orci cursus, vestibulum lorem consequat, molestie ligula. Morbi nec eros semper, molestie nisl a, cursus augue. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec consectetur enim at lorem gravida, sit amet interdum odio tincidunt. Nam lectus leo, cursus id tristique a, euismod non velit. Curabitur tincidunt nibh ac erat varius iaculis. Nunc tristique tortor sed faucibus mollis. Quisque in pretium neque, sit amet venenatis dolor. Quisque maximus, urna non gravida lobortis, elit ex maximus erat, vitae gravida erat dui eget orci. Donec nunc nisl, fermentum non accumsan sed, lacinia sit amet tellus. Duis commodo nulla nec sodales laoreet. Sed dignissim porttitor velit ut convallis. Pellentesque fringilla ligula sodales dictum venenatis.
+        </p>
 
-      <p>
-        Fusce purus nulla, fermentum id suscipit ut, vestibulum sit amet nibh. Nullam hendrerit ullamcorper convallis. Morbi et ipsum quis velit scelerisque convallis. Nulla lobortis, leo nec facilisis maximus, erat odio blandit felis, vel iaculis magna mauris nec erat. Vestibulum semper risus vel interdum rutrum. Proin congue massa nec velit consequat, nec bibendum urna accumsan. Suspendisse euismod nisi vel vehicula faucibus. Donec a enim vitae diam mattis dignissim dapibus a odio. Mauris tristique lacinia faucibus. Vestibulum eros lorem, pulvinar egestas est a, feugiat mollis ante. Ut dictum diam at lacus pharetra convallis.
-      </p>
+        <p>
+          Fusce purus nulla, fermentum id suscipit ut, vestibulum sit amet nibh. Nullam hendrerit ullamcorper convallis. Morbi et ipsum quis velit scelerisque convallis. Nulla lobortis, leo nec facilisis maximus, erat odio blandit felis, vel iaculis magna mauris nec erat. Vestibulum semper risus vel interdum rutrum. Proin congue massa nec velit consequat, nec bibendum urna accumsan. Suspendisse euismod nisi vel vehicula faucibus. Donec a enim vitae diam mattis dignissim dapibus a odio. Mauris tristique lacinia faucibus. Vestibulum eros lorem, pulvinar egestas est a, feugiat mollis ante. Ut dictum diam at lacus pharetra convallis.
+        </p>
 
-      <p>
-        Integer venenatis tincidunt convallis. Ut lobortis metus orci, sit amet iaculis diam suscipit vel. Sed in ante nibh. Praesent at dignissim risus. Aenean efficitur odio sed enim ullamcorper, faucibus tincidunt erat tincidunt. Suspendisse potenti. Sed non metus vel ante accumsan volutpat. Integer convallis pulvinar posuere. Quisque eget posuere sapien. Vestibulum tempor egestas condimentum. Vestibulum efficitur, nunc in vulputate lobortis, mauris dui dignissim sapien, nec condimentum eros dolor vulputate enim. Morbi sed urna sem. Nunc lacinia sem ac malesuada vestibulum.
-      </p>
+        <p>
+          Integer venenatis tincidunt convallis. Ut lobortis metus orci, sit amet iaculis diam suscipit vel. Sed in ante nibh. Praesent at dignissim risus. Aenean efficitur odio sed enim ullamcorper, faucibus tincidunt erat tincidunt. Suspendisse potenti. Sed non metus vel ante accumsan volutpat. Integer convallis pulvinar posuere. Quisque eget posuere sapien. Vestibulum tempor egestas condimentum. Vestibulum efficitur, nunc in vulputate lobortis, mauris dui dignissim sapien, nec condimentum eros dolor vulputate enim. Morbi sed urna sem. Nunc lacinia sem ac malesuada vestibulum.
+        </p>
+      </div>
     </div>
   </section>
 
@@ -47,20 +49,44 @@
       <h1 (click)="showDefaultOrSection(sections.scrubbing)">Scrubbing</h1>
     </header>
 
-    <div *ngIf="isDefault(sections.scrubbing)" (click)="showSection(sections.scrubbing)" class="intro-section">
-      <p>
-        Learn how to use AnimationBuilder to do scrubbing in an animation
-      </p>
+    <div class="data">
+      <div *ngIf="isDefault(sections.scrubbing)" (click)="showSection(sections.scrubbing)" class="intro-section">
+        <p>
+          Learn how to use AnimationBuilder to do scrubbing in an animation
+        </p>
 
-      <p>
-        Scrubbing means frame-by-frame access in an animation
-      </p>
+        <p>
+          Scrubbing means frame-by-frame access in an animation
+        </p>
 
-      <button (click)="showSection(sections.scrubbing)">Learn More</button>
-    </div>
+        <button (click)="showSection(sections.scrubbing)">Learn More</button>
+      </div>
 
-    <div *ngIf="isExpanded(sections.scrubbing)">
-      ...
+      <div *ngIf="isExpanded(sections.scrubbing)">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla elementum nisi, id placerat sem. Nullam dapibus elit neque, ac maximus tellus cursus at. Etiam suscipit tristique facilisis. Etiam imperdiet, velit ut congue eleifend, ligula nisl ultricies urna, sed rhoncus risus dolor at mi. Vivamus vulputate tincidunt ex, nec blandit odio consectetur quis. Duis id lorem ut lacus sollicitudin vestibulum. Fusce at feugiat neque, ut blandit arcu. Suspendisse consectetur ac enim ac pulvinar. Integer varius pharetra purus, vel facilisis urna rhoncus et. Proin congue tempus neque ac fringilla. Nullam ullamcorper, augue nec cursus sodales, nulla elit sollicitudin quam, vel mollis turpis ligula non mi. Nunc ac enim pretium, dictum mauris eget, sagittis nibh. Curabitur neque urna, molestie a porttitor in, rhoncus at massa.
+        </p>
+
+        <app-code-snippet>
+          alert('cool')
+        </app-code-snippet>
+
+        <p>
+          Quisque sed orci cursus, vestibulum lorem consequat, molestie ligula. Morbi nec eros semper, molestie nisl a, cursus augue. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec consectetur enim at lorem gravida, sit amet interdum odio tincidunt. Nam lectus leo, cursus id tristique a, euismod non velit. Curabitur tincidunt nibh ac erat varius iaculis. Nunc tristique tortor sed faucibus mollis. Quisque in pretium neque, sit amet venenatis dolor. Quisque maximus, urna non gravida lobortis, elit ex maximus erat, vitae gravida erat dui eget orci. Donec nunc nisl, fermentum non accumsan sed, lacinia sit amet tellus. Duis commodo nulla nec sodales laoreet. Sed dignissim porttitor velit ut convallis. Pellentesque fringilla ligula sodales dictum venenatis.
+        </p>
+
+        <p>
+          Fusce purus nulla, fermentum id suscipit ut, vestibulum sit amet nibh. Nullam hendrerit ullamcorper convallis. Morbi et ipsum quis velit scelerisque convallis. Nulla lobortis, leo nec facilisis maximus, erat odio blandit felis, vel iaculis magna mauris nec erat. Vestibulum semper risus vel interdum rutrum. Proin congue massa nec velit consequat, nec bibendum urna accumsan. Suspendisse euismod nisi vel vehicula faucibus. Donec a enim vitae diam mattis dignissim dapibus a odio. Mauris tristique lacinia faucibus. Vestibulum eros lorem, pulvinar egestas est a, feugiat mollis ante. Ut dictum diam at lacus pharetra convallis.
+        </p>
+
+        <app-code-snippet>
+          alert('cool')
+        </app-code-snippet>
+
+        <p>
+          Integer venenatis tincidunt convallis. Ut lobortis metus orci, sit amet iaculis diam suscipit vel. Sed in ante nibh. Praesent at dignissim risus. Aenean efficitur odio sed enim ullamcorper, faucibus tincidunt erat tincidunt. Suspendisse potenti. Sed non metus vel ante accumsan volutpat. Integer convallis pulvinar posuere. Quisque eget posuere sapien. Vestibulum tempor egestas condimentum. Vestibulum efficitur, nunc in vulputate lobortis, mauris dui dignissim sapien, nec condimentum eros dolor vulputate enim. Morbi sed urna sem. Nunc lacinia sem ac malesuada vestibulum.
+        </p>
+      </div>
     </div>
   </section>
 </div>
