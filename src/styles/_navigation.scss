@@ -1,10 +1,14 @@
 @import "./_colors";
 
 .main-navigation {
-  padding:20px;
-  overflow:auto;
-  border-bottom:1px solid #ddd;
-  text-align:right;
+  text-align:left;
+  background:#111;
+  padding:1em;
+  display:inline-block;
+  z-index:10000;
+  position:absolute;
+  top:1em;
+  left:1em;
 }
 
 .main-navigation > a {
@@ -24,10 +28,7 @@
   padding-bottom:5px;
 }
 
-.main-navigation > a:first-child {
-  float:left;
-}
-
+.main-navigation > a:hover,
 .main-navigation > a.active {
   color:$redColor;
   border-bottom-color:$redColor;

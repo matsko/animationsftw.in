@@ -1,23 +1,50 @@
 .basics-intro {
-  display:table;
-  width:100%;
+  position:relative;
+  overflow:hidden;
+  height:1000px;
 }
 
 .content-area {
-  display:table-cell;
-  width:70%;
-  padding:1rem;
-}
-
-.content-area > div {
-  overflow:hidden;
 }
 
 .menu-area {
-  width:30%;
+  position:absolute;
+  top:0;
+  right:0;
 }
 
-.content-area, .menu-area {
-  display:table-cell;
-  vertical-align:top;
+.inner-section {
+  position:relative;
+  height:700px;
+  overflow:hidden;
+  transition:0.3s ease-out all;
+}
+
+.inner-section:not(.visible):hover {
+  cursor:pointer;
+  opacity:0.8;
+}
+
+.inner-section:not(.visible) {
+  cursor:pointer;
+  opacity:0.5;
+}
+
+.inner-section img {
+  position:absolute;
+  left:0;
+  top:50%;
+  transform: translateY(-50%);
+  width:100%;
+}
+
+.inner-section .details {
+  position:absolute;
+  top:50px;
+  left:50px;
+  width:50%;
+  background:rgba(0,0,0,0.5);
+  color:white;
+  display:inline-block;
+  padding:1rem;
 }

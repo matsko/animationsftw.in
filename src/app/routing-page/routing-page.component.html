@@ -1,14 +1,10 @@
-<header>
-  <h1>Advanced Animations</h1>
-</header>
-
-<div class="nav">
+<div class="main-route-navigation">
   <a href="" routerLink="/routing/">1</a>
   <a href="" routerLink="/routing/page2/">2</a>
   <a href="" routerLink="/routing/page3/">3</a>
   <a href="" routerLink="/routing/page4/">4</a>
 </div>
 
-<div class="router-contianer" [@routerAnimations]="prepRouteTransition(outlet)">
+<div class="main-route-container" [@routerAnimations]="prepRouteTransition(outlet)">
   <router-outlet #outlet="outlet"></router-outlet>
 </div>

@@ -1,71 +1,87 @@
-<header>
-  <h1>Animation Basics</h1>
-</header>
+<div class="">
+  <section class="basics-intro stage">
+    <div class="content-area" [@contentAnimation]="section" (@contentAnimation.done)="visibleSection=section">
+      <div class="inner-section" [class.visible]="visibleSection==sections.intro" (click)="onInnerSectionClick(sections.intro)">
+        <img src="/assets/design-images/house-1.jpg" />
+        <div class="details">
+          <h2>Intro</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nisl ipsum, sollicitudin at quam id, hendrerit semper sapien. Integer lectus dui, malesuada a tortor et, bibendum dignissim justo. Donec scelerisque lacus et sapien semper blandit. Donec id egestas orci. Quisque consequat tellus nunc, a accumsan neque molestie id. In risus nibh, euismod vitae arcu at, cursus rutrum est. Aliquam pulvinar enim non suscipit tincidunt. Suspendisse ac ante justo. Donec quis consequat ligula, et tincidunt lacus. Sed viverra vestibulum magna.
+          </p>
+          <p>
+            Fusce erat quam, malesuada cursus magna nec, tempus dictum turpis. Aenean ac ex dignissim ipsum molestie semper iaculis a ex. Quisque nec nisi in quam mollis fringilla. Aliquam fermentum sapien eu neque congue sollicitudin vehicula et sem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc ut sollicitudin erat, et tempus justo. Etiam erat dui, dapibus eu nisl eu, hendrerit euismod justo.
+          </p>
+          <p>
+            Fusce dignissim augue purus, at commodo nunc euismod ut. Aliquam erat volutpat. Curabitur lacinia nunc ac mauris egestas ullamcorper. Vivamus consequat commodo scelerisque. Mauris auctor justo in dui malesuada mattis. Nulla lacinia, magna vitae laoreet laoreet, dolor augue aliquam tellus, euismod tempus odio felis in tortor. Donec scelerisque mi a magna consequat sollicitudin. Nunc laoreet posuere tristique. Aliquam erat volutpat. Curabitur id vehicula augue. In tincidunt neque sed sollicitudin eleifend. Donec id orci et quam viverra ullamcorper in elementum quam.
+          </p>
+        </div>
+      </div>
+      <div class="inner-section" [class.visible]="visibleSection==sections.triggers" (click)="onInnerSectionClick(sections.triggers)">
+        <img src="/assets/design-images/car-1.jpg" />
+        <div class="details">
+          <h2>Triggers</h2>
+          <p>
+            Fusce dignissim augue purus, at commodo nunc euismod ut. Aliquam erat volutpat. Curabitur lacinia nunc ac mauris egestas ullamcorper. Vivamus consequat commodo scelerisque. Mauris auctor justo in dui malesuada mattis. Nulla lacinia, magna vitae laoreet laoreet, dolor augue aliquam tellus, euismod tempus odio felis in tortor. Donec scelerisque mi a magna consequat sollicitudin. Nunc laoreet posuere tristique. Aliquam erat volutpat. Curabitur id vehicula augue. In tincidunt neque sed sollicitudin eleifend. Donec id orci et quam viverra ullamcorper in elementum quam.
+          </p>
+        </div>
+      </div>
+      <div class="inner-section" [class.visible]="visibleSection==sections.component" (click)="onInnerSectionClick(sections.component)">
+        <img src="/assets/design-images/dinner-1.jpg" />
+        <div class="details">
+          <h2>Component Animations</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nisl ipsum, sollicitudin at quam id, hendrerit semper sapien. Integer lectus dui, malesuada a tortor et, bibendum dignissim justo. Donec scelerisque lacus et sapien semper blandit. Donec id egestas orci. Quisque consequat tellus nunc, a accumsan neque molestie id. In risus nibh, euismod vitae arcu at, cursus rutrum est. Aliquam pulvinar enim non suscipit tincidunt. Suspendisse ac ante justo. Donec quis consequat ligula, et tincidunt lacus. Sed viverra vestibulum magna.
+          </p>
+          <p>
+            Fusce erat quam, malesuada cursus magna nec, tempus dictum turpis. Aenean ac ex dignissim ipsum molestie semper iaculis a ex. Quisque nec nisi in quam mollis fringilla. Aliquam fermentum sapien eu neque congue sollicitudin vehicula et sem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc ut sollicitudin erat, et tempus justo. Etiam erat dui, dapibus eu nisl eu, hendrerit euismod justo.
+          </p>
+          <p>
+            Fusce dignissim augue purus, at commodo nunc euismod ut. Aliquam erat volutpat. Curabitur lacinia nunc ac mauris egestas ullamcorper. Vivamus consequat commodo scelerisque. Mauris auctor justo in dui malesuada mattis. Nulla lacinia, magna vitae laoreet laoreet, dolor augue aliquam tellus, euismod tempus odio felis in tortor. Donec scelerisque mi a magna consequat sollicitudin. Nunc laoreet posuere tristique. Aliquam erat volutpat. Curabitur id vehicula augue. In tincidunt neque sed sollicitudin eleifend. Donec id orci et quam viverra ullamcorper in elementum quam.
+          </p>
+        </div>
+      </div>
+      <div class="inner-section" [class.visible]="visibleSection==sections.transition" (click)="onInnerSectionClick(sections.transition)">
+        <img src="/assets/design-images/travel-1.jpg" />
+        <div class="details">
+          <h2>The transition() function</h2>
+          <p>
+            Fusce dignissim augue purus, at commodo nunc euismod ut. Aliquam erat volutpat. Curabitur lacinia nunc ac mauris egestas ullamcorper. Vivamus consequat commodo scelerisque. Mauris auctor justo in dui malesuada mattis. Nulla lacinia, magna vitae laoreet laoreet, dolor augue aliquam tellus, euismod tempus odio felis in tortor. Donec scelerisque mi a magna consequat sollicitudin. Nunc laoreet posuere tristique. Aliquam erat volutpat. Curabitur id vehicula augue. In tincidunt neque sed sollicitudin eleifend. Donec id orci et quam viverra ullamcorper in elementum quam.
+          </p>
+        </div>
+      </div>
+      <div class="inner-section" [class.visible]="visibleSection==sections.fadeInFadeOut" (click)="onInnerSectionClick(sections.fadeInFadeOut)">
+        <img src="/assets/design-images/car-2.jpg" />
+        <div class="details">
+          <h2>Fade In Fade Out</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nisl ipsum, sollicitudin at quam id, hendrerit semper sapien. Integer lectus dui, malesuada a tortor et, bibendum dignissim justo. Donec scelerisque lacus et sapien semper blandit. Donec id egestas orci. Quisque consequat tellus nunc, a accumsan neque molestie id. In risus nibh, euismod vitae arcu at, cursus rutrum est. Aliquam pulvinar enim non suscipit tincidunt. Suspendisse ac ante justo. Donec quis consequat ligula, et tincidunt lacus. Sed viverra vestibulum magna.
+          </p>
+          <p>
+            Fusce erat quam, malesuada cursus magna nec, tempus dictum turpis. Aenean ac ex dignissim ipsum molestie semper iaculis a ex. Quisque nec nisi in quam mollis fringilla. Aliquam fermentum sapien eu neque congue sollicitudin vehicula et sem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc ut sollicitudin erat, et tempus justo. Etiam erat dui, dapibus eu nisl eu, hendrerit euismod justo.
+          </p>
+          <p>
+            Fusce dignissim augue purus, at commodo nunc euismod ut. Aliquam erat volutpat. Curabitur lacinia nunc ac mauris egestas ullamcorper. Vivamus consequat commodo scelerisque. Mauris auctor justo in dui malesuada mattis. Nulla lacinia, magna vitae laoreet laoreet, dolor augue aliquam tellus, euismod tempus odio felis in tortor. Donec scelerisque mi a magna consequat sollicitudin. Nunc laoreet posuere tristique. Aliquam erat volutpat. Curabitur id vehicula augue. In tincidunt neque sed sollicitudin eleifend. Donec id orci et quam viverra ullamcorper in elementum quam.
+          </p>
+        </div>
+      </div>
+      <div class="inner-section" [class.visible]="visibleSection==sections.animationCallback" (click)="onInnerSectionClick(sections.animationCallback)">
+        <img src="/assets/design-images/house-2.jpg" />
+        <div class="details">
+          <h2>(@animation.callback) code</h2>
+          <p>
+            Fusce dignissim augue purus, at commodo nunc euismod ut. Aliquam erat volutpat. Curabitur lacinia nunc ac mauris egestas ullamcorper. Vivamus consequat commodo scelerisque. Mauris auctor justo in dui malesuada mattis. Nulla lacinia, magna vitae laoreet laoreet, dolor augue aliquam tellus, euismod tempus odio felis in tortor. Donec scelerisque mi a magna consequat sollicitudin. Nunc laoreet posuere tristique. Aliquam erat volutpat. Curabitur id vehicula augue. In tincidunt neque sed sollicitudin eleifend. Donec id orci et quam viverra ullamcorper in elementum quam.
+          </p>
+        </div>
+      </div>
+    </div>
 
-<section class="basics-intro stage">
-  <div [ngSwitch]="section" class="content-area">
-    <div *ngSwitchCase="sections.intro" @contentAnimation>
-      <h2>Intro</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nisl ipsum, sollicitudin at quam id, hendrerit semper sapien. Integer lectus dui, malesuada a tortor et, bibendum dignissim justo. Donec scelerisque lacus et sapien semper blandit. Donec id egestas orci. Quisque consequat tellus nunc, a accumsan neque molestie id. In risus nibh, euismod vitae arcu at, cursus rutrum est. Aliquam pulvinar enim non suscipit tincidunt. Suspendisse ac ante justo. Donec quis consequat ligula, et tincidunt lacus. Sed viverra vestibulum magna.
-      </p>
-      <p>
-        Fusce erat quam, malesuada cursus magna nec, tempus dictum turpis. Aenean ac ex dignissim ipsum molestie semper iaculis a ex. Quisque nec nisi in quam mollis fringilla. Aliquam fermentum sapien eu neque congue sollicitudin vehicula et sem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc ut sollicitudin erat, et tempus justo. Etiam erat dui, dapibus eu nisl eu, hendrerit euismod justo.
-      </p>
-      <p>
-        Fusce dignissim augue purus, at commodo nunc euismod ut. Aliquam erat volutpat. Curabitur lacinia nunc ac mauris egestas ullamcorper. Vivamus consequat commodo scelerisque. Mauris auctor justo in dui malesuada mattis. Nulla lacinia, magna vitae laoreet laoreet, dolor augue aliquam tellus, euismod tempus odio felis in tortor. Donec scelerisque mi a magna consequat sollicitudin. Nunc laoreet posuere tristique. Aliquam erat volutpat. Curabitur id vehicula augue. In tincidunt neque sed sollicitudin eleifend. Donec id orci et quam viverra ullamcorper in elementum quam.
-      </p>
-    </div>
-    <div *ngSwitchCase="sections.triggers" @contentAnimation>
-      <h2>Triggers</h2>
-      <p>
-        Fusce dignissim augue purus, at commodo nunc euismod ut. Aliquam erat volutpat. Curabitur lacinia nunc ac mauris egestas ullamcorper. Vivamus consequat commodo scelerisque. Mauris auctor justo in dui malesuada mattis. Nulla lacinia, magna vitae laoreet laoreet, dolor augue aliquam tellus, euismod tempus odio felis in tortor. Donec scelerisque mi a magna consequat sollicitudin. Nunc laoreet posuere tristique. Aliquam erat volutpat. Curabitur id vehicula augue. In tincidunt neque sed sollicitudin eleifend. Donec id orci et quam viverra ullamcorper in elementum quam.
-      </p>
-    </div>
-    <div *ngSwitchCase="sections.component" @contentAnimation>
-      <h2>Component Animations</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nisl ipsum, sollicitudin at quam id, hendrerit semper sapien. Integer lectus dui, malesuada a tortor et, bibendum dignissim justo. Donec scelerisque lacus et sapien semper blandit. Donec id egestas orci. Quisque consequat tellus nunc, a accumsan neque molestie id. In risus nibh, euismod vitae arcu at, cursus rutrum est. Aliquam pulvinar enim non suscipit tincidunt. Suspendisse ac ante justo. Donec quis consequat ligula, et tincidunt lacus. Sed viverra vestibulum magna.
-      </p>
-      <p>
-        Fusce erat quam, malesuada cursus magna nec, tempus dictum turpis. Aenean ac ex dignissim ipsum molestie semper iaculis a ex. Quisque nec nisi in quam mollis fringilla. Aliquam fermentum sapien eu neque congue sollicitudin vehicula et sem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc ut sollicitudin erat, et tempus justo. Etiam erat dui, dapibus eu nisl eu, hendrerit euismod justo.
-      </p>
-      <p>
-        Fusce dignissim augue purus, at commodo nunc euismod ut. Aliquam erat volutpat. Curabitur lacinia nunc ac mauris egestas ullamcorper. Vivamus consequat commodo scelerisque. Mauris auctor justo in dui malesuada mattis. Nulla lacinia, magna vitae laoreet laoreet, dolor augue aliquam tellus, euismod tempus odio felis in tortor. Donec scelerisque mi a magna consequat sollicitudin. Nunc laoreet posuere tristique. Aliquam erat volutpat. Curabitur id vehicula augue. In tincidunt neque sed sollicitudin eleifend. Donec id orci et quam viverra ullamcorper in elementum quam.
-      </p>
-    </div>
-    <div *ngSwitchCase="sections.transition" @contentAnimation>
-      <h2>The transition() function</h2>
-      <p>
-        Fusce dignissim augue purus, at commodo nunc euismod ut. Aliquam erat volutpat. Curabitur lacinia nunc ac mauris egestas ullamcorper. Vivamus consequat commodo scelerisque. Mauris auctor justo in dui malesuada mattis. Nulla lacinia, magna vitae laoreet laoreet, dolor augue aliquam tellus, euismod tempus odio felis in tortor. Donec scelerisque mi a magna consequat sollicitudin. Nunc laoreet posuere tristique. Aliquam erat volutpat. Curabitur id vehicula augue. In tincidunt neque sed sollicitudin eleifend. Donec id orci et quam viverra ullamcorper in elementum quam.
-      </p>
-    </div>
-    <div *ngSwitchCase="sections.fadeInFadeOut" @contentAnimation>
-      <h2>Fade In Fade Out</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nisl ipsum, sollicitudin at quam id, hendrerit semper sapien. Integer lectus dui, malesuada a tortor et, bibendum dignissim justo. Donec scelerisque lacus et sapien semper blandit. Donec id egestas orci. Quisque consequat tellus nunc, a accumsan neque molestie id. In risus nibh, euismod vitae arcu at, cursus rutrum est. Aliquam pulvinar enim non suscipit tincidunt. Suspendisse ac ante justo. Donec quis consequat ligula, et tincidunt lacus. Sed viverra vestibulum magna.
-      </p>
-      <p>
-        Fusce erat quam, malesuada cursus magna nec, tempus dictum turpis. Aenean ac ex dignissim ipsum molestie semper iaculis a ex. Quisque nec nisi in quam mollis fringilla. Aliquam fermentum sapien eu neque congue sollicitudin vehicula et sem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc ut sollicitudin erat, et tempus justo. Etiam erat dui, dapibus eu nisl eu, hendrerit euismod justo.
-      </p>
-      <p>
-        Fusce dignissim augue purus, at commodo nunc euismod ut. Aliquam erat volutpat. Curabitur lacinia nunc ac mauris egestas ullamcorper. Vivamus consequat commodo scelerisque. Mauris auctor justo in dui malesuada mattis. Nulla lacinia, magna vitae laoreet laoreet, dolor augue aliquam tellus, euismod tempus odio felis in tortor. Donec scelerisque mi a magna consequat sollicitudin. Nunc laoreet posuere tristique. Aliquam erat volutpat. Curabitur id vehicula augue. In tincidunt neque sed sollicitudin eleifend. Donec id orci et quam viverra ullamcorper in elementum quam.
-      </p>
-    </div>
-    <div *ngSwitchCase="sections.animationCallback" @contentAnimation>
-      <h2>(@animation.callback) code</h2>
-      <p>
-        Fusce dignissim augue purus, at commodo nunc euismod ut. Aliquam erat volutpat. Curabitur lacinia nunc ac mauris egestas ullamcorper. Vivamus consequat commodo scelerisque. Mauris auctor justo in dui malesuada mattis. Nulla lacinia, magna vitae laoreet laoreet, dolor augue aliquam tellus, euismod tempus odio felis in tortor. Donec scelerisque mi a magna consequat sollicitudin. Nunc laoreet posuere tristique. Aliquam erat volutpat. Curabitur id vehicula augue. In tincidunt neque sed sollicitudin eleifend. Donec id orci et quam viverra ullamcorper in elementum quam.
-      </p>
-    </div>
-  </div>
-
-  <ol class="menu menu-area">
-    <li [class.selected]="isActive(sections.intro)" (click)="section=sections.intro">How Animations Work</li>
-    <li [class.selected]="isActive(sections.triggers)" (click)="section=sections.triggers">Animation @Triggers</li>
-    <li [class.selected]="isActive(sections.component)" (click)="section=sections.component">Component Animations</li>
-    <li [class.selected]="isActive(sections.transition)" (click)="section=sections.transition">transition()</li>
-    <li [class.selected]="isActive(sections.fadeInFadeOut)" (click)="section=sections.fadeInFadeOut">fade in / fade out</li>
-    <li [class.selected]="isActive(sections.animationCallback)" (click)="section=sections.animationCallback">(@animation.callback)</li>
-  </ol>
-</section>
+    <ol class="menu menu-area">
+      <li [class.selected]="isActive(sections.intro)" (click)="section=sections.intro">How Animations Work</li>
+      <li [class.selected]="isActive(sections.triggers)" (click)="section=sections.triggers">Animation @Triggers</li>
+      <li [class.selected]="isActive(sections.component)" (click)="section=sections.component">Component Animations</li>
+      <li [class.selected]="isActive(sections.transition)" (click)="section=sections.transition">transition()</li>
+      <li [class.selected]="isActive(sections.fadeInFadeOut)" (click)="section=sections.fadeInFadeOut">fade in / fade out</li>
+      <li [class.selected]="isActive(sections.animationCallback)" (click)="section=sections.animationCallback">(@animation.callback)</li>
+    </ol>
+  </section>
+</div>

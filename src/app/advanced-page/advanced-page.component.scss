@@ -1,0 +1,70 @@
+.advanced-area {
+  display:table;
+  width:100%;
+}
+
+.side-area, .gallery-area {
+  vertical-align: top;
+  display:table-cell;
+}
+
+.side-area {
+  padding-top:10%;
+}
+
+.gallery-area {
+  width:80%;
+  position:relative;
+  &:before {
+    content:"";
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&1+0,0+100 */
+background: -moz-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 */
+    width:10px;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    z-index:100;
+  }
+}
+
+.gallery-area .photo-record {
+  width:25%;
+  display:inline-block;
+  height:20vh;
+  border:1px solid black;
+  text-align:center;
+  transition:0.2s ease-out all;
+  cursor:pointer;
+  position:relative;
+  overflow:hidden;
+  margin-top:-5px;
+}
+
+.gallery-area .photo-record:hover {
+  transform:scale(1.05);
+  position:relative;
+  z-index:100;
+}
+
+.photo-record .title {
+  font-size:4rem;
+  display:block;
+  line-height:200px;
+}
+
+.photo-record img {
+  position:absolute;
+  left:-10%;
+  width:120%;
+  top:50%;
+  transform:translateY(-50%);
+}
+
+.g0 { background:#444; }
+.g1 { background: #494949; }
+.g2 { background: #555; }
+.g3 { background: #595959; }

@@ -1,19 +1,16 @@
-<header>
-  <h1>Advanced Animations</h1>
-</header>
-
 <div class="advanced-area">
   <aside class="side-area">
     <ol class="menu">
-      <li [class.selected]="isActive(sections.about)" (click)="section=sections.about">Advanced Stuff</li>
-      <li [class.selected]="isActive(sections.query)" (click)="section=sections.query">Querying</li>
-      <li [class.selected]="isActive(sections.stagger)" (click)="section=sections.stagger">Staggering</li>
+      <li [class.selected]="isActive(sections.one)" (click)="section=sections.one">Travel</li>
+      <li [class.selected]="isActive(sections.two)" (click)="section=sections.two">Cars</li>
+      <li [class.selected]="isActive(sections.three)" (click)="section=sections.three">Angular</li>
     </ol>
   </aside>
 
   <section class="gallery gallery-area" [@listAnimation]="section">
-    <li *ngFor="let photo of getPhotos(section)" class="photo-record">
-      <span [class]="'title ' + photo.className" (click)="showModalFor(photo)">{{ photo.title }}</span>
+    <li *ngFor="let photo of getPhotos(section)" class="photo-record" (click)="showModalFor(photo)">
+      <img *ngIf="photo.src" [src]="photo.src" />
+      <span *ngIf="!photo.src" [class]="'title ' + photo.className">{{ photo.title }}</span>
     </li>
   </section>
 </div>

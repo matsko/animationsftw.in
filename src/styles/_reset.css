@@ -25,10 +25,11 @@ ol, ul, li {
 html, #wrapper {
   color:white;
   background:black url(/assets/bg-dark.png);
+  height:100%;
+  position:relative;
 }
 
-app-root {
+.container {
   width:80%;
   margin:0 auto;
-  background:#222 url(/assets/bg-light.png);
 }
