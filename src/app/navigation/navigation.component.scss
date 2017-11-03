@@ -1,0 +1,60 @@
+@import "../../styles/_colors";
+
+:host { display:block; }
+
+.main-navigation {
+  text-align:left;
+  background:#111;
+  display:inline-block;
+  z-index:10000;
+  position:absolute;
+  top:1em;
+  left:1em;
+  padding:0 10px 10px;
+  height:60px;
+}
+
+.main-navigation > a {
+  display:inline-block;
+  padding:20px 10px 10px;
+  color:white;
+  letter-spacing: 2px;
+  font-family: 'Open Sans';
+  text-transform: uppercase;
+  font-weight:bold;
+  font-size:0.8rem;
+  text-decoration:none;
+  border-bottom:5px solid transparent;
+}
+
+.main-navigation > a:hover,
+.main-navigation > a.active {
+  color:$redColor;
+  border-bottom-color:$redColor;
+}
+
+.sup-navigation {
+  z-index:10000;
+  position:absolute;
+  top:1em;
+  right:1em;
+  background:maroon;
+  padding-left:20px;
+  padding-right:20px;
+  height:60px;
+}
+
+.sup-navigation > span {
+  display:inline-block;
+  font-family: 'Open Sans';
+  text-transform: uppercase;
+  font-weight:bold;
+  padding:0 10px;
+  line-height:60px;
+  font-size:1.2rem;
+  cursor:pointer;
+}
+
+.animation-toggle.disabled {
+  opacity:0.5;
+}

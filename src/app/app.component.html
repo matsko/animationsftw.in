@@ -1,11 +1,4 @@
-<nav class="main-navigation">
-  <a href="" [class.active]="isActiveRoute('/')" routerLink='/'>Home</a>
-  <a href="" [class.active]="isActiveRoute('/basics')" routerLink='/basics'>Basics</a>
-  <a href="" [class.active]="isActiveRoute('/advanced')" routerLink='/advanced'>Advanced</a>
-  <a href="" [class.active]="isActiveRoute('/routing')" routerLink='/routing'>Routing</a>
-  <a href="" [class.active]="isActiveRoute('/programmatic')" routerLink='/programmatic'>Animation Builder</a>
-  <a href="" [class.active]="isActiveRoute('/new-features')" routerLink='/new-features'>New Stuff?</a>
-</nav>
+<app-navigation></app-navigation>
 
 <div class="main-stage" [@codeExampleAnimation]="showCodeExample">
   <div class="router-container" [@routerContainerAnimation]="showCodeExample" [@routeAnimation]="prepRouteAnimation(outlet)">

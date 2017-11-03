@@ -20,7 +20,9 @@ import { IntroPageComponent } from './intro-page/intro-page.component';
 import { ModalComponent } from './modal/modal.component';
 
 import { ModalService } from './modal.service';
+import { AnimationCountService } from './animation-count.service';
 import { CodeSnippetComponent } from './code-snippet/code-snippet.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import { CodeSnippetComponent } from './code-snippet/code-snippet.component';
     RoutePage4Component,
     IntroPageComponent,
     ModalComponent,
-    CodeSnippetComponent
+    CodeSnippetComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -45,7 +48,8 @@ import { CodeSnippetComponent } from './code-snippet/code-snippet.component';
   ],
   providers: [
     CodeExampleService,
-    ModalService
+    ModalService,
+    AnimationCountService
   ],
   bootstrap: [AppComponent]
 })

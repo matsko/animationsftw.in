@@ -2,13 +2,13 @@
 @import "./styles/_reset";
 @import "./styles/_components";
 @import "./styles/_colors";
+@import "./styles/_font_awesome";
 @import "../node_modules/prismjs/themes/prism.css";
 @import "../node_modules/prismjs/themes/prism-okaidia.css";
 
 $FontPathOpenSans: "/assets/fonts/open-sans";
 @import "../node_modules/npm-font-open-sans/open-sans.scss";
 
-@import "./styles/_navigation";
 @import "./styles/_page_header";
 
 .sections {

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 import { Router, RouterOutlet, NavigationStart } from '@angular/router';
 import { CodeExampleService } from './code-example.service';
 import { trigger, transition, animate, style, query, group, state, animateChild } from '@angular/animations';
@@ -49,6 +49,9 @@ import { ModalService } from './modal.service';
 export class AppComponent {
   showCodeExample = false;
 
+  @HostBinding('@.disabled')
+  animationsDisabled = false;
+
   constructor(private _router: Router, private _modalService: ModalService, private _codeExampleService: CodeExampleService) {
     this._codeExampleService.onChange(status => {
       status === 'open' ? this.openCloseExample() : this.closeCodeExample();
@@ -65,10 +68,6 @@ export class AppComponent {
     return this._modalService.visible;
   }
 
-  get activeRoutePath(): string {
-    return this._router.url;
-  }
-
   onRouteChange() {
   }
 
@@ -80,12 +79,16 @@ export class AppComponent {
     this.showCodeExample = true;
   }
 
-  isActiveRoute(path: string) {
-    if (path.length > 1) {
-      const regex = new RegExp('^' + path);
-      return regex.test(this.activeRoutePath);
-    }
-    return path == this.activeRoutePath;
+  disableAnimations() {
+    this.animationsDisabled = true;
+  }
+
+  enableAnimations() {
+    this.animationsDisabled = false;
+  }
+
+  toggleAnimations() {
+    this.animationsDisabled ? this.enableAnimations() : this.disableAnimations();
   }
 
   prepRouteAnimation(outlet: RouterOutlet) {

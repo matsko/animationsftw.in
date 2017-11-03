@@ -1,0 +1,16 @@
+<nav class="main-navigation">
+  <a href="" [class.active]="isActiveRoute('/')" routerLink='/'>Home</a>
+  <a href="" [class.active]="isActiveRoute('/basics')" routerLink='/basics'>Basics</a>
+  <a href="" [class.active]="isActiveRoute('/advanced')" routerLink='/advanced'>Advanced</a>
+  <a href="" [class.active]="isActiveRoute('/routing')" routerLink='/routing'>Routing</a>
+  <a href="" [class.active]="isActiveRoute('/programmatic')" routerLink='/programmatic'>Animation Builder</a>
+  <a href="" [class.active]="isActiveRoute('/new-features')" routerLink='/new-features'>New Stuff?</a>
+</nav>
+
+<nav class="sup-navigation">
+  <span>
+    <span class="fa fa-superpowers"></span>
+    <span [@counterChangeAnimation]="totalAnimations">{{ totalAnimations }}</span>
+  </span>
+  <span class="animation-toggle" (click)="toggleDisableAnimations()" [class.disabled]="animationsDisabled()"><span class="fa fa-power-off"></span> </span>
+</nav>

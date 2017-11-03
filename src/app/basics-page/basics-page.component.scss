@@ -1,0 +1,74 @@
+.basics-intro {
+  position:relative;
+  overflow:hidden;
+  height:100vh;
+  width:80%;
+
+  &:before {
+    content:"";
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    width:20px;
+    z-index:100;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,1+100 */
+background: -moz-linear-gradient(left, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(0,0,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=1 ); /* IE6-9 */
+  }
+}
+
+.menu-area {
+  padding-top:10%;
+  width:19%;
+  padding:100px 1rem 0;
+  display:inline-block;
+}
+
+.basics-intro, .menu-area {
+  display:inline-block;
+  vertical-align: top;
+}
+
+.basics-area {
+  height:100%;
+  overflow:hidden;
+}
+
+.inner-section {
+  position:relative;
+  height:700px;
+  overflow:hidden;
+  transition:0.3s ease-out all;
+}
+
+.inner-section:not(.visible):hover {
+  cursor:pointer;
+  opacity:0.8;
+}
+
+.inner-section:not(.visible) {
+  cursor:pointer;
+  opacity:0.5;
+}
+
+.inner-section img {
+  position:absolute;
+  left:0;
+  top:50%;
+  transform: translateY(-50%);
+  width:100%;
+}
+
+.inner-section .details {
+  position:absolute;
+  top:50px;
+  left:50px;
+  width:50%;
+  background:rgba(0,0,0,0.5);
+  color:white;
+  display:inline-block;
+  padding:1rem;
+}

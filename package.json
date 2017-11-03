@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "cp -R node_modules/npm-font-open-sans/fonts ./src/assets/fonts/open-sans"
+    "postinstall": "./npm_scripts/postinstall.sh"
   },
   "private": true,
   "dependencies": {
@@ -23,6 +23,8 @@
     "@angular/platform-browser-dynamic": "^5.0.0-rc.8",
     "@angular/router": "^5.0.0-rc.8",
     "core-js": "^2.4.1",
+    "font-awesome": "^4.7.0",
+    "font-awesome-sass": "^4.7.0",
     "normalize-scss": "^7.0.0",
     "npm-font-open-sans": "^1.1.0",
     "prismjs": "^1.8.3",

@@ -1,4 +1,4 @@
-<div class="">
+<div class="basics-area">
   <section class="basics-intro stage">
     <div class="content-area" [@contentAnimation]="section" (@contentAnimation.done)="visibleSection=section">
       <div class="inner-section" [class.visible]="visibleSection==sections.intro" (click)="onInnerSectionClick(sections.intro)">
@@ -74,14 +74,14 @@
         </div>
       </div>
     </div>
-
-    <ol class="menu menu-area">
-      <li [class.selected]="isActive(sections.intro)" (click)="section=sections.intro">How Animations Work</li>
-      <li [class.selected]="isActive(sections.triggers)" (click)="section=sections.triggers">Animation @Triggers</li>
-      <li [class.selected]="isActive(sections.component)" (click)="section=sections.component">Component Animations</li>
-      <li [class.selected]="isActive(sections.transition)" (click)="section=sections.transition">transition()</li>
-      <li [class.selected]="isActive(sections.fadeInFadeOut)" (click)="section=sections.fadeInFadeOut">fade in / fade out</li>
-      <li [class.selected]="isActive(sections.animationCallback)" (click)="section=sections.animationCallback">(@animation.callback)</li>
-    </ol>
   </section>
+
+  <ol class="menu menu-area">
+    <li [class.selected]="isActive(sections.intro)" (click)="section=sections.intro">How Animations Work</li>
+    <li [class.selected]="isActive(sections.triggers)" (click)="section=sections.triggers">Animation @Triggers</li>
+    <li [class.selected]="isActive(sections.component)" (click)="section=sections.component">Component Animations</li>
+    <li [class.selected]="isActive(sections.transition)" (click)="section=sections.transition">transition()</li>
+    <li [class.selected]="isActive(sections.fadeInFadeOut)" (click)="section=sections.fadeInFadeOut">fade in / fade out</li>
+    <li [class.selected]="isActive(sections.animationCallback)" (click)="section=sections.animationCallback">(@animation.callback)</li>
+  </ol>
 </div>

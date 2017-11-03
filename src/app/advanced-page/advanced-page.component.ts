@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { trigger, transition, animate, style, query, stagger } from '@angular/animations';
 import { ModalService } from '../modal.service';
+import { KeyboardBinding, Keys } from '../keyboard.service';
+import { AnimationCountService } from '../animation-count.service';
 
 const SECTIONS = {
   one: 1,
@@ -139,7 +141,33 @@ export class AdvancedPageComponent {
     },
   ];
 
-  constructor(private _modalService: ModalService) { }
+  private _keydownBinding: KeyboardBinding;
+
+  constructor(private _modalService: ModalService, private _animationCount: AnimationCountService) {
+    this._animationCount.setTotal(4);
+  }
+
+  ngOnInit() {
+    this._keydownBinding = new KeyboardBinding([Keys.KEY_UP, Keys.KEY_DOWN], keyCode => {
+      if (keyCode === Keys.KEY_UP) {
+        this.up();
+      } else if (keyCode === Keys.KEY_DOWN) {
+        this.down();
+      }
+    });
+  }
+
+  ngOnDestroy() {
+    this._keydownBinding.deregister();
+  }
+
+  up() {
+    this.section = Math.max(this.section - 1, 1);
+  }
+
+  down() {
+    this.section = Math.min(this.section + 1, Object.keys(SECTIONS).length);
+  }
 
   getPhotos(section: number) {
     const entries = this.photos.find(e => e.section == section);
