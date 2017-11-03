@@ -10,6 +10,27 @@ import { ModalService } from './modal.service';
   styleUrls: ['./app.component.css'],
   animations: [
     trigger('routeAnimation', [
+      transition('* => intro', [
+        style({ position: 'relative' }),
+        query(':enter, :leave', style({
+          position: 'absolute', top:0, left:0, width: '100%'
+        })),
+        group([
+          query(':enter', [
+            style({ transform: 'translateY(-100%)' }),
+            animate('1200ms ease-out', style({ transform: 'none' })),
+            animateChild()
+          ]),
+          // broken here
+          query(':leave', [
+            style({ zIndex: 1000 }),
+            animate('10000ms ease-out', style({ transform: 'translateY(100%)' }))
+          ])
+        ])
+      ]),
+      transition('* => advanced, * => routing, * => basics', [
+        query(':enter', animateChild())
+      ]),
       transition('* => *', [])
     ]),
     trigger('routerContainerAnimation', [

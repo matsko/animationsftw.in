@@ -1,4 +1,4 @@
-import { HostBinding, Component, OnInit } from '@angular/core';
+import { HostBinding, Component } from '@angular/core';
 import { trigger, transition, style, animate, stagger, query, useAnimation } from '@angular/animations';
 import { PAGE_IN_ANIMATION, PAGE_OUT_ANIMATION } from '../shared_route_animations';
 
@@ -13,13 +13,7 @@ import { PAGE_IN_ANIMATION, PAGE_OUT_ANIMATION } from '../shared_route_animation
     ]),
   ]
 })
-export class RoutePage1Component implements OnInit {
+export class RoutePage1Component {
   @HostBinding('@pageAnimations')
   public animatePage = true;
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
 }

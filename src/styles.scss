@@ -98,10 +98,11 @@ app-routing-page, .router-container, .main-route-container {
 
 .main-route-details {
   position:absolute;
+  padding:20px;
   bottom:20%;
   right:20px;
   width:40%;
-  background:#222;
+  background:rgba(0,0,0,0.8);
   color:white;
   z-index:100;
 }

@@ -19,28 +19,6 @@ export const PAGE_IN_ANIMATION = animation([
   ])
 ]);
 
-/*
- style({ height: '{{ height }}px' })
-
- function saggerLeftFactory(time: number) {
-  return function staggerLeftRight(element: any, styles: any, params: any, allElements: any[]) {
-    return 0; // column 1
-    return 100; // column 2
-  }
-}
-
-style()
-animate()
-stagger
-query(queryFn)
-
-function queryFn(containerElement: any, queryFn: Function, params) {
-  const elements = queryFn(...).filter
-}
-
- stagger(staggerLeftFactory(1000), [...])
-*/
-
 export const PAGE_OUT_ANIMATION = animation([
   group([
     query('.main-route-details > *', [

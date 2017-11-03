@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { HostBinding, Component } from '@angular/core';
 import { trigger, transition, animate, style, query, stagger } from '@angular/animations';
 import { ModalService } from '../modal.service';
 import { KeyboardBinding, Keys } from '../keyboard.service';
@@ -15,6 +15,16 @@ const SECTIONS = {
   templateUrl: './advanced-page.component.html',
   styleUrls: ['./advanced-page.component.scss'],
   animations: [
+    trigger('pageAnimations', [
+      transition(':enter', [
+        query('.photo-record, .menu li', [
+          style({opacity: 0, transform: 'translateY(-100px)'}),
+          stagger(-30, [
+            animate('500ms cubic-bezier(0.35, 0, 0.25, 1)', style({ opacity: 1, transform: 'none' }))
+          ])
+        ])
+      ])
+    ]),
     trigger('listAnimation', [
       transition(':enter', []),
       transition('* => 3', [
@@ -63,6 +73,9 @@ const SECTIONS = {
   ]
 })
 export class AdvancedPageComponent {
+  @HostBinding('@pageAnimations')
+  public animatePage = true;
+
   section = SECTIONS.one;
   sections = SECTIONS;
 

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { HostBinding, Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { trigger, transition, style, animate, query, group, animateChild } from '@angular/animations';
 
@@ -19,6 +19,20 @@ const NICE_EASING = 'cubic-bezier(0.35, 0, 0.25, 1)';
   templateUrl: './routing-page.component.html',
   styleUrls: ['./routing-page.component.css'],
   animations: [
+    trigger('pageAnimations', [
+      transition(':enter', [
+        group([
+          query('.main-route-container', [
+            style({ opacity: 0, transform: 'translateY(-100%)'}),
+            animate('800ms ' + NICE_EASING, style({ opacity: 1, transform: 'none'}))
+          ]),
+          query('.main-route-details', [
+            style({ opacity: 0, transform: 'translateY(100%)'}),
+            animate('800ms ' + NICE_EASING, style({ opacity: 1, transform: 'none'}))
+          ])
+        ])
+      ])
+    ]),
     trigger('routerAnimations', [
       transition(':enter', []),
       transition(':increment', [
@@ -31,7 +45,7 @@ const NICE_EASING = 'cubic-bezier(0.35, 0, 0.25, 1)';
         ]),
         group([
           query(':leave', [
-            animate('1.5s ease-out', style({ transform: 'translateX(-100%)'}))
+            animate('1s ' + NICE_EASING, style({ transform: 'translateX(-100%)', opacity: 0}))
           ]),
           query(':enter', [
             animate('0.5s 0.1s ' + NICE_EASING, style({ opacity: 1, transform: 'none' })),
@@ -51,7 +65,7 @@ const NICE_EASING = 'cubic-bezier(0.35, 0, 0.25, 1)';
         ]),
         group([
           query(':leave', [
-            animate('1.5s ease-out', style({ transform: 'translateX(100%)'}))
+            animate('1s ' + NICE_EASING, style({ transform: 'translateX(100%)', opacity: 0 }))
           ]),
           query(':enter', [
             animate('0.5s 0.1s ' + NICE_EASING, style({ opacity: 1, transform: 'none' })),
@@ -65,7 +79,8 @@ const NICE_EASING = 'cubic-bezier(0.35, 0, 0.25, 1)';
   ]
 })
 export class RoutingPageComponent {
-  constructor() { }
+  @HostBinding('@pageAnimations')
+  public animatePage = true;
 
   prepRouteTransition(outlet: RouterOutlet) {
     return outlet.activatedRouteData['animation'] || '';

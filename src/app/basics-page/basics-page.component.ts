@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { trigger, transition, style, state, animate } from '@angular/animations';
+import { HostBinding, Component } from '@angular/core';
+import { stagger, trigger, transition, style, state, query, group, animate } from '@angular/animations';
 import { KeyboardBinding, Keys } from '../keyboard.service';
 import { AnimationCountService } from '../animation-count.service';
 
@@ -20,6 +20,16 @@ const DOWN_ARROW_CODE = 40;
   templateUrl: './basics-page.component.html',
   styleUrls: ['./basics-page.component.scss'],
   animations: [
+    trigger('pageAnimations', [
+      transition(':enter', [
+        query('.inner-section, .menu-area > li', [
+          style({ transform: 'translateY(-100px)', opacity: 0 }),
+          stagger(50, [
+            animate('300ms ease-out', style({ transform: 'none', opacity: '*' }))
+          ])
+        ])
+      ])
+    ]),
     trigger('contentAnimation', [
       transition(':enter', []),
 
@@ -35,6 +45,9 @@ const DOWN_ARROW_CODE = 40;
   ]
 })
 export class BasicsPageComponent {
+  @HostBinding('@pageAnimations')
+  public animatePage = true;
+
   section = SECTIONS.intro;
   visibleSection = SECTIONS.intro;
 
