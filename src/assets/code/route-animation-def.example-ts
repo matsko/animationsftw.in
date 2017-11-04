@@ -1,0 +1,12 @@
+@Component({
+  animations: [
+    trigger('routeAnimations', [
+      transition('homePage => profilePage', [
+        // the route animation takes place here
+      ])
+    ])
+  ]
+})
+class AppComponent {
+
+}

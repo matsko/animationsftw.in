@@ -1,0 +1,4 @@
+--- {"className": "big"}
+<div class="route-container" [@routeAnimations]="...">
+  <router-outlet></router-outlet>
+</div>

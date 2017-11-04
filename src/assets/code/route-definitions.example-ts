@@ -1,0 +1,9 @@
+// routes.ts (imported into the app.module.ts code)
+const ROUTES = [
+  // the { animation: '...' } data will be used to figure out
+  // which animation to handle between a route change
+  { component: HomePage, path: '', data: {animation: 'HomePage' }},
+  { component: ProfilePage, path: '/profile/:id', data: {animation: 'ProfilePage' }},
+  { component: AboutPage, path: '/about', data: {animation: 'AboutPage' }},
+  { component: ContactPage, path: '/contact', data: {animation: 'ContactPage' }},
+]

@@ -1,5 +1,5 @@
 import { HostBinding, Component } from '@angular/core';
-import { trigger, transition, state, animate, style, query, stagger, animateChild } from '@angular/animations';
+import { trigger, transition, animate, style, query, stagger } from '@angular/animations';
 import { ModalService } from '../modal.service';
 import { KeyboardBinding, Keys } from '../keyboard.service';
 import { AnimationCountService } from '../animation-count.service';
@@ -40,23 +40,22 @@ function filterPhotos(photos: any, criteria: string): any[] {
       ])
     ]),
     trigger('filterAnimation', [
-      transition(':enter, * => -1', []),
+      transition(':enter, * => 0, * => -1', []),
       transition(':increment', [
-        query('*', [
-          // this fails here
-          animateChild()
+        query(':enter', [
+          style({ opacity: 0, width: '0px' }),
+          stagger(50, [
+            animate('300ms ease-out', style({ opacity: 1, width: '*' })),
+          ]),
         ])
       ]),
-      transition(':increment', [
-        query('*', [
-          stagger(50, animateChild())
+      transition(':decrement', [
+        query(':leave', [
+          stagger(50, [
+            animate('300ms ease-out', style({ opacity: 0, width: '0px' })),
+          ]),
         ])
-      ])
-    ]),
-    trigger('photoAnimation', [
-      state('active', style({ opacity: '*' })),
-      state('inactive', style({ opacity: '0.2' })),
-      transition('active <=> inactive', animate(300))
+      ]),
     ]),
     trigger('listAnimation', [
       transition(':enter', []),
@@ -112,7 +111,6 @@ export class AdvancedPageComponent {
   section: number;
   sections = SECTIONS;
 
-  private _criteria: string;
   private _photoResults: any[] = [];
   public filterTotal = -1;
 
@@ -213,11 +211,11 @@ export class AdvancedPageComponent {
   }
 
   up() {
-    this.section = Math.max(this.section - 1, 1);
+    this.updateSection(Math.max(this.section - 1, 1));
   }
 
   down() {
-    this.section = Math.min(this.section + 1, Object.keys(SECTIONS).length);
+    this.updateSection(Math.min(this.section + 1, Object.keys(SECTIONS).length));
   }
 
   updateSection(section: number) {
@@ -228,9 +226,9 @@ export class AdvancedPageComponent {
 
   updateCriteria(criteria: string) {
     criteria = criteria ? criteria.trim() : '';
-    this._criteria = criteria;
     this.updateSection(this.section);
-    const newTotal = filterPhotos(this._photoResults, criteria).length;
+    this._photoResults = filterPhotos(this._photoResults, criteria);
+    const newTotal = this._photoResults.length;
     if (this.filterTotal != newTotal) {
       this.filterTotal = newTotal;
     } else if (!criteria) {
@@ -244,9 +242,5 @@ export class AdvancedPageComponent {
 
   isActive(section: number) {
     return section == this.section;
-  }
-
-  isPhotoActive(photo: any) {
-    return PHOTO_FILTER.isPhotoActive(photo, this._criteria);
   }
 }

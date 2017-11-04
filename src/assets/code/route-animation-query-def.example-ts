@@ -1,0 +1,17 @@
+@Component({
+  animations: [
+    trigger('routeAnimations', [
+      transition('homePage => profilePage', [
+        query(':enter', [ // the new page
+          //...
+        ]),
+        query(':leave', [ // the old page
+          //...
+        ])
+      ])
+    ])
+  ]
+})
+class AppComponent {
+
+}

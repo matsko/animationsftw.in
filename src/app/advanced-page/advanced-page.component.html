@@ -8,11 +8,10 @@
       <li [class.selected]="isActive(sections.two)" (click)="updateSection(sections.two)">Cars</li>
       <li [class.selected]="isActive(sections.three)" (click)="updateSection(sections.three)">Angular</li>
     </ol>
-    TOTAL = {{ filterTotal }}
   </aside>
 
   <section class="gallery gallery-area" [@listAnimation]="section" [@filterAnimation]="filterTotal">
-    <li *ngFor="let photo of getPhotos()" class="photo-record" [@photoAnimation]="isPhotoActive(photo, criteria.value) ? 'active' : 'inactive'">
+    <li *ngFor="let photo of getPhotos()" class="photo-record">
   co
       <img *ngIf="photo.src" [src]="photo.src" />
       <span *ngIf="!photo.src" [class]="'title ' + photo.className">{{ photo.title }}</span>

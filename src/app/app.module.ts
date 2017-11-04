@@ -31,6 +31,7 @@ import { ToolTipHoverDirective } from './tool-tip-hover.directive';
 import { AnimationDetailsComponent } from './animation-details/animation-details.component';
 import { CodeModalClickDirective } from './code-modal-click.directive';
 import { PhotoPipe } from './photo.pipe';
+import { RoutePage5Component } from './route-page5/route-page5.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { PhotoPipe } from './photo.pipe';
     ToolTipHoverDirective,
     AnimationDetailsComponent,
     CodeModalClickDirective,
-    PhotoPipe
+    PhotoPipe,
+    RoutePage5Component
   ],
   imports: [
     HttpModule,

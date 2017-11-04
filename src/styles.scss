@@ -64,7 +64,8 @@ section.intro-section {
 app-route-page1,
 app-route-page2,
 app-route-page3,
-app-route-page4 {
+app-route-page4,
+app-route-page5 {
   display:block;
   position:relative;
   overflow:hidden;
@@ -78,8 +79,8 @@ app-routing-page, .router-container, .main-route-container {
 
 .main-route-navigation {
   position:absolute;
-  top:100px;
-  left:0;
+  bottom:20px;
+  left:20px;
   background:maroon;
   z-index:100;
   color:white;
@@ -99,9 +100,9 @@ app-routing-page, .router-container, .main-route-container {
 .main-route-details {
   position:absolute;
   padding:20px;
-  bottom:20%;
+  bottom:20px;
   right:20px;
-  width:40%;
+  width:50%;
   background:rgba(0,0,0,0.8);
   color:white;
   z-index:100;

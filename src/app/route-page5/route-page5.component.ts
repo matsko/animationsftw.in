@@ -3,9 +3,9 @@ import { trigger, transition, style, animate, stagger, query, useAnimation } fro
 import { PAGE_IN_ANIMATION, PAGE_OUT_ANIMATION } from '../shared_route_animations';
 
 @Component({
-  selector: 'app-route-page4',
-  templateUrl: './route-page4.component.html',
-  styleUrls: ['./route-page4.component.css'],
+  selector: 'app-route-page5',
+  templateUrl: './route-page5.component.html',
+  styleUrls: ['./route-page5.component.scss'],
   animations: [
     trigger('pageAnimations', [
       transition(':enter', useAnimation(PAGE_IN_ANIMATION)),
@@ -13,7 +13,8 @@ import { PAGE_IN_ANIMATION, PAGE_OUT_ANIMATION } from '../shared_route_animation
     ]),
   ]
 })
-export class RoutePage4Component {
+export class RoutePage5Component {
   @HostBinding('@pageAnimations')
   public animatePage = true;
 }
+

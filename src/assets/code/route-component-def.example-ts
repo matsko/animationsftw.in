@@ -1,0 +1,17 @@
+@Component({
+  selector: 'home-page-component',
+  animations: [
+    trigger('pageAnimations', [
+      transition(':enter', [
+        // animation for the page entering
+      ]),
+      transition(':leave', [
+        // animation for the page leaving
+      ])
+    ])
+  ]
+})
+class HomePageComponent {
+  @HostBinding('@pageAnimations')
+  public animatePage = true;
+}
