@@ -4,11 +4,10 @@
   <a href="" [class.active]="isActiveRoute('/advanced')" routerLink='/advanced'>Advanced</a>
   <a href="" [class.active]="isActiveRoute('/routing')" routerLink='/routing'>Routing</a>
   <a href="" [class.active]="isActiveRoute('/programmatic')" routerLink='/programmatic'>Animation Builder</a>
-  <a href="" [class.active]="isActiveRoute('/new-features')" routerLink='/new-features'>New Stuff?</a>
 </nav>
 
 <nav class="sup-navigation">
-  <span>
+  <span appToolTipHover="animations">
     <span class="fa fa-superpowers"></span>
     <span [@counterChangeAnimation]="totalAnimations">{{ totalAnimations }}</span>
   </span>

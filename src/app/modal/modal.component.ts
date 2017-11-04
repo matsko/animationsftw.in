@@ -1,6 +1,8 @@
-import { Component, HostBinding, EventEmitter, Output, Input } from '@angular/core';
+import { Component, EventEmitter, Output, Input } from '@angular/core';
 import { trigger, transition, animate, style, query, state, group, animateChild } from '@angular/animations';
-import { ModalService } from '../modal.service';
+import { Http } from '@angular/http';
+
+const NICE_EASING = 'cubic-bezier(0.35, 0, 0.25, 1)';
 
 @Component({
   selector: 'app-modal',
@@ -19,24 +21,34 @@ import { ModalService } from '../modal.service';
       state('*', style({ backgroundColor: 'rgba(0,0,0,0.5)' })),
       transition(':enter', [
         style({ opacity: 0, backgroundColor: 'rgba(0,0,0,0)' }),
-        animate('200ms ease-out')
+        animate('200ms ' + NICE_EASING)
       ]),
     ]),
     trigger('frameAnimation', [
       transition(':enter', [
         style({ opacity: 0, transform: 'translateY(-60%) translateX(-50%)' }),
-        animate('300ms ease-out', style({ opacity: 1, transform: '*' }))
+        animate('300ms ' + NICE_EASING, style({ opacity: 1, transform: '*' }))
       ]),
     ]),
   ]
 })
 export class ModalComponent {
-  @HostBinding('@modalAnimation')
-  public animate = true;
+  public visible = false;
+  public status: 'loading'|'ready' = 'loading';
+  public fileName: string;
 
-  constructor(private _modalService: ModalService) { }
+  constructor(private _http: Http) { }
+
+  setDetails(codeFileName: string) {
+    this.status = 'loading';
+    this.fileName = codeFileName;
+  }
+
+  show() {
+    this.visible = true;
+  }
 
   hide() {
-    this._modalService.hide();
+    this.visible = false;
   }
 }

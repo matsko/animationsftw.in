@@ -1,14 +1,23 @@
 import { Injectable } from '@angular/core';
 
+export interface AnimationItem {
+  title: string;
+  fileName: string;
+}
+
 @Injectable()
 export class AnimationCountService {
-  private _total: number = 0;
+  private _items: AnimationItem[] = [];
 
   get total() {
-    return this._total;
+    return this._items.length;
   }
 
-  setTotal(total: number) {
-    this._total = total;
+  specifyAnimations(animations: AnimationItem[]) {
+    this._items = Array.from(animations);
+  }
+
+  get items() {
+    return this._items;
   }
 }

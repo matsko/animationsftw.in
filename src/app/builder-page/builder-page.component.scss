@@ -1,0 +1,39 @@
+:host {
+  display:block;
+}
+
+:host > .builder-area:first-child {
+  .left, .right {
+    padding-top:100px;
+  }
+}
+
+.builder-area {
+  display:table;
+  width:100%;
+}
+
+.builder-area pre {
+  padding:50px!important;
+}
+
+.builder-area .left, .builder-area .right {
+  width:50%;
+  overflow-x:auto;
+  vertical-align: middle;
+  display:table-cell;
+}
+
+.builder-area:not(.reverse) .left, .builder-area.reverse .right {
+  padding-left:50px;
+  padding-right:50px;
+}
+
+.design-image {
+  height:300px;
+  overflow:hidden;
+
+  img {
+    width:100%;
+  }
+}

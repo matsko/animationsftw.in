@@ -8,7 +8,15 @@ const SECTIONS = {
   one: 1,
   two: 2,
   three: 3
-}
+};
+
+
+const PAGE_ANIMATIONS = [
+  {title: 'Page Animation', fileName: '/assets/code/a1-page.example-ts'},
+  {title: 'Left Animation', fileName: '/assets/code/a1-left.example-ts'},
+  {title: 'Right Animation', fileName: '/assets/code/a1-right.example-ts'},
+  {title: 'Stagger Animation', fileName: '/assets/code/a1-stagger.example-ts'},
+];
 
 @Component({
   selector: 'app-advanced-page',
@@ -157,7 +165,7 @@ export class AdvancedPageComponent {
   private _keydownBinding: KeyboardBinding;
 
   constructor(private _modalService: ModalService, private _animationCount: AnimationCountService) {
-    this._animationCount.setTotal(4);
+    this._animationCount.specifyAnimations(PAGE_ANIMATIONS);
   }
 
   ngOnInit() {
@@ -189,9 +197,5 @@ export class AdvancedPageComponent {
 
   isActive(section: number) {
     return section == this.section;
-  }
-
-  showModalFor(item: any) {
-    this._modalService.show();
   }
 }

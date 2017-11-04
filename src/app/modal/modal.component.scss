@@ -10,29 +10,27 @@
   right:0;
   bottom:0;
   background:rgba(0,0,0,0.5);
+  z-index:100000;
 }
 
 .frame {
   color:black;
-  border:20px solid #ddd;
-  background:white;
+  background:#272822;
   position:absolute;
   top:50%;
   left:50%;
+  min-height:600px;
   transform:translateX(-50%) translateY(-50%);
-  width:80%;
+  width:60%;
+  z-index:100001;
 }
 
-.frame > header {
-  padding:1rem;
-  background:#eee;
+.frame code {
+  padding:0;
+  margin:0;
 }
 
-.frame > .body {
-  padding:1rem;
-}
-
-.frame > footer {
-  padding:1rem;
-  background:#eee;
+.frame pre {
+  padding:0;
+  margin:0;
 }

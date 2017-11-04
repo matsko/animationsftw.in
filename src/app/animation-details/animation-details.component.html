@@ -1,0 +1,4 @@
+<h3>This Page has {{ animationItems.length }} animations</h3>
+<div *ngFor="let item of animationItems; let index=index" (click)="loadAnimationDetails(item)" class="item">
+  {{ index + 1}}. {{ item.title }}
+</div>

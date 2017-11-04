@@ -1,6 +1,8 @@
 import { HostBinding, Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { trigger, transition, style, animate, query, group, animateChild } from '@angular/animations';
+import { KeyboardBinding, Keys } from '../keyboard.service';
+import { AnimationCountService } from '../animation-count.service';
 
 const SHARED_ANIMATION_STYLES = [
   style({ position: 'relative', height: '!' }),
@@ -12,7 +14,18 @@ const SHARED_ANIMATION_STYLES = [
   query(':enter', style({ opacity: 0 }))
 ];
 
+const PAGE_ANIMATIONS = [
+  {title: 'Item Selection', fileName: '/assets/code/foo.ts'}
+];
+
 const NICE_EASING = 'cubic-bezier(0.35, 0, 0.25, 1)';
+
+const PAGES = [
+  '/routing',
+  '/routing/page2',
+  '/routing/page3',
+  '/routing/page4',
+]
 
 @Component({
   selector: 'app-routing-page',
@@ -81,6 +94,40 @@ const NICE_EASING = 'cubic-bezier(0.35, 0, 0.25, 1)';
 export class RoutingPageComponent {
   @HostBinding('@pageAnimations')
   public animatePage = true;
+
+  private _keydownBinding: KeyboardBinding;
+
+  constructor(private animationService: AnimationCountService, private _router: Router) {
+    animationService.specifyAnimations(PAGE_ANIMATIONS);
+
+    this._keydownBinding = new KeyboardBinding([Keys.KEY_LEFT, Keys.KEY_RIGHT], keyCode => {
+      if (keyCode === Keys.KEY_LEFT) {
+        this.left();
+      } else if (keyCode === Keys.KEY_RIGHT) {
+        this.right();
+      }
+    });
+  }
+
+  left() {
+    const currentUrl = this._router.url;
+    const index = PAGES.indexOf(currentUrl);
+    const nextIndex = Math.max(index - 1, 0);
+    const url = PAGES[nextIndex];
+    this._navigate(url);
+  }
+
+  right() {
+    const currentUrl = this._router.url;
+    const index = PAGES.indexOf(currentUrl);
+    const nextIndex = Math.min(index + 1, PAGES.length - 1);
+    const url = PAGES[nextIndex];
+    this._navigate(url);
+  }
+
+  private _navigate(path: string) {
+    this._router.navigateByUrl(path);
+  }
 
   prepRouteTransition(outlet: RouterOutlet) {
     return outlet.activatedRouteData['animation'] || '';

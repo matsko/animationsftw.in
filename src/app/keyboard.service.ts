@@ -21,6 +21,8 @@ export class KeyboardBinding {
       for (let i = 0; i < keys.length; i++) {
         const key = keys[i];
         if (key == code) {
+          event.preventDefault();
+          event.stopPropagation();
           callback(key, event);
           break;
         }

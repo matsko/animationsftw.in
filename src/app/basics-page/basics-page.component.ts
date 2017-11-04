@@ -12,6 +12,10 @@ const SECTIONS = {
   animationCallback: 6
 };
 
+const PAGE_ANIMATIONS = [
+  {title: 'Item Selection', fileName: '/assets/code/foo.ts'}
+];
+
 const UP_ARROW_CODE = 38;
 const DOWN_ARROW_CODE = 40;
 
@@ -56,7 +60,7 @@ export class BasicsPageComponent {
   private _keydownBinding: KeyboardBinding;
 
   constructor(private _animationCount: AnimationCountService) {
-    this._animationCount.setTotal(2);
+    this._animationCount.specifyAnimations(PAGE_ANIMATIONS);
   }
 
   ngOnInit() {

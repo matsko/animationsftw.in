@@ -1,9 +1,17 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 
 const ESC_KEY = 27;
 
+export interface ModalEvent {
+  action: string;
+  codeFileName?: string;
+  data?: {}
+}
+
 @Injectable()
 export class ModalService {
+  public changes = new EventEmitter<ModalEvent>();
+
   constructor() {
     document.body.addEventListener('keydown', e => {
       if (e.keyCode == ESC_KEY) {
@@ -12,13 +20,16 @@ export class ModalService {
     })
   }
 
-  visible = false;
-
-  show() {
-    this.visible = true;
+  show(fileName: string) {
+    this.changes.emit({
+      action: 'show',
+      codeFileName: fileName
+    });
   }
 
   hide() {
-    this.visible = false;
+    this.changes.emit({
+      action: 'hide'
+    });
   }
 }

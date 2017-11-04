@@ -1,1 +1,9 @@
-<pre [class]="'language-' + language"><code #code><ng-content></ng-content></code></pre>
+<div [hidden]="status!='loading'" class="loading">
+  Loading...
+</div>
+<div [hidden]="status!='ready'" class="code-container">
+  <pre [class]="'language-' + language"><code #code><ng-content></ng-content></code></pre>
+</div>
+<div [hidden]="status!='error'" class="error">
+  Unable to load code snippet
+</div>

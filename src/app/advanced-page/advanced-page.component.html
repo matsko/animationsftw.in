@@ -8,7 +8,7 @@
   </aside>
 
   <section class="gallery gallery-area" [@listAnimation]="section">
-    <li *ngFor="let photo of getPhotos(section)" class="photo-record" (click)="showModalFor(photo)">
+    <li *ngFor="let photo of getPhotos(section)" class="photo-record">
       <img *ngIf="photo.src" [src]="photo.src" />
       <span *ngIf="!photo.src" [class]="'title ' + photo.className">{{ photo.title }}</span>
     </li>

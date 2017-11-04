@@ -1,6 +1,7 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 import { CodeExampleService } from './code-example.service';
 
 import { AppComponent } from './app.component';
@@ -23,6 +24,10 @@ import { ModalService } from './modal.service';
 import { AnimationCountService } from './animation-count.service';
 import { CodeSnippetComponent } from './code-snippet/code-snippet.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { ToolTipComponent } from './tool-tip/tool-tip.component';
+import { ToolTipService } from './tool-tip.service';
+import { ToolTipHoverDirective } from './tool-tip-hover.directive';
+import { AnimationDetailsComponent } from './animation-details/animation-details.component';
 
 @NgModule({
   declarations: [
@@ -40,16 +45,21 @@ import { NavigationComponent } from './navigation/navigation.component';
     IntroPageComponent,
     ModalComponent,
     CodeSnippetComponent,
-    NavigationComponent
+    NavigationComponent,
+    ToolTipComponent,
+    ToolTipHoverDirective,
+    AnimationDetailsComponent
   ],
   imports: [
+    HttpModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(ROUTES)
   ],
   providers: [
     CodeExampleService,
     ModalService,
-    AnimationCountService
+    AnimationCountService,
+    ToolTipService
   ],
   bootstrap: [AppComponent]
 })
