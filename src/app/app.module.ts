@@ -1,5 +1,6 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { CodeExampleService } from './code-example.service';
@@ -29,6 +30,7 @@ import { ToolTipService } from './tool-tip.service';
 import { ToolTipHoverDirective } from './tool-tip-hover.directive';
 import { AnimationDetailsComponent } from './animation-details/animation-details.component';
 import { CodeModalClickDirective } from './code-modal-click.directive';
+import { PhotoPipe } from './photo.pipe';
 
 @NgModule({
   declarations: [
@@ -50,10 +52,12 @@ import { CodeModalClickDirective } from './code-modal-click.directive';
     ToolTipComponent,
     ToolTipHoverDirective,
     AnimationDetailsComponent,
-    CodeModalClickDirective
+    CodeModalClickDirective,
+    PhotoPipe
   ],
   imports: [
     HttpModule,
+    FormsModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(ROUTES)
   ],

@@ -15,6 +15,7 @@
 .gallery-area {
   width:80%;
   position:relative;
+  overflow:hidden;
   &:before {
     content:"";
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&1+0,0+100 */
@@ -68,3 +69,21 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
 .g1 { background: #494949; }
 .g2 { background: #555; }
 .g3 { background: #595959; }
+
+input {
+  padding:10px;
+  border:0;
+  background:#333;
+  font-size:1.2rem;
+  width:100%;
+  color:white;
+  margin-bottom:20px;
+}
+
+input:focus {
+  outline:2px solid maroon;
+}
+
+input:not(:empty) {
+  background:#555
+}

@@ -1,14 +1,19 @@
 <div class="advanced-area">
   <aside class="side-area">
+    <form>
+      <input #criteria (input)="updateCriteria(criteria.value)" placeholder="filter results" />
+    </form>
     <ol class="menu">
-      <li [class.selected]="isActive(sections.one)" (click)="section=sections.one">Travel</li>
-      <li [class.selected]="isActive(sections.two)" (click)="section=sections.two">Cars</li>
-      <li [class.selected]="isActive(sections.three)" (click)="section=sections.three">Angular</li>
+      <li [class.selected]="isActive(sections.one)" (click)="updateSection(sections.one)">Travel</li>
+      <li [class.selected]="isActive(sections.two)" (click)="updateSection(sections.two)">Cars</li>
+      <li [class.selected]="isActive(sections.three)" (click)="updateSection(sections.three)">Angular</li>
     </ol>
+    TOTAL = {{ filterTotal }}
   </aside>
 
-  <section class="gallery gallery-area" [@listAnimation]="section">
-    <li *ngFor="let photo of getPhotos(section)" class="photo-record">
+  <section class="gallery gallery-area" [@listAnimation]="section" [@filterAnimation]="filterTotal">
+    <li *ngFor="let photo of getPhotos()" class="photo-record" [@photoAnimation]="isPhotoActive(photo, criteria.value) ? 'active' : 'inactive'">
+  co
       <img *ngIf="photo.src" [src]="photo.src" />
       <span *ngIf="!photo.src" [class]="'title ' + photo.className">{{ photo.title }}</span>
     </li>
