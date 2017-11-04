@@ -1,0 +1,10 @@
+--- {"className": "big"}
+<!-- this animates when `someStateValue` changes -->
+<div [@myAnimationTrigger]="someStateValue">
+  ...
+</div>
+
+<!-- this can animate on enter/leave -->
+<div @myAnimationTrigger *ngIf="exp">
+  ...
+</div>

@@ -1,0 +1,19 @@
+trigger('myAnimationTrigger', [
+  transition('* => visible', [
+    animate('1s', keyframes([
+      style({ opacity: 0 }), // 0%
+      style({ opacity: 0.8 }), // 33%
+      style({ opacity: 0.2 }), // 66%
+      style({ opacity: 1 }), // 100%
+    ]))
+  ]),
+
+  transition('* => hidden', [
+    animate('1s', keyframes([
+      style({ opacity: 1, offset: 0 }), // 0%
+      style({ opacity: 0.2, offset: 0.8 }), // 80%
+      style({ opacity: 0.4, offset: 0.9 }), // 90%
+      style({ opacity: 0, offset: 1 }), // 100%
+    ]))
+  ])
+])

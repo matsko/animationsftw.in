@@ -28,6 +28,7 @@ import { ToolTipComponent } from './tool-tip/tool-tip.component';
 import { ToolTipService } from './tool-tip.service';
 import { ToolTipHoverDirective } from './tool-tip-hover.directive';
 import { AnimationDetailsComponent } from './animation-details/animation-details.component';
+import { CodeModalClickDirective } from './code-modal-click.directive';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { AnimationDetailsComponent } from './animation-details/animation-details
     NavigationComponent,
     ToolTipComponent,
     ToolTipHoverDirective,
-    AnimationDetailsComponent
+    AnimationDetailsComponent,
+    CodeModalClickDirective
   ],
   imports: [
     HttpModule,

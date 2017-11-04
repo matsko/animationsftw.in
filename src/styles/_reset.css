@@ -33,3 +33,7 @@ html, #wrapper {
   width:80%;
   margin:0 auto;
 }
+
+a,a:link,a:visited,a:active {
+  text-decoration: none;
+}

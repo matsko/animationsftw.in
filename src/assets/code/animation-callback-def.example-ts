@@ -1,0 +1,16 @@
+@Component({
+  animations: [
+    trigger('myInsertRemoveTrigger', [
+      //...
+    ])
+  ],
+  template: `
+    <div *ngIf="exp"
+          @myInsertRemoveTrigger
+         (@myInsertRemoveTrigger.start)="onAnimationEvent($event)"
+         (@myInsertRemoveTrigger.done)="onAnimationEvent($event)">...</div>
+  `
+})
+class MyInsertRemoveComponent {
+  onAnimationEvent(event: AnimationEvent) { /* ... */ }
+}

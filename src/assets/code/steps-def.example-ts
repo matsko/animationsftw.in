@@ -1,0 +1,17 @@
+trigger('myAnimationTrigger', [
+  transition('* => visible', [
+    // fade out the element immediately
+    style({ opacity: 0 }),
+
+    // now animate it in over one second
+    animate(1000, style({ opacity: 1 }))
+  ]),
+
+  transition('* => hidden', [
+    // use the existing opacity on the element
+    style({ opacity: '*' }),
+
+    // now animate it out over 500ms
+    animate('500ms', style({ opacity: 0 }))
+  ])
+])

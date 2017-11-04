@@ -1,0 +1,17 @@
+import {transition, trigger} from "@angular/animations";
+
+@Component({
+  template: `
+    <div [@myAnimationTrigger]="myValue">...</div>
+  `,
+  animations: [
+    trigger('myAnimationTrigger', [
+      transition('* => someState', [
+        // animations go here
+      ])
+    ])
+  ]
+})
+class MyComponentWithAnimations {
+  myValue = 'someState';
+}

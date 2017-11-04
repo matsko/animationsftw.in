@@ -1,0 +1,18 @@
+@Component({
+  animations: [
+    trigger('myInsertRemoveTrigger', [
+      //...
+    ])
+  ],
+  template: `...`
+})
+class MyInsertRemoveComponent {
+  onAnimationEvent(event: AnimationEvent) {
+    console.log(event.triggerName); // myInsertRemoveTrigger
+    console.log(event.phaseName); // start or done
+    console.log(event.totalTime); // 1000
+    console.log(event.fromState); // void or *
+    console.log(event.toState); // * or void
+    console.log(event.element); // the element itself
+  }
+}

@@ -1,0 +1,9 @@
+trigger('myAnimationTrigger', [
+  transition('* => visible', [
+    style({ opacity: 0 }),
+    animate('500ms', style({ opacity: 1 }))
+  ]),
+  transition('* => hidden', [
+    animate('500ms', style({ opacity: 0 }))
+  ])
+])

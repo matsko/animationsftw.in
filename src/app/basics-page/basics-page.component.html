@@ -4,24 +4,31 @@
       <div class="inner-section" [class.visible]="visibleSection==sections.intro" (click)="onInnerSectionClick(sections.intro)">
         <img src="/assets/design-images/house-1.jpg" />
         <div class="details">
-          <h2>Intro</h2>
+          <h2>Angular Animation</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nisl ipsum, sollicitudin at quam id, hendrerit semper sapien. Integer lectus dui, malesuada a tortor et, bibendum dignissim justo. Donec scelerisque lacus et sapien semper blandit. Donec id egestas orci. Quisque consequat tellus nunc, a accumsan neque molestie id. In risus nibh, euismod vitae arcu at, cursus rutrum est. Aliquam pulvinar enim non suscipit tincidunt. Suspendisse ac ante justo. Donec quis consequat ligula, et tincidunt lacus. Sed viverra vestibulum magna.
+            Angular contains an Animation DSL language that allows for complex animations to defined for components.
           </p>
           <p>
-            Fusce erat quam, malesuada cursus magna nec, tempus dictum turpis. Aenean ac ex dignissim ipsum molestie semper iaculis a ex. Quisque nec nisi in quam mollis fringilla. Aliquam fermentum sapien eu neque congue sollicitudin vehicula et sem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc ut sollicitudin erat, et tempus justo. Etiam erat dui, dapibus eu nisl eu, hendrerit euismod justo.
+            To get started, just include <a href="" class="help-link" appCodeModalClick="/assets/code/module.example-ts">BrowserAnimationsModule</a> into your application module.
           </p>
           <p>
-            Fusce dignissim augue purus, at commodo nunc euismod ut. Aliquam erat volutpat. Curabitur lacinia nunc ac mauris egestas ullamcorper. Vivamus consequat commodo scelerisque. Mauris auctor justo in dui malesuada mattis. Nulla lacinia, magna vitae laoreet laoreet, dolor augue aliquam tellus, euismod tempus odio felis in tortor. Donec scelerisque mi a magna consequat sollicitudin. Nunc laoreet posuere tristique. Aliquam erat volutpat. Curabitur id vehicula augue. In tincidunt neque sed sollicitudin eleifend. Donec id orci et quam viverra ullamcorper in elementum quam.
+            The DSL works atop of the web-animations API and requires a <a href="" class="help-link" appCodeModalClick="/assets/code/polyfill.example-html">polyfill</a>.
           </p>
         </div>
+
       </div>
       <div class="inner-section" [class.visible]="visibleSection==sections.triggers" (click)="onInnerSectionClick(sections.triggers)">
         <img src="/assets/design-images/car-1.jpg" />
         <div class="details">
           <h2>Triggers</h2>
           <p>
-            Fusce dignissim augue purus, at commodo nunc euismod ut. Aliquam erat volutpat. Curabitur lacinia nunc ac mauris egestas ullamcorper. Vivamus consequat commodo scelerisque. Mauris auctor justo in dui malesuada mattis. Nulla lacinia, magna vitae laoreet laoreet, dolor augue aliquam tellus, euismod tempus odio felis in tortor. Donec scelerisque mi a magna consequat sollicitudin. Nunc laoreet posuere tristique. Aliquam erat volutpat. Curabitur id vehicula augue. In tincidunt neque sed sollicitudin eleifend. Donec id orci et quam viverra ullamcorper in elementum quam.
+            Aniamtions in Angular are linked in the <a href="" class="help-link" appCodeModalClick="/assets/code/template-triggers.example-html">template using @properties.</a>
+          </p>
+          <p>
+            When a property changes state (or the element is inserted/destroyed), it will trigger an animation.
+          </p>
+          <p>
+            The @trigger is bound to the component (that's where the animation is defined).
           </p>
         </div>
       </div>
@@ -30,37 +37,48 @@
         <div class="details">
           <h2>Component Animations</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nisl ipsum, sollicitudin at quam id, hendrerit semper sapien. Integer lectus dui, malesuada a tortor et, bibendum dignissim justo. Donec scelerisque lacus et sapien semper blandit. Donec id egestas orci. Quisque consequat tellus nunc, a accumsan neque molestie id. In risus nibh, euismod vitae arcu at, cursus rutrum est. Aliquam pulvinar enim non suscipit tincidunt. Suspendisse ac ante justo. Donec quis consequat ligula, et tincidunt lacus. Sed viverra vestibulum magna.
+            The animation itself is
+            <a href="" class="help-link" appCodeModalClick="/assets/code/component-def.example-ts">defined on the component</a>
+            using the DSL language.
           </p>
           <p>
-            Fusce erat quam, malesuada cursus magna nec, tempus dictum turpis. Aenean ac ex dignissim ipsum molestie semper iaculis a ex. Quisque nec nisi in quam mollis fringilla. Aliquam fermentum sapien eu neque congue sollicitudin vehicula et sem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc ut sollicitudin erat, et tempus justo. Etiam erat dui, dapibus eu nisl eu, hendrerit euismod justo.
+            Triggers kick off transitions and a <a href="" class="help-link" appCodeModalClick="/assets/code/transition-def.example-ts">transition consists of animation steps</a>.
           </p>
           <p>
-            Fusce dignissim augue purus, at commodo nunc euismod ut. Aliquam erat volutpat. Curabitur lacinia nunc ac mauris egestas ullamcorper. Vivamus consequat commodo scelerisque. Mauris auctor justo in dui malesuada mattis. Nulla lacinia, magna vitae laoreet laoreet, dolor augue aliquam tellus, euismod tempus odio felis in tortor. Donec scelerisque mi a magna consequat sollicitudin. Nunc laoreet posuere tristique. Aliquam erat volutpat. Curabitur id vehicula augue. In tincidunt neque sed sollicitudin eleifend. Donec id orci et quam viverra ullamcorper in elementum quam.
+            When an animation is complete, it will jump to a state and the <a href="" class="help-link" appCodeModalClick="/assets/code/state-def.example-ts">final styles will be applied</a>.
           </p>
         </div>
       </div>
       <div class="inner-section" [class.visible]="visibleSection==sections.transition" (click)="onInnerSectionClick(sections.transition)">
         <img src="/assets/design-images/travel-1.jpg" />
         <div class="details">
-          <h2>The transition() function</h2>
+          <h2>animate() and style()</h2>
           <p>
-            Fusce dignissim augue purus, at commodo nunc euismod ut. Aliquam erat volutpat. Curabitur lacinia nunc ac mauris egestas ullamcorper. Vivamus consequat commodo scelerisque. Mauris auctor justo in dui malesuada mattis. Nulla lacinia, magna vitae laoreet laoreet, dolor augue aliquam tellus, euismod tempus odio felis in tortor. Donec scelerisque mi a magna consequat sollicitudin. Nunc laoreet posuere tristique. Aliquam erat volutpat. Curabitur id vehicula augue. In tincidunt neque sed sollicitudin eleifend. Donec id orci et quam viverra ullamcorper in elementum quam.
+            The animate() and style() steps are the bread and butter of animations in Angular.
+          </p>
+          <p>
+            style() applies the styling to the element immediately.
+          </p>
+          <p>
+           <a href="" class="help-link" appCodeModalClick="/assets/code/steps-def.example-ts">animate('time', style(...))</a> applies the styling to the over a specified duration.
+          </p>
+          <p>
+            <a href="" class="help-link" appCodeModalClick="/assets/code/keyframes-def.example-ts">animate('time', keyframes(...))</a> applies a series of keyframes over a specified duration.
           </p>
         </div>
       </div>
       <div class="inner-section" [class.visible]="visibleSection==sections.fadeInFadeOut" (click)="onInnerSectionClick(sections.fadeInFadeOut)">
         <img src="/assets/design-images/car-2.jpg" />
         <div class="details">
-          <h2>Fade In Fade Out</h2>
+          <h2>Insertion / Removal</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nisl ipsum, sollicitudin at quam id, hendrerit semper sapien. Integer lectus dui, malesuada a tortor et, bibendum dignissim justo. Donec scelerisque lacus et sapien semper blandit. Donec id egestas orci. Quisque consequat tellus nunc, a accumsan neque molestie id. In risus nibh, euismod vitae arcu at, cursus rutrum est. Aliquam pulvinar enim non suscipit tincidunt. Suspendisse ac ante justo. Donec quis consequat ligula, et tincidunt lacus. Sed viverra vestibulum magna.
+            When an item is inserted and removed from a view it has special <a href="" class="help-link" appCodeModalClick="/assets/code/insert-remove-def.example-ts">:enter and :leave animations</a>.
           </p>
           <p>
-            Fusce erat quam, malesuada cursus magna nec, tempus dictum turpis. Aenean ac ex dignissim ipsum molestie semper iaculis a ex. Quisque nec nisi in quam mollis fringilla. Aliquam fermentum sapien eu neque congue sollicitudin vehicula et sem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc ut sollicitudin erat, et tempus justo. Etiam erat dui, dapibus eu nisl eu, hendrerit euismod justo.
+            :enter is run when any *ngIf, *ngFor, *ngSwitch item is placed into the page.
           </p>
           <p>
-            Fusce dignissim augue purus, at commodo nunc euismod ut. Aliquam erat volutpat. Curabitur lacinia nunc ac mauris egestas ullamcorper. Vivamus consequat commodo scelerisque. Mauris auctor justo in dui malesuada mattis. Nulla lacinia, magna vitae laoreet laoreet, dolor augue aliquam tellus, euismod tempus odio felis in tortor. Donec scelerisque mi a magna consequat sollicitudin. Nunc laoreet posuere tristique. Aliquam erat volutpat. Curabitur id vehicula augue. In tincidunt neque sed sollicitudin eleifend. Donec id orci et quam viverra ullamcorper in elementum quam.
+            :leave is run when they are removed from the page.
           </p>
         </div>
       </div>
@@ -69,7 +87,13 @@
         <div class="details">
           <h2>(@animation.callback) code</h2>
           <p>
-            Fusce dignissim augue purus, at commodo nunc euismod ut. Aliquam erat volutpat. Curabitur lacinia nunc ac mauris egestas ullamcorper. Vivamus consequat commodo scelerisque. Mauris auctor justo in dui malesuada mattis. Nulla lacinia, magna vitae laoreet laoreet, dolor augue aliquam tellus, euismod tempus odio felis in tortor. Donec scelerisque mi a magna consequat sollicitudin. Nunc laoreet posuere tristique. Aliquam erat volutpat. Curabitur id vehicula augue. In tincidunt neque sed sollicitudin eleifend. Donec id orci et quam viverra ullamcorper in elementum quam.
+            When an animation starts and finishes it will <a href="" class="help-link" appCodeModalClick="/assets/code/animation-callback-def.example-ts">emit callbacks</a>
+          </p>
+          <p>
+            (@trigger.start) is called on start and (@trigger.done) when the animation completes
+          </p>
+          <p>
+            An AnimationEvent is passed back via <a href="" class="help-link" appCodeModalClick="/assets/code/animation-callback-event.example-ts">$event in the callback</a>
           </p>
         </div>
       </div>

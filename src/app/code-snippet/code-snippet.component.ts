@@ -1,4 +1,4 @@
-import { Input, ViewChild, Component, OnInit } from '@angular/core';
+import { HostBinding, Input, ViewChild, Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import * as Prism from 'prismjs';
 
@@ -36,6 +36,8 @@ function resolveLanguageFromFileName(fileName: string) {
   styleUrls: ['./code-snippet.component.scss'],
 })
 export class CodeSnippetComponent implements OnInit {
+  public classes: string = '';
+
   @ViewChild('code')
   public codeContainer;
 
@@ -67,10 +69,37 @@ export class CodeSnippetComponent implements OnInit {
     }
   }
 
-  private _updateContent(code: string, language: string) {
+  private _processCode(code: string): {metadata: {[key: string]: any}, code: string} {
+    const metadata: {[key: string]: any} = {};
+    code = code.trim();
+    if (code.substring(0,3) === '---') {
+      code = code.replace(/^---\s*(.*)?/, (_, capture) => {
+        if (capture[0] == '{' && capture[capture.length - 1] == '}') {
+          const json = JSON.parse(capture);
+          Object.keys(json).forEach(key => {
+            metadata[key] = json[key];
+          });
+        }
+        return '';
+      });
+    }
+
+    return {
+      code: code.trim(),
+      metadata
+    }
+  }
+
+  private _processMetadata(metadata: {[key: string]: any}) {
+    this.classes = metadata['className'] || '';
+  }
+
+  private _updateContent(input: string, language: string) {
     this.status = 'ready';
-    const text = Prism.highlight(code,  Prism.languages[language]);
     const element = this.codeContainer.nativeElement;
-    element.innerHTML = text.trim();
+    const {code, metadata} = this._processCode(input);
+    this._processMetadata(metadata);
+    const text = Prism.highlight(code,  Prism.languages[language]);
+    element.innerHTML = text;
   }
 }

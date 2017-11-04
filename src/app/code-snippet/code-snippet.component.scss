@@ -11,6 +11,11 @@ pre {
 
 pre * {
   font-size:1.5rem;
+  font-family:Monaco;
+}
+
+pre.big * {
+  font-size:1.8rem;
 }
 
 .error {

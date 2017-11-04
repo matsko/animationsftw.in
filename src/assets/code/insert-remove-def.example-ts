@@ -1,0 +1,14 @@
+/* the template looks like this
+ * <div *ngIf="exp" @myInsertRemoveTrigger>...</div>
+ */
+
+// in the component
+trigger('myInsertRemoveTrigger', [
+  transition(':enter', [
+    style({ opacity: 0 }),
+    animate('1s', style({ opacity: 1 })
+  ]),
+  transition(':leave', [
+    animate('1s', style({ opacity: 0 })
+  ])
+])
