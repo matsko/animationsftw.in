@@ -3,6 +3,8 @@
 @import "./styles/_components";
 @import "./styles/_colors";
 @import "./styles/_font_awesome";
+@import "./styles/_range";
+@import "./styles/_buttons";
 @import "../node_modules/prismjs/themes/prism.css";
 @import "../node_modules/prismjs/themes/prism-okaidia.css";
 
@@ -79,15 +81,26 @@ app-routing-page, .router-container, .main-route-container {
 
 .main-route-navigation {
   position:absolute;
-  bottom:20px;
-  left:20px;
-  background:maroon;
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%);
+  background:rgba(0,0,0,0.5);
   z-index:100;
   color:white;
-  font-size:30px;
   padding:10px;
 
-  a { color:white; }
+  a {
+    color:white;
+    font-size:2rem;
+    padding:5px 10px;
+    display:inline-block;
+    border-radius:20px;
+    margin:0 5px;
+
+    &.active {
+      background:maroon;
+    }
+  }
 }
 
 .main-route-image {
@@ -98,10 +111,13 @@ app-routing-page, .router-container, .main-route-container {
 }
 
 .main-route-details {
+  font-size:1.8rem;
   position:absolute;
-  padding:20px;
-  bottom:20px;
-  right:20px;
+  padding:60px;
+  top:20%;
+  left:50%;
+  text-align:center;
+  margin-left:-25%;
   width:50%;
   background:rgba(0,0,0,0.8);
   color:white;
@@ -109,9 +125,8 @@ app-routing-page, .router-container, .main-route-container {
 }
 
 .help-link {
-  background:maroon;
+  background: rgba(128,0,0,0.5);
   padding:5px;
   color:white;
-  border-radius:5px;
   display:inline-block;
 }

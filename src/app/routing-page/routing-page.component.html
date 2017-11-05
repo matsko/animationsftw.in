@@ -1,9 +1,9 @@
 <div class="main-route-navigation">
-  <a href="" routerLink="/routing/">1</a>
-  <a href="" routerLink="/routing/page2/">2</a>
-  <a href="" routerLink="/routing/page3/">3</a>
-  <a href="" routerLink="/routing/page4/">4</a>
-  <a href="" routerLink="/routing/page5/">5</a>
+  <a href="" routerLink="/routing/" [class.active]="isRouteActive('1')">1</a>
+  <a href="" routerLink="/routing/page2/" [class.active]="isRouteActive('2')">2</a>
+  <a href="" routerLink="/routing/page3/" [class.active]="isRouteActive('3')">3</a>
+  <a href="" routerLink="/routing/page4/" [class.active]="isRouteActive('4')">4</a>
+  <a href="" routerLink="/routing/page5/" [class.active]="isRouteActive('5')">5</a>
 </div>
 
 <div class="main-route-container" [@routerAnimations]="prepRouteTransition(outlet)">

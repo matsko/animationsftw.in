@@ -132,4 +132,12 @@ export class RoutingPageComponent {
   prepRouteTransition(outlet: RouterOutlet) {
     return outlet.activatedRouteData['animation'] || '';
   }
+
+  isRouteActive(num: string) {
+    let path = '/routing';
+    if (num != '1') {
+      path += `/page${num}`;
+    }
+    return this._router.url === path;
+  }
 }

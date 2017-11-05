@@ -5,8 +5,26 @@
 :host > .builder-area:first-child {
   .left, .right {
     padding-top:100px;
+    font-size:1.5rem;
   }
 }
+
+.player-actions {
+  margin-top:50px;
+
+  input {
+    width:80%;
+    margin:0 auto;
+  }
+
+  .label {
+    font-size:1.5rem;
+    display:inline-block;
+    vertical-align: middle;
+    padding:0 5px;
+  }
+}
+
 
 .builder-area {
   display:table;

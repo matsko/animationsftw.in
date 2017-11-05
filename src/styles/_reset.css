@@ -1,5 +1,6 @@
 *, *:before, *:after {
   box-sizing:border-box;
+  line-height:150%;
 }
 
 html, body {

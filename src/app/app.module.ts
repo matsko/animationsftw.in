@@ -32,6 +32,7 @@ import { AnimationDetailsComponent } from './animation-details/animation-details
 import { CodeModalClickDirective } from './code-modal-click.directive';
 import { PhotoPipe } from './photo.pipe';
 import { RoutePage5Component } from './route-page5/route-page5.component';
+import { PhotoScrubberComponent } from './photo-scrubber/photo-scrubber.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { RoutePage5Component } from './route-page5/route-page5.component';
     AnimationDetailsComponent,
     CodeModalClickDirective,
     PhotoPipe,
-    RoutePage5Component
+    RoutePage5Component,
+    PhotoScrubberComponent
   ],
   imports: [
     HttpModule,

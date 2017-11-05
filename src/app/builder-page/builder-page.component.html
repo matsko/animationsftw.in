@@ -2,38 +2,21 @@
   <div class="left">
     <h1>Animation Builder</h1>
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur euismod vitae ex sed dapibus. Donec pellentesque tempus ligula ac eleifend. Cras tortor leo, faucibus ut pulvinar nec, posuere nec enim. Maecenas pharetra libero ac arcu placerat finibus. Duis eget blandit diam, quis posuere purus. Duis euismod quis nisl vel hendrerit. Quisque sit amet libero justo. Nullam non nunc pulvinar, imperdiet ipsum ut, laoreet libero. Etiam feugiat non mauris interdum viverra. Phasellus rutrum, mauris eu accumsan facilisis, nulla urna fringilla felis, non efficitur lorem diam nec metus. Pellentesque fermentum elementum nisi, et consequat erat. Vestibulum rhoncus eros at ipsum pulvinar, quis euismod magna viverra. Maecenas sollicitudin sapien vitae orci tincidunt ultrices. Nam sodales dui at felis porttitor pretium. Quisque vitae ex lobortis, mollis eros quis, convallis velit. Integer et mauris vitae augue malesuada aliquet eget eu neque.
+      Animations can also be constructed/sequenced within a component (instead of just the metadata).
     </p>
     <p>
-      In auctor ex a metus convallis commodo. Suspendisse sem sapien, porttitor in molestie a, maximus eu orci. Aenean ornare facilisis ante, sit amet semper ipsum sollicitudin nec. Vestibulum ornare varius diam et blandit. Aliquam varius enim mauris, a tincidunt augue bibendum quis. Curabitur sit amet neque malesuada, porta lorem quis, tincidunt nisi. Donec efficitur lacus eu tortor malesuada porttitor. Sed augue quam, dictum ut mauris sit amet, efficitur vulputate arcu. Nullam dapibus lacus et nisi facilisis, at interdum purus convallis. Sed vitae tempor erat. Praesent viverra quis est quis laoreet. Morbi id pharetra risus.
+      By injecting <span class="em">AnimationBuilder</span> into your component.
     </p>
+    <p>
+      And then building an animation player.
+    </p>
+    <div class="player-actions">
+      <span class="label">0%</span>
+      <input type="range" [(ngModel)]="position" min="0" max="100" step="0.1" [disabled]="scrubber.playing" />
+      <span class="label">100%</span>
+    </div>
   </div>
   <div class="right">
-    <app-code-snippet src="/assets/code/builder1.example-ts">
-    </app-code-snippet>
+    <app-photo-scrubber #scrubber [position]="position" [photos]="photos"></app-photo-scrubber>
   </div>
-</div>
-
-<div class="design-image">
-  <img src="/assets/design-images/dinner-1.jpg" />
-</div>
-
-<div class="sections builder-area reverse">
-  <div class="left">
-    <app-code-snippet src="/assets/code/builder1.example-ts">
-    </app-code-snippet>
-  </div>
-  <div class="right">
-    <h1>Animation Builder</h1>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur euismod vitae ex sed dapibus. Donec pellentesque tempus ligula ac eleifend. Cras tortor leo, faucibus ut pulvinar nec, posuere nec enim. Maecenas pharetra libero ac arcu placerat finibus. Duis eget blandit diam, quis posuere purus. Duis euismod quis nisl vel hendrerit. Quisque sit amet libero justo. Nullam non nunc pulvinar, imperdiet ipsum ut, laoreet libero. Etiam feugiat non mauris interdum viverra. Phasellus rutrum, mauris eu accumsan facilisis, nulla urna fringilla felis, non efficitur lorem diam nec metus. Pellentesque fermentum elementum nisi, et consequat erat. Vestibulum rhoncus eros at ipsum pulvinar, quis euismod magna viverra. Maecenas sollicitudin sapien vitae orci tincidunt ultrices. Nam sodales dui at felis porttitor pretium. Quisque vitae ex lobortis, mollis eros quis, convallis velit. Integer et mauris vitae augue malesuada aliquet eget eu neque.
-    </p>
-    <p>
-      In auctor ex a metus convallis commodo. Suspendisse sem sapien, porttitor in molestie a, maximus eu orci. Aenean ornare facilisis ante, sit amet semper ipsum sollicitudin nec. Vestibulum ornare varius diam et blandit. Aliquam varius enim mauris, a tincidunt augue bibendum quis. Curabitur sit amet neque malesuada, porta lorem quis, tincidunt nisi. Donec efficitur lacus eu tortor malesuada porttitor. Sed augue quam, dictum ut mauris sit amet, efficitur vulputate arcu. Nullam dapibus lacus et nisi facilisis, at interdum purus convallis. Sed vitae tempor erat. Praesent viverra quis est quis laoreet. Morbi id pharetra risus.
-    </p>
-  </div>
-</div>
-
-<div class="design-image">
-  <img src="/assets/design-images/travel-1.jpg" />
 </div>

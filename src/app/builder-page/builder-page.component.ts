@@ -1,4 +1,5 @@
-import { HostBinding, Component } from '@angular/core';
+import { ViewChild, HostBinding, Component } from '@angular/core';
+import { PhotoScrubberComponent } from '../photo-scrubber/photo-scrubber.component';
 import { trigger, group, sequence, transition, state, style, animate, query, stagger, animateChild } from '@angular/animations';
 
 @Component({
@@ -19,6 +20,33 @@ import { trigger, group, sequence, transition, state, style, animate, query, sta
   ]
 })
 export class BuilderPageComponent {
+  @ViewChild('scrubber')
+  public scrubber: PhotoScrubberComponent;
+
   @HostBinding('@pageAnimations')
   public animatePage = true;
+
+  playerStatus = 'Play'
+
+  ngOnInit() {
+  }
+
+  public photos: string[] = [
+    "/assets/gallery/15.jpg",
+    "/assets/gallery/3.jpg",
+    "/assets/gallery/12.jpg",
+    "/assets/gallery/11.jpg",
+    "/assets/gallery/14.jpg",
+    "/assets/gallery/16.jpg",
+    "/assets/gallery/5.jpg",
+    "/assets/gallery/6.jpg",
+    "/assets/gallery/13.jpg",
+    "/assets/gallery/19.jpg",
+    "/assets/gallery/23.jpg",
+    "/assets/gallery/4.jpg",
+    "/assets/gallery/7.jpg",
+    "/assets/gallery/8.jpg",
+    "/assets/gallery/10.jpg",
+    "/assets/gallery/17.jpg"
+  ];
 }
