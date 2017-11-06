@@ -84,21 +84,23 @@ app-routing-page, .router-container, .main-route-container {
   bottom:0;
   left:50%;
   transform:translateX(-50%);
-  background:rgba(0,0,0,0.5);
+  background:#111;
   z-index:100;
   color:white;
-  padding:10px;
 
   a {
     color:white;
     font-size:2rem;
-    padding:5px 10px;
+    padding:10px 20px;
     display:inline-block;
-    border-radius:20px;
-    margin:0 5px;
+    margin-left:-3px;
+
+    &:hover {
+      background:#333;
+    }
 
     &.active {
-      background:maroon;
+      background:$redColor;
     }
   }
 }
@@ -119,14 +121,42 @@ app-routing-page, .router-container, .main-route-container {
   text-align:center;
   margin-left:-25%;
   width:50%;
-  background:rgba(0,0,0,0.8);
+  background:#111;
   color:white;
   z-index:100;
 }
 
 .help-link {
-  background: rgba(128,0,0,0.5);
+  background:$redColor;
   padding:5px;
   color:white;
   display:inline-block;
+}
+
+.loading {
+  height:100%;
+  position:relative;
+  text-indent:-9999px;
+  &:before {
+    content:"";
+    width:50px;
+    height:50px;
+    position:absolute;
+    top:100px;
+    left:50%;
+    margin-left:-50px;
+    margin-top:-50px;
+    animation: rotate 800ms infinite linear, upDown 1200ms infinite ease-in-out alternate;
+    background:red;
+  }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes upDown {
+  from { top:100px; }
+  to { top: 300px; }
 }

@@ -1,4 +1,4 @@
-import { ViewChild, Component, HostBinding } from '@angular/core';
+import { ChangeDetectorRef, ViewChild, Component, HostBinding } from '@angular/core';
 import { Router, RouterOutlet, NavigationStart } from '@angular/router';
 import { CodeExampleService } from './code-example.service';
 import { trigger, transition, animate, style, query, group, state, animateChild } from '@angular/animations';
@@ -6,12 +6,30 @@ import { ModalEvent, ModalService } from './modal.service';
 import { ToolTipComponent } from './tool-tip/tool-tip.component';
 import { ModalComponent } from './modal/modal.component';
 import { ToolTipService, ToolTipEvent } from './tool-tip.service';
+import PHOTOS from './photos';
+
+const MIN_PAGE_TIMEOUT = 2000;
+const ELASTIC_BEZIER = 'cubic-bezier(.26,1.96,.58,.61)';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  styleUrls: ['./app.component.scss'],
   animations: [
+    trigger('loadingAnimation', [
+      transition(':enter', [
+        query('.text', [
+          style({ marginTop: '-200px' }),
+          animate('1500ms ' + ELASTIC_BEZIER, style({ marginTop: '0px' }))
+        ])
+      ]),
+      transition(':leave', [
+        query('.text', [
+          animate('800ms ease-out', style({ opacity: '0' }))
+        ]),
+        animate('300ms', style({ opacity: 0 }))
+      ])
+    ]),
     trigger('routeAnimation', [
       transition('* => intro', [
         style({ position: 'relative' }),
@@ -20,8 +38,8 @@ import { ToolTipService, ToolTipEvent } from './tool-tip.service';
         })),
         group([
           query(':enter', [
-            style({ transform: 'translateY(-100%)' }),
-            animate('500ms cubic-bezier(0.35, 0, 0.25, 1)', style({ transform: 'none' })),
+            style({ transform: 'translateX(-100px)', opacity:0 }),
+            animate('300ms ease-out', style({ opacity:1, transform: 'none' })),
             animateChild()
           ]),
         ])
@@ -30,44 +48,10 @@ import { ToolTipService, ToolTipEvent } from './tool-tip.service';
         query(':enter', animateChild())
       ]),
       transition('* => *', [])
-    ]),
-    trigger('routerContainerAnimation', [
-      state('false', style({ transform: 'translateX(0%)' })),
-      state('true', style({ transform: 'translateX(-50%)' })),
-      transition('* => *', animate('300ms ease-out'))
-    ]),
-    trigger('codeExampleAnimation', [
-      transition(':enter', []),
-      transition('* => false', [
-        group([
-          query('.router-container', animateChild()),
-          query('.code-container', [
-            style({ transform: 'translateX(0%)' }),
-            animate('300ms ease-out', style({ transform: 'translateX(100%)' })),
-          ]),
-        ]),
-      ]),
-      transition('* => true', [
-        query('.code-close-surface', [
-          style({ opacity: 0 }),
-        ]),
-        group([
-          query('.router-container', animateChild()),
-          query('.code-container', [
-            style({ transform: 'translateX(100%)' }),
-            animate('300ms ease-out', style({ transform: 'translateX(0%)' })),
-          ]),
-        ]),
-        query('.code-close-surface', [
-          animate('300ms', style({ opacity: 1 }))
-        ]),
-      ]),
-    ]),
+    ])
   ]
 })
 export class AppComponent {
-  showCodeExample = false;
-
   @HostBinding('@.disabled')
   animationsDisabled = false;
 
@@ -77,17 +61,12 @@ export class AppComponent {
   @ViewChild('modal')
   public modal: ModalComponent;
 
-  constructor(private _router: Router, private _tooltipService: ToolTipService, private _modalService: ModalService, private _codeExampleService: CodeExampleService) {
-    this._codeExampleService.onChange(status => {
-      status === 'open' ? this.openCloseExample() : this.closeCodeExample();
-    });
+  // this will be true once all the photos are preloaded
+  public ready = false;
+  private _preloaded = false;
+  private _timeoutDone = false;
 
-    this._router.events.subscribe(e => {
-      if (e instanceof NavigationStart) {
-        this.closeCodeExample();
-      }
-    });
-
+  constructor(private _cd: ChangeDetectorRef, private _router: Router, private _tooltipService: ToolTipService, private _modalService: ModalService) {
     _tooltipService.changes.subscribe((e: ToolTipEvent) => {
       switch (e.action) {
         case 'reposition':
@@ -117,12 +96,41 @@ export class AppComponent {
     });
   }
 
-  closeCodeExample() {
-    this.showCodeExample = false;
+  ngOnInit() {
+    this.preloadPhotos(() => {
+      this._preloaded = true;
+      this._onReady();
+    });
+
+    setTimeout(() => {
+      this._timeoutDone = true;
+      this._onReady();
+    }, MIN_PAGE_TIMEOUT);
   }
 
-  openCloseExample() {
-    this.showCodeExample = true;
+  private _onReady() {
+    if (this._preloaded && this._timeoutDone) {
+      this.ready = true;
+      this._cd.detectChanges();
+    }
+  }
+
+  preloadPhotos(onDoneCb: () => any) {
+    let count = 0;
+    let done = false;
+    const body = document.body;
+    PHOTOS.forEach(photo => {
+      const img = new Image();
+      img.onload = onImageDone;
+      img.src = photo.src;
+    });
+
+    function onImageDone() {
+      if (!done && ++count >= PHOTOS.length) {
+        done = true;
+        onDoneCb();
+      }
+    }
   }
 
   disableAnimations() {

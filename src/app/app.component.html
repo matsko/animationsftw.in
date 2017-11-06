@@ -1,13 +1,13 @@
 <app-navigation></app-navigation>
 
-<div class="main-stage" [@codeExampleAnimation]="showCodeExample">
-  <div class="router-container" [@routerContainerAnimation]="showCodeExample" [@routeAnimation]="prepRouteAnimation(outlet)">
+<div class="loading-stage" @loadingAnimation *ngIf="!ready">
+  <div class="text"> loading...</div>
+</div>
+
+<div class="main-stage">
+  <div class="router-container" [@routeAnimation]="prepRouteAnimation(outlet)">
     <router-outlet #outlet="outlet"></router-outlet>
   </div>
-  <div *ngIf="showCodeExample" (click)="closeCodeExample()" class="code-close-surface">
-    <div class="trigger"></div>
-  </div>
-  <app-code-example class="code-container" *ngIf="showCodeExample"></app-code-example>
 </div>
 
 <app-modal #modal></app-modal>

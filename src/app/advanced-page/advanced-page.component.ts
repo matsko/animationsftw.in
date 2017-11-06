@@ -4,6 +4,7 @@ import { ModalService } from '../modal.service';
 import { KeyboardBinding, Keys } from '../keyboard.service';
 import { AnimationCountService } from '../animation-count.service';
 import { PhotoPipe } from '../photo.pipe';
+import PHOTOS from '../photos';
 
 const SECTIONS = {
   one: 1,
@@ -17,6 +18,13 @@ const PAGE_ANIMATIONS = [
   {title: 'Right Animation', fileName: '/assets/code/a1-right.example-ts'},
   {title: 'Stagger Animation', fileName: '/assets/code/a1-stagger.example-ts'},
 ];
+
+const sectionedPhotos: any[] = [
+  PHOTOS.slice(0, 20),
+  PHOTOS.slice(20, 40),
+  PHOTOS.slice(40, 60)
+];
+console.log(sectionedPhotos);
 
 const PHOTO_FILTER = new PhotoPipe();
 
@@ -116,76 +124,13 @@ export class AdvancedPageComponent {
 
   photos: any[] = [
     { section: SECTIONS.one,
-      photos: [
-        {title: '1', className: 'g0', src: "/assets/gallery/1.jpg", tags: ["woman"]},
-        {title: '2', className: 'g1', src: "/assets/gallery/2.jpg", tags: ["cow"]},
-        {title: '3', className: 'g2', src: "/assets/gallery/3.jpg", tags: ["forest"]},
-        {title: '5', className: 'g0', src: "/assets/gallery/5.jpg", tags: ["book"]},
-        {title: '6', className: 'g1', src: "/assets/gallery/6.jpg", tags: ["man"]},
-        {title: '8', className: 'g0', src: "/assets/gallery/8.jpg", tags: ["shows"]},
-        {title: '10', className: 'g1', src: "/assets/gallery/10.jpg", tags: ["class", "class room", "lecture", "school"]},
-        {title: '12', className: 'g0', src: "/assets/gallery/12.jpg", tags: ["books"]},
-        {title: '13', className: 'g1', src: "/assets/gallery/13.jpg", tags: ["beach", "la", "men"]},
-        {title: '15', className: 'g0', src: "/assets/gallery/15.jpg", tags: ["forest"]},
-        {title: '16', className: 'g2', src: "/assets/gallery/16.jpg", tags: ["apples"]},
-        {title: '30', className: 'g0', src: "/assets/gallery/17.jpg", tags: ["wine"]},
-        {title: '18', className: 'g3', src: "/assets/gallery/18.jpg", tags: ["road", "highway"]},
-        {title: '21', className: 'g1', src: "/assets/gallery/21.jpg", tags: ["watch", "man", "style"]},
-        {title: '19', className: 'g0', src: "/assets/gallery/19.jpg", tags: ["style", "vest", "man"]},
-        {title: '23', className: 'g0', src: "/assets/gallery/23.jpg", tags: ["blonde", "woman", "beautiful"]},
-        {title: '25', className: 'g0', src: "/assets/gallery/4.jpg", tags: ["laptop", "apple", "macbook"]},
-        {title: '26', className: 'g3', src: "/assets/gallery/7.jpg", tags: ["style", "watch", "suite", "man"]},
-        {title: '27', className: 'g1', src: "/assets/gallery/11.jpg", tags: ["blonde", "woman", "theatre", "beautiful"]},
-        {title: '29', className: 'g2', src: "/assets/gallery/14.jpg", tags: ["forest", "red", "beautiful"]}
-      ]
+      photos: sectionedPhotos[0]
     },
     { section: SECTIONS.two,
-      photos: [
-        {title: '15', className: 'g0', src: "/assets/gallery/15.jpg", tags: [""]},
-        {title: '3', className: 'g2', src: "/assets/gallery/3.jpg", tags: [""]},
-        {title: '12', className: 'g0', src: "/assets/gallery/12.jpg", tags: [""]},
-        {title: '27', className: 'g1', src: "/assets/gallery/11.jpg", tags: [""]},
-        {title: '29', className: 'g2', src: "/assets/gallery/14.jpg", tags: [""]},
-        {title: '16', className: 'g2', src: "/assets/gallery/16.jpg", tags: [""]},
-        {title: '5', className: 'g0', src: "/assets/gallery/5.jpg", tags: [""]},
-        {title: '6', className: 'g1', src: "/assets/gallery/6.jpg", tags: [""]},
-        {title: '13', className: 'g1', src: "/assets/gallery/13.jpg", tags: [""]},
-        {title: '19', className: 'g0', src: "/assets/gallery/19.jpg", tags: [""]},
-        {title: '23', className: 'g0', src: "/assets/gallery/23.jpg", tags: [""]},
-        {title: '25', className: 'g0', src: "/assets/gallery/4.jpg", tags: [""]},
-        {title: '26', className: 'g3', src: "/assets/gallery/7.jpg", tags: [""]},
-        {title: '8', className: 'g0', src: "/assets/gallery/8.jpg", tags: [""]},
-        {title: '10', className: 'g1', src: "/assets/gallery/10.jpg", tags: [""]},
-        {title: '30', className: 'g0', src: "/assets/gallery/17.jpg", tags: [""]},
-        {title: '18', className: 'g3', src: "/assets/gallery/18.jpg", tags: [""]},
-        {title: '21', className: 'g1', src: "/assets/gallery/21.jpg", tags: [""]},
-        {title: '1', className: 'g0', src: "/assets/gallery/1.jpg", tags: [""]},
-        {title: '2', className: 'g1', src: "/assets/gallery/2.jpg", tags: [""]},
-      ]
+      photos: sectionedPhotos[1]
     },
     { section: SECTIONS.three,
-      photos: [
-        {title: '31', className: 'g3', src: "/assets/gallery/24.jpg", tags: [""]},
-        {title: '32', className: 'g1', src: "/assets/gallery/9.jpg", tags: [""]},
-        {title: '34', className: 'g0', src: "/assets/gallery/22.jpg", tags: [""]},
-        {title: '36', className: 'g0', src: "/assets/gallery/20.jpg", tags: [""]},
-        {title: '19', className: 'g0', src: "/assets/gallery/19.jpg", tags: [""]},
-        {title: '23', className: 'g0', src: "/assets/gallery/23.jpg", tags: [""]},
-        {title: '25', className: 'g0', src: "/assets/gallery/4.jpg", tags: [""]},
-        {title: '26', className: 'g3', src: "/assets/gallery/7.jpg", tags: [""]},
-        {title: '8', className: 'g0', src: "/assets/gallery/8.jpg", tags: [""]},
-        {title: '10', className: 'g1', src: "/assets/gallery/10.jpg", tags: [""]},
-        {title: '30', className: 'g0', src: "/assets/gallery/17.jpg", tags: [""]},
-        {title: '18', className: 'g3', src: "/assets/gallery/18.jpg", tags: [""]},
-        {title: '21', className: 'g1', src: "/assets/gallery/21.jpg", tags: [""]},
-        {title: '1', className: 'g0', src: "/assets/gallery/1.jpg", tags: [""]},
-        {title: '31', className: 'g3', src: "/assets/gallery/24.jpg", tags: [""]},
-        {title: '32', className: 'g1', src: "/assets/gallery/9.jpg", tags: [""]},
-        {title: '34', className: 'g0', src: "/assets/gallery/22.jpg", tags: [""]},
-        {title: '36', className: 'g0', src: "/assets/gallery/20.jpg", tags: [""]},
-        {title: '15', className: 'g0', src: "/assets/gallery/15.jpg", tags: [""]},
-        {title: '3', className: 'g2', src: "/assets/gallery/3.jpg", tags: [""]},
-      ]
+      photos: sectionedPhotos[2]
     },
   ];
 

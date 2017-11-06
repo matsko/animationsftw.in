@@ -36,17 +36,17 @@ export class BuilderPageComponent {
     "/assets/gallery/3.jpg",
     "/assets/gallery/12.jpg",
     "/assets/gallery/11.jpg",
-    "/assets/gallery/14.jpg",
-    "/assets/gallery/16.jpg",
+    "/assets/gallery/44.jpg",
+    "/assets/gallery/1.jpg",
     "/assets/gallery/5.jpg",
-    "/assets/gallery/6.jpg",
-    "/assets/gallery/13.jpg",
+    "/assets/gallery/59.jpg",
+    "/assets/gallery/42.jpg",
     "/assets/gallery/19.jpg",
     "/assets/gallery/23.jpg",
-    "/assets/gallery/4.jpg",
+    "/assets/gallery/33.jpg",
     "/assets/gallery/7.jpg",
-    "/assets/gallery/8.jpg",
+    "/assets/gallery/29.jpg",
     "/assets/gallery/10.jpg",
-    "/assets/gallery/17.jpg"
+    "/assets/gallery/28.jpg"
   ];
 }

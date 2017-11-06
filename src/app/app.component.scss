@@ -1,0 +1,73 @@
+@import "../styles/_colors";
+
+.main-stage {
+  position:relative;
+  height:100%;
+}
+
+.code-close-surface {
+  cursor:pointer;
+  position:absolute;
+  top:0;
+  left:0;
+  bottom:0;
+  width:50%;
+  background:rgba(0,0,0,0.5);
+}
+
+.code-close-surface .trigger {
+  border-radius:50px;
+  position:absolute;
+  border:50px solid rgba(0,0,0,0.8);
+  top:50%;
+  left:50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+app-code-example {
+  position:absolute;
+  top:0;
+  right:0;
+  bottom:0;
+  width:50%;
+  background:#eee;
+}
+
+.loading-stage {
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background:rgba(0,0,0,0.95);
+  z-index:100000;
+
+  .text {
+    position:absolute;
+    padding-left:100px;
+    top:50%;
+    left:50%;
+    transform:translateX(-50%) translateY(-50%);
+    font-size:50px;
+    line-height:80px;
+
+    &:after, &:before {
+      width:40px;
+      height:80px;
+      position:absolute;
+      top:0;
+      left:0;
+      content:"";
+    }
+
+    &:before {
+      animation: rotate 4s linear infinite;
+      background:$redColor2;
+    }
+
+    &:after {
+      background:$redColor;
+      animation: rotate 1.5s linear infinite reverse;
+    }
+  }
+}

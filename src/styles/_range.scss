@@ -3,9 +3,10 @@
 // Author: Darlan Rod https://github.com/darlanrod
 // Version 1.4.1
 // MIT License
+@import "./_colors";
 
 $track-color: #eceff1 !default;
-$thumb-color: maroon !default;
+$thumb-color: $redColor !default;
 
 $thumb-radius: 3px !default;
 $thumb-height: 24px !default;
