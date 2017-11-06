@@ -1,7 +1,7 @@
 <app-navigation></app-navigation>
 
 <div class="loading-stage" @loadingAnimation *ngIf="!ready">
-  <div class="text"> loading...</div>
+  <div class="text"> loading ({{ percentage }}%)</div>
 </div>
 
 <div class="main-stage">

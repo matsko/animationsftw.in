@@ -3,7 +3,7 @@ import { BasicsPageComponent } from './basics-page/basics-page.component';
 import { AdvancedPageComponent } from './advanced-page/advanced-page.component';
 import { RoutingPageComponent } from './routing-page/routing-page.component';
 import { BuilderPageComponent } from './builder-page/builder-page.component';
-import { NewFeaturesPageComponent } from './new-features-page/new-features-page.component';
+import { ResourcesPageComponent } from './resources-page/resources-page.component';
 
 import { RoutePage1Component } from './route-page1/route-page1.component';
 import { RoutePage2Component } from './route-page2/route-page2.component';
@@ -29,5 +29,5 @@ export const ROUTES = [
    ]
   },
   {path:'programmatic', component: BuilderPageComponent, data: {animation:'programmatic'}},
-  {path:'new-features', component: NewFeaturesPageComponent, data: {animation:'new-features'}},
+  {path:'resources', component: ResourcesPageComponent, data: {animation:'resources'}},
 ];

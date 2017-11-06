@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { CodeExampleService } from './code-example.service';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { BasicsPageComponent } from './basics-page/basics-page.component';
@@ -33,6 +34,7 @@ import { CodeModalClickDirective } from './code-modal-click.directive';
 import { PhotoPipe } from './photo.pipe';
 import { RoutePage5Component } from './route-page5/route-page5.component';
 import { PhotoScrubberComponent } from './photo-scrubber/photo-scrubber.component';
+import { ResourcesPageComponent } from './resources-page/resources-page.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +59,8 @@ import { PhotoScrubberComponent } from './photo-scrubber/photo-scrubber.componen
     CodeModalClickDirective,
     PhotoPipe,
     RoutePage5Component,
-    PhotoScrubberComponent
+    PhotoScrubberComponent,
+    ResourcesPageComponent
   ],
   imports: [
     HttpModule,
@@ -69,7 +72,8 @@ import { PhotoScrubberComponent } from './photo-scrubber/photo-scrubber.componen
     CodeExampleService,
     ModalService,
     AnimationCountService,
-    ToolTipService
+    ToolTipService,
+    {provide: LocationStrategy, useClass: HashLocationStrategy}
   ],
   bootstrap: [AppComponent]
 })

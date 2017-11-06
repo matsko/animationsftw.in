@@ -1,0 +1,57 @@
+<div class="resources" [@gridAnimation]="1">
+  <div class="cell" [@gridCell]="section == sections.resources" (mouseover)="section=sections.resources">
+    <img src="/assets/gallery/25.jpg" class="avatar" />
+
+    <div class="content">
+      <h2 class="heading">Learn More</h2>
+      <div class="inner" *ngIf="section == sections.resources">
+        <p>
+          One
+        </p>
+        <p>
+          Two
+        </p>
+        <p>
+          Three
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cell" [@gridCell]="section == sections.lukas" (mouseover)="section=sections.lukas">
+    <img src="/assets/gallery/3.jpg" class="avatar" />
+
+    <div class="content">
+      <h2 class="heading">Contact Lukas</h2>
+      <div class="inner" *ngIf="section == sections.lukas">
+        <p>
+          One
+        </p>
+        <p>
+          Two
+        </p>
+        <p>
+          Three
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cell" [@gridCell]="section == sections.matias" (mouseover)="section=sections.matias">
+    <img src="/assets/gallery/34.jpg" class="avatar" />
+    <div class="content">
+      <h2 class="heading">Contact Matias</h2>
+      <div class="inner" *ngIf="section == sections.matias">
+        <p>
+          One
+        </p>
+        <p>
+          Two
+        </p>
+        <p>
+          Three
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

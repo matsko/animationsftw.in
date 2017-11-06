@@ -24,7 +24,6 @@ const sectionedPhotos: any[] = [
   PHOTOS.slice(20, 40),
   PHOTOS.slice(40, 60)
 ];
-console.log(sectionedPhotos);
 
 const PHOTO_FILTER = new PhotoPipe();
 

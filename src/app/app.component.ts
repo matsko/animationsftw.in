@@ -44,7 +44,7 @@ const ELASTIC_BEZIER = 'cubic-bezier(.26,1.96,.58,.61)';
           ]),
         ])
       ]),
-      transition('* => advanced, * => routing, * => basics, * => programmatic', [
+      transition('* => advanced, * => routing, * => basics, * => programmatic, * => resources', [
         query(':enter', animateChild())
       ]),
       transition('* => *', [])
@@ -65,6 +65,7 @@ export class AppComponent {
   public ready = false;
   private _preloaded = false;
   private _timeoutDone = false;
+  public percentage = 0;
 
   constructor(private _cd: ChangeDetectorRef, private _router: Router, private _tooltipService: ToolTipService, private _modalService: ModalService) {
     _tooltipService.changes.subscribe((e: ToolTipEvent) => {
@@ -99,7 +100,11 @@ export class AppComponent {
   ngOnInit() {
     this.preloadPhotos(() => {
       this._preloaded = true;
+      this.percentage = 100;
       this._onReady();
+    }, (doneCount, totalCount) => {
+      this.percentage = Math.ceil((doneCount / totalCount) * 100);
+      this._cd.detectChanges();
     });
 
     setTimeout(() => {
@@ -115,7 +120,7 @@ export class AppComponent {
     }
   }
 
-  preloadPhotos(onDoneCb: () => any) {
+  preloadPhotos(onDoneCb: () => any, onProgressCb: (doneCount: number, totalCount: number) => any) {
     let count = 0;
     let done = false;
     const body = document.body;
@@ -129,6 +134,8 @@ export class AppComponent {
       if (!done && ++count >= PHOTOS.length) {
         done = true;
         onDoneCb();
+      } else {
+        onProgressCb(count, PHOTOS.length);
       }
     }
   }

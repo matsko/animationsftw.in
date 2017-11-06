@@ -1,0 +1,44 @@
+@import "../../styles/_colors";
+
+:host {
+  display:block;
+}
+
+.resources > .cell {
+  display:inline-block;
+  width:calc(33% + 3px);
+  position:relative;
+  margin-left:-3px;
+  overflow:hidden;
+  height:100vh;
+  text-align: center;
+  padding:20px;
+  vertical-align: top;
+
+  .avatar {
+    position:absolute;
+    height:100%;
+    top:0;
+    left:50%;
+    transform:translateX(-50%);
+  }
+
+  .heading {
+    text-transform:uppercase;
+    color:white;
+  }
+
+  .content {
+    background:#111;
+    padding:1em;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:translateY(-50%) translateX(-50%);
+
+    .item {
+      line-height:30px;
+      height:30px;
+    }
+  }
+}
