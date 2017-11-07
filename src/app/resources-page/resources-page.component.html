@@ -1,6 +1,7 @@
 <div class="resources">
   <div class="cell" [@gridCell]="isSectionActive(sections.resources)" (mouseover)="section=sections.resources">
-    <img src="/assets/angular.svg" class="avatar" />
+    <img src="/assets/angular.svg" *ngIf="!isSectionActive(sections.resources)" class="avatar" />
+    <img src="/assets/angular-focus.png" *ngIf="isSectionActive(sections.resources)" class="avatar" />
 
     <div class="content">
       <h2 class="heading">Learn More</h2>
@@ -19,7 +20,8 @@
   </div>
 
   <div class="cell" [@gridCell]="isSectionActive(sections.lukas)" (mouseover)="section=sections.lukas">
-    <img src="/assets/lukas.jpg" class="avatar" />
+    <img src="/assets/lukas.jpg" *ngIf="!isSectionActive(sections.lukas)" class="avatar" />
+    <img src="/assets/lukas-sky.jpg" class="avatar" *ngIf="isSectionActive(sections.lukas)" />
 
     <div class="content">
       <h2 class="heading">Contact Lukas</h2>
@@ -35,7 +37,9 @@
   </div>
 
   <div class="cell" [@gridCell]="isSectionActive(sections.matias)" (mouseover)="section=sections.matias">
-    <img src="/assets/matias.jpg" class="avatar" />
+    <img src="/assets/matias.jpg" *ngIf="!isSectionActive(sections.matias)" class="avatar" />
+    <img src="/assets/matias-sky.jpg" class="avatar" *ngIf="isSectionActive(sections.matias)" />
+
     <div class="content">
       <h2 class="heading">Contact Matias</h2>
       <div class="inner" *ngIf="section == sections.matias">

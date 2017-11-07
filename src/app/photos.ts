@@ -82,6 +82,9 @@ export default [
 
   // resources
   {title: 'angular', src: "/assets/angular.svg", tags: [""]},
+  {title: 'angular', src: "/assets/angular-focus.png", tags: [""]},
   {title: 'matias', src: "/assets/matias.jpg", tags: [""]},
+  {title: 'matias', src: "/assets/matias-sky.jpg", tags: [""]},
   {title: 'lukas', src: "/assets/lukas.jpg", tags: [""]},
+  {title: 'lukas', src: "/assets/lukas-sky.jpg", tags: [""]},
 ];

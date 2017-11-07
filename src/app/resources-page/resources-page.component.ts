@@ -37,9 +37,13 @@ const PAGE_ANIMATIONS = [
         animate('150ms ' + NICE_EASING)
       ])),
       transition('* => true', group([
+        query('img:enter', [
+          style({opacity:0}),
+          animate('300ms', style({opacity:1}))
+        ], {optional:true}),
         query('.inner *', [
           style({ opacity: 0, height: 0 }),
-          stagger(300, [
+          stagger(50, [
             animate('500ms', style({ opacity: 1, height: '*' }))
           ])
         ]),
