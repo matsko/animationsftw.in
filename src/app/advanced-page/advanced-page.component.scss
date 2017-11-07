@@ -18,11 +18,6 @@
   overflow:hidden;
   &:before {
     content:"";
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&1+0,0+100 */
-background: -moz-linear-gradient(left, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(left, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to right, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 */
     width:10px;
     position:absolute;
     top:0;
@@ -70,12 +65,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', end
 .g3 { background: #595959; }
 
 input {
-  padding:10px;
+  padding:20px;
   border:0;
   background:#333;
   font-size:1.2rem;
   width:100%;
   color:white;
+  text-transform: uppercase;
   margin-bottom:20px;
 }
 

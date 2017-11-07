@@ -38,10 +38,6 @@ const PAGES = [
           query('.main-route-container', [
             style({ opacity: 0, transform: 'translateY(100px)'}),
             animate('800ms ' + NICE_EASING, style({ opacity: 1, transform: 'none'}))
-          ]),
-          query('.main-route-details', [
-            style({ opacity: 0, transform: 'translateY(300px)'}),
-            animate('800ms ' + NICE_EASING, style({ opacity: 1, transform: 'none'}))
           ])
         ])
       ])

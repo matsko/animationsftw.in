@@ -8,8 +8,8 @@ import { transition, trigger, query, style, animate, stagger } from '@angular/an
   animations: [
     trigger('pageAnimations', [
       transition(':enter', [
-        query(':self, .logo > *', style({ opacity: 0 })),
-        query(':self, .logo > *', [
+        query(':self, .logo > *, .viking', [
+          style({ opacity: 0 }),
           stagger(100, [
             animate('300ms ease-out', style({ opacity: 1 }))
           ])

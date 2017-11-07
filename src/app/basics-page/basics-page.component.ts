@@ -38,11 +38,11 @@ const DOWN_ARROW_CODE = 40;
       transition(':enter', []),
 
       state(`${SECTIONS.intro}`, style({ transform: 'translateY(0px)' })),
-      state(`${SECTIONS.triggers}`, style({ transform: 'translateY(-500px)' })),
-      state(`${SECTIONS.component}`, style({ transform: 'translateY(-1200px)' })),
-      state(`${SECTIONS.transition}`, style({ transform: 'translateY(-1900px)' })),
-      state(`${SECTIONS.fadeInFadeOut}`, style({ transform: 'translateY(-2600px)' })),
-      state(`${SECTIONS.animationCallback}`, style({ transform: 'translateY(-3100px)' })),
+      state(`${SECTIONS.triggers}`, style({ transform: 'translateY(-700px)' })),
+      state(`${SECTIONS.component}`, style({ transform: 'translateY(-1500px)' })),
+      state(`${SECTIONS.transition}`, style({ transform: 'translateY(-2300px)' })),
+      state(`${SECTIONS.fadeInFadeOut}`, style({ transform: 'translateY(-3100px)' })),
+      state(`${SECTIONS.animationCallback}`, style({ transform: 'translateY(-3700px)' })),
 
       transition('* => *', animate('500ms cubic-bezier(0.35, 0, 0.25, 1)'))
     ])

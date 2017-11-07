@@ -10,28 +10,25 @@
   position:absolute;
   top:1em;
   left:1em;
-  padding:0 10px 10px;
-  height:60px;
 }
 
 .main-navigation > a {
   display:inline-block;
-  padding:20px 10px 10px;
+  padding:20px;
   color:white;
   letter-spacing: 2px;
   font-family: 'Open Sans';
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-weight:bold;
-  font-size:0.8rem;
+  font-size:1.1rem;
   text-decoration:none;
-  border-bottom:5px solid transparent;
-  transition:0.5s ease-out border-bottom-color;
+  transition:0.5s ease-out all;
 }
 
 .main-navigation > a:hover,
 .main-navigation > a.active {
-  color:$redColor;
-  border-bottom-color:$redColor;
+  color:white;
+  background:$blueColor;
 }
 
 .sup-navigation {

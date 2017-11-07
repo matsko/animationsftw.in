@@ -18,6 +18,7 @@ $FontPathOpenSans: "/assets/fonts/open-sans";
 }
 
 #wrapper {
+  background:url(/assets/square-bg.png);
   position:relative;
   &:before {
     content:"";
@@ -100,7 +101,7 @@ app-routing-page, .router-container, .main-route-container {
     }
 
     &.active {
-      background:$redColor;
+      background:$blueColor;
     }
   }
 }
@@ -116,10 +117,10 @@ app-routing-page, .router-container, .main-route-container {
   font-size:1.8rem;
   position:absolute;
   padding:60px;
-  top:20%;
+  top:50%;
   left:50%;
+  transform:translateY(-50%) translateX(-50%);
   text-align:center;
-  margin-left:-25%;
   width:50%;
   background:#111;
   color:white;
@@ -127,10 +128,15 @@ app-routing-page, .router-container, .main-route-container {
 }
 
 .help-link {
+  display:table;
+  margin:10px auto;
   background:$redColor;
-  padding:5px;
+  padding:10px;
   color:white;
-  display:inline-block;
+
+  &:hover {
+  background:$redColor2;
+  }
 }
 
 .loading {
@@ -159,4 +165,8 @@ app-routing-page, .router-container, .main-route-container {
 @keyframes upDown {
   from { top:100px; }
   to { top: 300px; }
+}
+
+.bullet-point:before {
+  content:"- ";
 }

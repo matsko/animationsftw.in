@@ -7,4 +7,12 @@
   text-transform: uppercase;
   font-weight:bold;
   cursor:pointer;
+
+  &:active {
+    outline:0;
+  }
+
+  &:hover {
+    background:#202020;
+  }
 }

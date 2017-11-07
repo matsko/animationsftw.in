@@ -1,6 +1,6 @@
 :host {
   display:block;
-  padding-top:100px;
+  padding-top:15vh;
   position:relative;
   height:100vh;
 }
@@ -12,36 +12,28 @@
   bottom:0;
   right:0;
   left:0;
-  background:url(/assets/bg.jpg);
-  opacity:0.5;
 }
 
 .logo {
-  font-size:20vh;
+  text-transform: uppercase;
+  font-size:8vw;
 }
 
 .logo span {
   display:block;
 }
 
-.logo .angular {
-  display:block;
-  padding-left:250px!important;
-  background:url(/assets/angular.png) no-repeat 0 0;
-  background-size: auto 20vh;
-}
-
-.logo .animation {
-  padding-left:400px;
-}
-
-.logo .movie {
-  padding-left:600px;
-}
-
 .content {
-  width:80%;
+  width:90%;
   margin:0 auto;
   position:relative;
   z-index:1000;
+}
+
+.viking {
+  position:fixed;
+  top:50%;
+  transform:translateY(-50%);
+  right:5%;
+  width:40%;
 }

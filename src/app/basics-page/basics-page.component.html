@@ -5,107 +5,115 @@
         <img src="/assets/design-images/house-1.jpg" />
         <div class="details">
           <h2>Angular Animation</h2>
-          <p>
-            Angular contains an Animation DSL language that allows for complex animations to defined for components.
-          </p>
-          <p>
-            To get started, just include <a href="" class="help-link" appCodeModalClick="/assets/code/module.example-ts">BrowserAnimationsModule</a> into your application module.
-          </p>
-          <p>
-            The DSL works atop of the web-animations API and requires a <a href="" class="help-link" appCodeModalClick="/assets/code/polyfill.example-html">polyfill</a>.
-          </p>
+          <div class="item bullet-point">
+            Angular has its own animation language!
+          </div>
+          <div class="item bullet-point">
+            The DSL works atop of the web-animations API
+          </div>
+          <div class="item bullet-point">
+            To get started, just include BrowserAnimationsModule into your application module
+          </div>
+          <nav>
+            <a href="" class="help-link" appCodeModalClick="/assets/code/module.example-ts">View Code</a>
+          </nav>
         </div>
-
       </div>
       <div class="inner-section" [class.visible]="visibleSection==sections.triggers" (click)="onInnerSectionClick(sections.triggers)">
         <img src="/assets/design-images/car-1.jpg" />
         <div class="details">
-          <h2>Triggers</h2>
-          <p>
-            Aniamtions in Angular are linked in the <a href="" class="help-link" appCodeModalClick="/assets/code/template-triggers.example-html">template using @properties.</a>
-          </p>
-          <p>
-            When a property changes state (or the element is inserted/destroyed), it will trigger an animation.
-          </p>
-          <p>
-            The @trigger is bound to the component (that's where the animation is defined).
-          </p>
+          <h2>@Triggers</h2>
+          <div class="item bullet-point">
+            Animations in Angular are linked using @trigger properties
+          </div>
+          <div class="item bullet-point">
+            When a property changes state (or the element is inserted/destroyed), it will trigger an animation
+          </div>
+          <div class="item bullet-point">
+            The @trigger is bound to the component (that's where the animation is defined)
+          </div>
+          <nav>
+            <a href="" class="help-link" appCodeModalClick="/assets/code/template-triggers.example-html">View Code</a>
+          </nav>
         </div>
       </div>
       <div class="inner-section" [class.visible]="visibleSection==sections.component" (click)="onInnerSectionClick(sections.component)">
         <img src="/assets/design-images/dinner-1.jpg" />
         <div class="details">
           <h2>Component Animations</h2>
-          <p>
+          <div class="item bullet-point">
             The animation itself is
             <a href="" class="help-link" appCodeModalClick="/assets/code/component-def.example-ts">defined on the component</a>
             using the DSL language.
-          </p>
-          <p>
+          </div>
+          <div class="item bullet-point">
             Triggers kick off transitions and a <a href="" class="help-link" appCodeModalClick="/assets/code/transition-def.example-ts">transition consists of animation steps</a>.
-          </p>
-          <p>
+          </div>
+          <div class="item bullet-point">
             When an animation is complete, it will jump to a state and the <a href="" class="help-link" appCodeModalClick="/assets/code/state-def.example-ts">final styles will be applied</a>.
-          </p>
+          </div>
+          <nav>
+
+          </nav>
         </div>
       </div>
       <div class="inner-section" [class.visible]="visibleSection==sections.transition" (click)="onInnerSectionClick(sections.transition)">
         <img src="/assets/design-images/travel-1.jpg" />
         <div class="details">
           <h2>animate() and style()</h2>
-          <p>
+          <div class="item bullet-point">
             The animate() and style() steps are the bread and butter of animations in Angular.
-          </p>
-          <p>
+          </div>
+          <div class="item bullet-point">
             style() applies the styling to the element immediately.
-          </p>
-          <p>
+          </div>
+          <div class="item bullet-point">
            <a href="" class="help-link" appCodeModalClick="/assets/code/steps-def.example-ts">animate('time', style(...))</a> applies the styling to the over a specified duration.
-          </p>
-          <p>
+          </div>
+          <div class="item bullet-point">
             <a href="" class="help-link" appCodeModalClick="/assets/code/keyframes-def.example-ts">animate('time', keyframes(...))</a> applies a series of keyframes over a specified duration.
-          </p>
+          </div>
         </div>
       </div>
       <div class="inner-section" [class.visible]="visibleSection==sections.fadeInFadeOut" (click)="onInnerSectionClick(sections.fadeInFadeOut)">
         <img src="/assets/design-images/car-2.jpg" />
         <div class="details">
           <h2>Insertion / Removal</h2>
-          <p>
-            When an item is inserted and removed from a view it has special <a href="" class="help-link" appCodeModalClick="/assets/code/insert-remove-def.example-ts">:enter and :leave animations</a>.
-          </p>
-          <p>
-            :enter is run when any *ngIf, *ngFor, *ngSwitch item is placed into the page.
-          </p>
-          <p>
+          <div class="item bullet-point">
+            When an item bullet-point is inserted and removed from a view it has special <a href="" class="help-link" appCodeModalClick="/assets/code/insert-remove-def.example-ts">:enter and :leave animations</a>.
+          </div>
+          <div class="item bullet-point">
+            :enter is run when any *ngIf, *ngFor, *ngSwitch item bullet-point is placed into the page.
+          </div>
+          <div class="item bullet-point">
             :leave is run when they are removed from the page.
-          </p>
+          </div>
         </div>
       </div>
       <div class="inner-section" [class.visible]="visibleSection==sections.animationCallback" (click)="onInnerSectionClick(sections.animationCallback)">
         <img src="/assets/design-images/house-2.jpg" />
         <div class="details">
-          <h2>(@animation.callback) code</h2>
-          <p>
+          <h2>(@animation.callback)</h2>
+          <div class="item bullet-point">
             When an animation starts and finishes it will <a href="" class="help-link" appCodeModalClick="/assets/code/animation-callback-def.example-ts">emit callbacks</a>
-          </p>
-          <p>
+          </div>
+          <div class="item bullet-point">
             (@trigger.start) is called on start and (@trigger.done) when the animation completes
-          </p>
-          <p>
+          </div>
+          <div class="item bullet-point">
             An AnimationEvent is passed back via <a href="" class="help-link" appCodeModalClick="/assets/code/animation-callback-event.example-ts">$event in the callback</a>
-          </p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <ol class="menu menu-area">
-    <li [class.selected]="isActive(sections.intro)" (click)="section=sections.intro">How Animations Work</li>
-    <li [class.selected]="isActive(sections.triggers)" (click)="section=sections.triggers">Animation @Triggers</li>
+    <li [class.selected]="isActive(sections.intro)" (click)="section=sections.intro">Angular Animations</li>
+    <li [class.selected]="isActive(sections.triggers)" (click)="section=sections.triggers">@Triggers</li>
     <li [class.selected]="isActive(sections.component)" (click)="section=sections.component">Component Animations</li>
-    <li [class.selected]="isActive(sections.transition)" (click)="section=sections.transition">transition()</li>
-    <li [class.selected]="isActive(sections.fadeInFadeOut)" (click)="section=sections.fadeInFadeOut">fade in / fade out</li>
+    <li [class.selected]="isActive(sections.transition)" (click)="section=sections.transition">animate() and style()</li>
+    <li [class.selected]="isActive(sections.fadeInFadeOut)" (click)="section=sections.fadeInFadeOut">Insertion / Removal</li>
     <li [class.selected]="isActive(sections.animationCallback)" (click)="section=sections.animationCallback">(@animation.callback)</li>
   </ol>
 </div>

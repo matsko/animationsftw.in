@@ -1,4 +1,4 @@
-import { HostBinding, Component } from '@angular/core';
+import { HostListener, HostBinding, Component } from '@angular/core';
 import { trigger, transition, animate, style, state, query, stagger, group, animateChild } from '@angular/animations';
 
 const SECTIONS = {
@@ -22,12 +22,6 @@ const NICE_EASING = 'cubic-bezier(0.35, 0, 0.25, 1)';
             animate('300ms ease-out', style({ opacity: '*' })),
           ])
         ])
-      ])
-    ]),
-    trigger('gridAnimation', [
-      transition(':enter', []),
-      transition('* => *', [
-        query('@*', animateChild())
       ])
     ]),
     trigger('gridCell', [
@@ -55,4 +49,9 @@ export class ResourcesPageComponent {
   section = SECTIONS.resources;
 
   sections = SECTIONS;
+
+  isSectionActive(section: number) {
+    console.log(section, this.section)
+    return section === this.section;
+  }
 }
