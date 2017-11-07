@@ -18,8 +18,8 @@ const NICE_EASING = 'cubic-bezier(0.35, 0, 0.25, 1)';
       transition(':enter', [
         query('.cell', [
           style({ opacity: 0 }),
-          stagger(300, [
-            animate('300ms ease-out', style({ opacity: 1 }))
+          stagger(100, [
+            animate('300ms ease-out', style({ opacity: '*' })),
           ])
         ])
       ])
@@ -34,16 +34,6 @@ const NICE_EASING = 'cubic-bezier(0.35, 0, 0.25, 1)';
       state('true', style({ width:'46%', opacity:1})),
       state('false', style({ width: '27%', opacity:0.5})),
       transition('* => false', group([
-        query('.inner', [
-          style({ height: '!' }),
-          animate('500ms', style({ height: '*' }))
-        ]),
-        query('.inner .item', [
-          style({ opacity: 1, height: '*' }),
-          stagger(300, [
-            animate('500ms', style({ opacity: 0, height: 0 }))
-          ])
-        ]),
         animate('150ms ' + NICE_EASING)
       ])),
       transition('* => true', group([

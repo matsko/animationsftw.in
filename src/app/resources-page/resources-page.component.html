@@ -5,52 +5,43 @@
     <div class="content">
       <h2 class="heading">Learn More</h2>
       <div class="inner" *ngIf="section == sections.resources">
-        <p>
-          One
-        </p>
-        <p>
-          Two
-        </p>
-        <p>
-          Three
-        </p>
+        <div class="item">
+          <a href="https://twitter.com/simpulton" target="_blank" rel="nofollow">yearofmoo.com - Animations in Angular 4.2+</a>
+        </div>
+        <div class="item">
+          <a href="http://www.angular.io" target="_blank" rel="nofollow">angular.io</a>
+        </div>
       </div>
     </div>
   </div>
 
   <div class="cell" [@gridCell]="section == sections.lukas" (mouseover)="section=sections.lukas">
-    <img src="/assets/gallery/3.jpg" class="avatar" />
+    <img src="/assets/lukas.jpg" class="avatar" />
 
     <div class="content">
       <h2 class="heading">Contact Lukas</h2>
       <div class="inner" *ngIf="section == sections.lukas">
-        <p>
-          One
-        </p>
-        <p>
-          Two
-        </p>
-        <p>
-          Three
-        </p>
+        <div class="item">
+          <a href="https://twitter.com/simpulton" target="_blank" rel="nofollow">@simpulton</a>
+        </div>
+        <div class="item">
+          <a href="http://onehungrymind.com/" target="_blank" rel="nofollow">www.onehungrymind.com</a>
+        </div>
       </div>
     </div>
   </div>
 
   <div class="cell" [@gridCell]="section == sections.matias" (mouseover)="section=sections.matias">
-    <img src="/assets/gallery/34.jpg" class="avatar" />
+    <img src="/assets/matias.jpg" class="avatar" />
     <div class="content">
       <h2 class="heading">Contact Matias</h2>
       <div class="inner" *ngIf="section == sections.matias">
-        <p>
-          One
-        </p>
-        <p>
-          Two
-        </p>
-        <p>
-          Three
-        </p>
+        <div class="item">
+          <a href="https://twitter.com/yearofmoo" target="_blank" rel="nofollow">@yearofmoo</a>
+        </div>
+        <div class="item">
+          <a href="http://www.yearofmoo.com" target="_blank" rel="nofollow">www.yearofmoo.com</a>
+        </div>
       </div>
     </div>
   </div>

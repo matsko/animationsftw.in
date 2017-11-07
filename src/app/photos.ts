@@ -71,4 +71,8 @@ export default [
   {title: '63', src: "/assets/design-images/dinner-3.jpg", tags: [""]},
   {title: '64', src: "/assets/design-images/space-1.jpg", tags: [""]},
   {title: '65', src: "/assets/design-images/outside-1.jpg", tags: [""]},
+
+  // resources
+  {title: 'matias', src: "/assets/matias.jpg", tags: [""]},
+  {title: 'lukas', src: "/assets/lukas.jpg", tags: [""]},
 ];
