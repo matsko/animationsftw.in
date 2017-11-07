@@ -65,6 +65,14 @@ export default [
   {title: '59', src: "/assets/gallery/59.jpg", tags: ["burn", "file", "house", "matches"]},
   {title: '60', src: "/assets/gallery/60.jpg", tags: ["green", "spices"]},
 
+  // next 5 photos for basics
+  {title: '61', src: "/assets/design-images/outside-2.jpg", tags: [""]},
+  {title: '62', src: "/assets/design-images/car-1.jpg", tags: [""]},
+  {title: '63', src: "/assets/design-images/dinner-1.jpg", tags: [""]},
+  {title: '64', src: "/assets/design-images/travel-1.jpg", tags: [""]},
+  {title: '65', src: "/assets/design-images/nature-2.jpg", tags: [""]},
+  {title: '65', src: "/assets/design-images/nature-3.jpg", tags: [""]},
+
   // next 5 photos for routing
   {title: '61', src: "/assets/design-images/nature-1.jpg", tags: [""]},
   {title: '62', src: "/assets/design-images/people-2.jpg", tags: [""]},
@@ -73,6 +81,7 @@ export default [
   {title: '65', src: "/assets/design-images/outside-1.jpg", tags: [""]},
 
   // resources
+  {title: 'angular', src: "/assets/angular.svg", tags: [""]},
   {title: 'matias', src: "/assets/matias.jpg", tags: [""]},
   {title: 'lukas', src: "/assets/lukas.jpg", tags: [""]},
 ];

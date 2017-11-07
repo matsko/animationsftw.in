@@ -18,10 +18,10 @@
 
   .avatar {
     position:absolute;
-    height:110%;
-    top:0;
+    height:120%;
+    top:50%;
     left:50%;
-    transform:translateX(-50%);
+    transform:translateX(-50%) translateY(-50%);
   }
 
   .heading {

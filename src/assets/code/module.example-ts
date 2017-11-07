@@ -1,10 +1,9 @@
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+// make sure to add @angular/animations package.json
+
+import {BrowserAnimationsModule}
+  from '@angular/platform-browser/animations';
 
 @NgModule({
-  imports: [
-    BrowserAnimationsModule
-  ]
+  imports: [BrowserAnimationsModule]
 })
-class AppModule {
-
-}
+class AppModule {}

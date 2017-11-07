@@ -1,0 +1,15 @@
+trigger('myAnimationTrigger', [
+  transition('* => visible', [
+    // fade out the element immediately
+    style({ opacity: 0 }),
+
+    //...
+  ]),
+
+  transition('* => hidden', [
+    // use the existing opacity on the element
+    style({ opacity: '*' }),
+
+    //...
+  ])
+])

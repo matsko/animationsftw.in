@@ -2,16 +2,16 @@
   <section class="basics-intro stage">
     <div class="content-area" [@contentAnimation]="section" (@contentAnimation.done)="visibleSection=section">
       <div class="inner-section" [class.visible]="visibleSection==sections.intro" (click)="onInnerSectionClick(sections.intro)">
-        <img src="/assets/design-images/house-1.jpg" />
+        <img src="/assets/design-images/outside-2.jpg" />
         <div class="details">
           <h2>Angular Animation</h2>
-          <div class="item bullet-point">
+          <div class="item ">
             Angular has its own animation language!
           </div>
-          <div class="item bullet-point">
+          <div class="item ">
             The DSL works atop of the web-animations API
           </div>
-          <div class="item bullet-point">
+          <div class="item ">
             To get started, just include BrowserAnimationsModule into your application module
           </div>
           <nav>
@@ -23,13 +23,13 @@
         <img src="/assets/design-images/car-1.jpg" />
         <div class="details">
           <h2>@Triggers</h2>
-          <div class="item bullet-point">
+          <div class="item ">
             Animations in Angular are linked using @trigger properties
           </div>
-          <div class="item bullet-point">
+          <div class="item ">
             When a property changes state (or the element is inserted/destroyed), it will trigger an animation
           </div>
-          <div class="item bullet-point">
+          <div class="item ">
             The @trigger is bound to the component (that's where the animation is defined)
           </div>
           <nav>
@@ -41,16 +41,15 @@
         <img src="/assets/design-images/dinner-1.jpg" />
         <div class="details">
           <h2>Component Animations</h2>
-          <div class="item bullet-point">
-            The animation itself is
-            <a href="" class="help-link" appCodeModalClick="/assets/code/component-def.example-ts">defined on the component</a>
-            using the DSL language.
+          <div class="item ">
+            Animations are placed within the
+            <a href="" class="help-link" appCodeModalClick="/assets/code/component-def.example-ts">@Component animations</a>
           </div>
-          <div class="item bullet-point">
-            Triggers kick off transitions and a <a href="" class="help-link" appCodeModalClick="/assets/code/transition-def.example-ts">transition consists of animation steps</a>.
+          <div class="item ">
+            Triggers kick off transitions and a <a href="" class="help-link" appCodeModalClick="/assets/code/transition-def.example-ts">transition consists of animation steps</a>
           </div>
-          <div class="item bullet-point">
-            When an animation is complete, it will jump to a state and the <a href="" class="help-link" appCodeModalClick="/assets/code/state-def.example-ts">final styles will be applied</a>.
+          <div class="item ">
+            When an animation is complete, it will jump to a state and the <a href="" class="help-link" appCodeModalClick="/assets/code/state-def.example-ts">final styles will be applied</a>
           </div>
           <nav>
 
@@ -61,46 +60,49 @@
         <img src="/assets/design-images/travel-1.jpg" />
         <div class="details">
           <h2>animate() and style()</h2>
-          <div class="item bullet-point">
-            The animate() and style() steps are the bread and butter of animations in Angular.
+          <div class="item ">
+            style() applies the styling to the element immediately
+           <a href="" class="help-link" appCodeModalClick="/assets/code/style-def.example-ts">View Code</a>
           </div>
-          <div class="item bullet-point">
-            style() applies the styling to the element immediately.
+          <div class="item ">
+           animate() + style() will apply the styling to the over a specified duration
+           <a href="" class="help-link" appCodeModalClick="/assets/code/steps-def.example-ts">View Code</a>
           </div>
-          <div class="item bullet-point">
-           <a href="" class="help-link" appCodeModalClick="/assets/code/steps-def.example-ts">animate('time', style(...))</a> applies the styling to the over a specified duration.
-          </div>
-          <div class="item bullet-point">
-            <a href="" class="help-link" appCodeModalClick="/assets/code/keyframes-def.example-ts">animate('time', keyframes(...))</a> applies a series of keyframes over a specified duration.
+          <div class="item ">
+            animate() + keyframes() will apply a series of keyframes over a specified duration
+            <a href="" class="help-link" appCodeModalClick="/assets/code/keyframes-def.example-ts">View Code</a>
           </div>
         </div>
       </div>
       <div class="inner-section" [class.visible]="visibleSection==sections.insertionRemoval" (click)="onInnerSectionClick(sections.insertionRemoval)">
-        <img src="/assets/design-images/car-2.jpg" />
+        <img src="/assets/design-images/nature-2.jpg" />
         <div class="details">
           <h2>Insertion / Removal</h2>
-          <div class="item bullet-point">
-            When an item is inserted and removed from a view it has special <a href="" class="help-link" appCodeModalClick="/assets/code/insert-remove-def.example-ts">:enter and :leave animations</a>.
+          <div class="item ">
+            When an item is inserted and removed from a view it has special <a href="" class="help-link" appCodeModalClick="/assets/code/insert-remove-def.example-ts">:enter and :leave animations</a>
           </div>
-          <div class="item bullet-point">
-            :enter is run when any *ngIf, *ngFor, *ngSwitch item is placed into the page.
+          <div class="item ">
+            :enter runs when any *ngIf / *ngFor views are placed into the page
           </div>
-          <div class="item bullet-point">
-            :leave is run when they are removed from the page.
+          <div class="item ">
+            :leave runs when they are removed from the page
           </div>
         </div>
       </div>
       <div class="inner-section" [class.visible]="visibleSection==sections.animationCallback" (click)="onInnerSectionClick(sections.animationCallback)">
-        <img src="/assets/design-images/house-2.jpg" />
+        <img src="/assets/design-images/nature-3.jpg" />
         <div class="details">
           <h2>(@animation.callback)</h2>
-          <div class="item bullet-point">
+          <div class="item ">
             When an animation starts and finishes it will <a href="" class="help-link" appCodeModalClick="/assets/code/animation-callback-def.example-ts">emit callbacks</a>
           </div>
-          <div class="item bullet-point">
-            (@trigger.start) is called on start and (@trigger.done) when the animation completes
+          <div class="item ">
+            (@trigger.start) is called on start
           </div>
-          <div class="item bullet-point">
+          <div class="item ">
+            (@trigger.done) when the animation completes
+          </div>
+          <div class="item ">
             An AnimationEvent is passed back via <a href="" class="help-link" appCodeModalClick="/assets/code/animation-callback-event.example-ts">$event in the callback</a>
           </div>
         </div>

@@ -60,7 +60,6 @@ export class ResourcesPageComponent {
   }
 
   isSectionActive(section: number) {
-    console.log(section, this.section)
     return section === this.section;
   }
 }

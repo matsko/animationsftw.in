@@ -15,6 +15,9 @@
       <input type="range" [(ngModel)]="position" min="0" max="100" step="0.1" [disabled]="scrubber.playing" />
       <span class="label">100%</span>
     </div>
+    <nav>
+      <a href="" class="help-link" appCodeModalClick="/assets/code/builder-page-list-animation.example-ts">View Code</a>
+    </nav>
   </div>
   <div class="right">
     <app-photo-scrubber #scrubber [position]="position" [photos]="photos"></app-photo-scrubber>
