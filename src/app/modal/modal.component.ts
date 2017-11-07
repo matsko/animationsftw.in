@@ -26,8 +26,8 @@ const NICE_EASING = 'cubic-bezier(0.35, 0, 0.25, 1)';
     ]),
     trigger('frameAnimation', [
       transition(':enter', [
-        style({ opacity: 0, transform: 'translateX(-50%)' }),
-        animate('300ms ' + NICE_EASING, style({ opacity: 1, transform: '*' }))
+        style({ opacity: 0 }),
+        animate('300ms ' + NICE_EASING, style({ opacity: 1 }))
       ]),
     ]),
   ]

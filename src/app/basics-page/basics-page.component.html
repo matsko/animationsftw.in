@@ -57,7 +57,7 @@
           </nav>
         </div>
       </div>
-      <div class="inner-section" [class.visible]="visibleSection==sections.transition" (click)="onInnerSectionClick(sections.transition)">
+      <div class="inner-section" [class.visible]="visibleSection==sections.animateStyle" (click)="onInnerSectionClick(sections.animateStyle)">
         <img src="/assets/design-images/travel-1.jpg" />
         <div class="details">
           <h2>animate() and style()</h2>
@@ -75,7 +75,7 @@
           </div>
         </div>
       </div>
-      <div class="inner-section" [class.visible]="visibleSection==sections.fadeInFadeOut" (click)="onInnerSectionClick(sections.fadeInFadeOut)">
+      <div class="inner-section" [class.visible]="visibleSection==sections.insertionRemoval" (click)="onInnerSectionClick(sections.insertionRemoval)">
         <img src="/assets/design-images/car-2.jpg" />
         <div class="details">
           <h2>Insertion / Removal</h2>
@@ -112,8 +112,8 @@
     <li [class.selected]="isActive(sections.intro)" (click)="section=sections.intro">Angular Animations</li>
     <li [class.selected]="isActive(sections.triggers)" (click)="section=sections.triggers">@Triggers</li>
     <li [class.selected]="isActive(sections.component)" (click)="section=sections.component">Component Animations</li>
-    <li [class.selected]="isActive(sections.transition)" (click)="section=sections.transition">animate() and style()</li>
-    <li [class.selected]="isActive(sections.fadeInFadeOut)" (click)="section=sections.fadeInFadeOut">Insertion / Removal</li>
+    <li [class.selected]="isActive(sections.animateStyle)" (click)="section=sections.animateStyle">animate() and style()</li>
+    <li [class.selected]="isActive(sections.insertionRemoval)" (click)="section=sections.insertionRemoval">Insertion / Removal</li>
     <li [class.selected]="isActive(sections.animationCallback)" (click)="section=sections.animationCallback">(@animation.callback)</li>
   </ol>
 </div>

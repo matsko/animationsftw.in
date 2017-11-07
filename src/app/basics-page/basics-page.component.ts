@@ -7,13 +7,14 @@ const SECTIONS = {
   intro: 1,
   triggers: 2,
   component: 3,
-  transition: 4,
-  fadeInFadeOut: 5,
+  animateStyle: 4,
+  insertionRemoval: 5,
   animationCallback: 6
 };
 
 const PAGE_ANIMATIONS = [
-  {title: 'Item Selection', fileName: '/assets/code/foo.ts'}
+  {title: 'Page Animation', fileName: '/assets/code/basics-page-animation.example-ts'},
+  {title: 'Photo Change Animation', fileName: '/assets/code/basics-page-content-animation.example-ts'}
 ];
 
 const UP_ARROW_CODE = 38;
@@ -40,8 +41,8 @@ const DOWN_ARROW_CODE = 40;
       state(`${SECTIONS.intro}`, style({ transform: 'translateY(0px)' })),
       state(`${SECTIONS.triggers}`, style({ transform: 'translateY(-700px)' })),
       state(`${SECTIONS.component}`, style({ transform: 'translateY(-1500px)' })),
-      state(`${SECTIONS.transition}`, style({ transform: 'translateY(-2300px)' })),
-      state(`${SECTIONS.fadeInFadeOut}`, style({ transform: 'translateY(-3100px)' })),
+      state(`${SECTIONS.animateStyle}`, style({ transform: 'translateY(-2300px)' })),
+      state(`${SECTIONS.insertionRemoval}`, style({ transform: 'translateY(-3100px)' })),
       state(`${SECTIONS.animationCallback}`, style({ transform: 'translateY(-3700px)' })),
 
       transition('* => *', animate('500ms cubic-bezier(0.35, 0, 0.25, 1)'))

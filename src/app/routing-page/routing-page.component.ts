@@ -15,7 +15,9 @@ const SHARED_ANIMATION_STYLES = [
 ];
 
 const PAGE_ANIMATIONS = [
-  {title: 'Item Selection', fileName: '/assets/code/foo.ts'}
+  {title: 'Page Animations', fileName: '/assets/code/routing-page-animations.example-ts'},
+  {title: 'Route Change Right', fileName: '/assets/code/routing-page-change-right.example-ts'},
+  {title: 'Route Change Left', fileName: '/assets/code/routing-page-change-left.example-ts'}
 ];
 
 const NICE_EASING = 'cubic-bezier(0.35, 0, 0.25, 1)';
@@ -34,11 +36,9 @@ const PAGES = [
   animations: [
     trigger('pageAnimations', [
       transition(':enter', [
-        group([
-          query('.main-route-container', [
-            style({ opacity: 0, transform: 'translateY(100px)'}),
-            animate('800ms ' + NICE_EASING, style({ opacity: 1, transform: 'none'}))
-          ])
+        query('.main-route-container', [
+          style({ opacity: 0, transform: 'translateY(100px)'}),
+          animate('800ms ' + NICE_EASING, style({ opacity: 1, transform: 'none'}))
         ])
       ])
     ]),

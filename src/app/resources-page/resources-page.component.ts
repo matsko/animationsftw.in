@@ -1,5 +1,6 @@
 import { HostListener, HostBinding, Component } from '@angular/core';
 import { trigger, transition, animate, style, state, query, stagger, group, animateChild } from '@angular/animations';
+import { AnimationCountService } from '../animation-count.service';
 
 const SECTIONS = {
   resources: 1,
@@ -8,6 +9,11 @@ const SECTIONS = {
 };
 
 const NICE_EASING = 'cubic-bezier(0.35, 0, 0.25, 1)';
+
+const PAGE_ANIMATIONS = [
+  {title: 'Page Animation', fileName: '/assets/code/resources-page-animation.example-ts'},
+  {title: 'Active Image Animation', fileName: '/assets/code/resources-page-cell-animation.example-ts'}
+];
 
 @Component({
   selector: 'app-resources-page',
@@ -47,8 +53,11 @@ export class ResourcesPageComponent {
   public animatePage = true;
 
   section = SECTIONS.resources;
-
   sections = SECTIONS;
+
+  constructor(private _animationCount: AnimationCountService) {
+    this._animationCount.specifyAnimations(PAGE_ANIMATIONS);
+  }
 
   isSectionActive(section: number) {
     console.log(section, this.section)

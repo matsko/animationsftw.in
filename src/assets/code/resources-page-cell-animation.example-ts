@@ -1,0 +1,16 @@
+trigger('gridCell', [
+  state('true', style({ width:'46%', opacity:1})),
+  state('false', style({ width: '27%', opacity:0.5})),
+  transition('* => false', group([
+    animate('150ms ease-out')
+  ])),
+  transition('* => true', group([
+    query('.inner *', [
+      style({ opacity: 0, height: 0 }),
+      stagger(300, [
+        animate('500ms', style({ opacity: 1, height: '*' }))
+      ])
+    ]),
+    animate('150ms ease-out')
+  ]))
+])

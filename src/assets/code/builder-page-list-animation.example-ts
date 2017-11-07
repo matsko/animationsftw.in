@@ -1,0 +1,19 @@
+export class PhotoScrubberComponent {
+  constructor(private _builder: AnimationBuilder, private _element: ElementRef) {}
+
+  private _buildAnimation() {
+    return this._builder.build([
+      query('.photo-record', [
+        style({ opacity: 0, transform: 'translateY(-50px)' }),
+        stagger(100, [
+          animate('500ms', style({ opacity: 1, transform: 'none' }))
+        ])
+      ])
+    ]);
+  }
+
+  private _buildPlayer() {
+    const animation = this._buildAnimation();
+    animation.create(this._element.nativeElement).play();
+  }
+}

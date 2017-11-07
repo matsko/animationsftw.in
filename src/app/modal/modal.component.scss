@@ -17,12 +17,14 @@
   color:black;
   background:#272822;
   position:absolute;
-  top:20%;
+  top:50%;
   left:50%;
   min-height:300px;
-  transform:translateX(-50%);
-  width:60%;
+  transform:translateX(-50%) translateY(-50%);
+  width:55%;
+  padding:20px;
   z-index:100001;
+  border:5px solid black;
 }
 
 .frame code {

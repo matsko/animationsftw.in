@@ -1,0 +1,10 @@
+trigger('pageAnimations', [
+  transition(':enter', [
+    query('.left, .right, .design-image', [
+      style({ opacity: 0, transform: 'translateX(-50px)' }),
+      stagger(100, [
+        animate('0.5s ease-out', style({ opacity: 1, transform: 'none' }))
+      ])
+    ])
+  ])
+])

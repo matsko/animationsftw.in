@@ -1,9 +1,11 @@
+@import "../../styles/_colors";
+
 :host {
   display:block;
   position:absolute;
   z-index:10000;
 
-  background:#555;
+  background:$redColor;
   padding:20px;
   width:300px;
 

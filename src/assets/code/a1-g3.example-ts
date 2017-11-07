@@ -1,0 +1,12 @@
+trigger('listAnimation', [
+  //...
+  transition('* => 3', [
+    query(':enter', [
+      style({ opacity: 0, transform: 'translateY(-100px)' }),
+      stagger(50, [
+        animate('300ms ease-out', style({ opacity: 1, transform: 'none' })),
+      ]),
+    ])
+  ]),
+  //...
+])

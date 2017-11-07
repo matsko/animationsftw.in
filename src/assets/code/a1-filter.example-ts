@@ -1,0 +1,20 @@
+// <div [@filterAnimation]="totalItems">
+trigger('filterAnimation', [
+  // this will ignore animations on enter and when there are none to display
+  transition(':enter, * => 0, * => -1', []),
+  transition(':increment', [
+    query(':enter', [
+      style({ opacity: 0, width: '0px' }),
+      stagger(50, [
+        animate('300ms ease-out', style({ opacity: 1, width: '*' })),
+      ]),
+    ])
+  ]),
+  transition(':decrement', [
+    query(':leave', [
+      stagger(50, [
+        animate('300ms ease-out', style({ opacity: 0, width: '0px' })),
+      ]),
+    ])
+  ]),
+])

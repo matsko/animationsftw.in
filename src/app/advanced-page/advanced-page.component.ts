@@ -14,9 +14,10 @@ const SECTIONS = {
 
 const PAGE_ANIMATIONS = [
   {title: 'Page Animation', fileName: '/assets/code/a1-page.example-ts'},
-  {title: 'Left Animation', fileName: '/assets/code/a1-left.example-ts'},
-  {title: 'Right Animation', fileName: '/assets/code/a1-right.example-ts'},
-  {title: 'Stagger Animation', fileName: '/assets/code/a1-stagger.example-ts'},
+  {title: 'Gallery One Animation', fileName: '/assets/code/a1-g1.example-ts'},
+  {title: 'Gallery Two Animation', fileName: '/assets/code/a1-g2.example-ts'},
+  {title: 'Gallery Three Animation', fileName: '/assets/code/a1-g3.example-ts'},
+  {title: 'Filter Animation', fileName: '/assets/code/a1-filter.example-ts'},
 ];
 
 const sectionedPhotos: any[] = [

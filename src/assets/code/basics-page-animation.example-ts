@@ -1,0 +1,10 @@
+trigger('pageAnimations', [
+  transition(':enter', [
+    query('.inner-section, .menu-area > li', [
+      style({ transform: 'translateY(-100px)', opacity: 0 }),
+      stagger(50, [
+        animate('300ms ease-out', style({ transform: 'none', opacity: '*' }))
+      ])
+    ])
+  ])
+])

@@ -1,0 +1,10 @@
+trigger('listAnimation', [
+  //...
+  transition('* => 1, * => 2', [
+    query(':enter', [
+      style({ opacity: 0, transform: 'translateX(-100px)' }),
+      animate('300ms ease-out', style({ opacity: 1, transform: 'none' })),
+    ])
+  ]),
+  //..
+])

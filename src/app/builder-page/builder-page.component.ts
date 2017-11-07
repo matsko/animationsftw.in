@@ -1,6 +1,12 @@
 import { ViewChild, HostBinding, Component } from '@angular/core';
 import { PhotoScrubberComponent } from '../photo-scrubber/photo-scrubber.component';
 import { trigger, group, sequence, transition, state, style, animate, query, stagger, animateChild } from '@angular/animations';
+import { AnimationCountService } from '../animation-count.service';
+
+const PAGE_ANIMATIONS = [
+  {title: 'Page Animation', fileName: '/assets/code/builder-page-animations.example-ts'},
+  {title: 'Photo List Animation', fileName: '/assets/code/builder-page-list-animation.example-ts'}
+];
 
 @Component({
   selector: 'app-builder-page',
@@ -26,9 +32,10 @@ export class BuilderPageComponent {
   @HostBinding('@pageAnimations')
   public animatePage = true;
 
-  playerStatus = 'Play'
+  playerStatus = 'Play';
 
-  ngOnInit() {
+  constructor(private _animationCount: AnimationCountService) {
+    this._animationCount.specifyAnimations(PAGE_ANIMATIONS);
   }
 
   public photos: string[] = [
