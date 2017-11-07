@@ -139,6 +139,17 @@ app-routing-page, .router-container, .main-route-container {
   }
 }
 
+nav.help-actions {
+  text-align:center;
+  & > .help-link {
+    display:inline-block;
+
+    & + .help-link {
+      margin-left:20px;
+    }
+  }
+}
+
 .loading {
   height:100%;
   position:relative;

@@ -1,0 +1,19 @@
+export class PhotoScrubberComponent {
+  //...
+  @Input('position')
+  set position(pos: number) {
+    this.pause();
+    this.player.setPosition(pos / 100);
+  }
+
+  play() {
+    this.paused = false;
+    this.player.play();
+  }
+
+  pause() {
+    this.paused = true;
+    this.player.pause();
+  }
+  //...
+}
