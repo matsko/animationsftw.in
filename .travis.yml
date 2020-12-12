@@ -1,0 +1,18 @@
+language: "node_js"
+os:
+- linux
+
+install:
+  - yarn install
+
+before_deploy:
+  - yarn build --prod
+
+deploy:
+  provider: s3
+  access_key_id: "$AWS_S3_KEY"
+  secret_access_key: "$AWS_S3_KEY_SECRET"
+  bucket: "$AWS_S3_BUCKET"
+  region: "$AWS_S3_REGION"
+  acl: public_read
+  local_dir: dist
