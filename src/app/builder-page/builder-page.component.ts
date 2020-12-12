@@ -26,6 +26,8 @@ const PAGE_ANIMATIONS = [
   ]
 })
 export class BuilderPageComponent {
+  position = 0;
+
   @ViewChild('scrubber')
   public scrubber: PhotoScrubberComponent;
 

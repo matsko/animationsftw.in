@@ -32,6 +32,8 @@ import { ComponentType } from '../tool-tip.service';
   ]
 })
 export class ToolTipComponent {
+  typeString = ''
+
   public x: string|number;
   public y: string|number;
   public visible = false;
