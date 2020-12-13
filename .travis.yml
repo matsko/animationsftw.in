@@ -9,15 +9,18 @@ install:
   - yarn install
 
 before_deploy:
-  - yarn build --prod
+  - echo $AWS_S3_BUCKET
+  - echo $AWS_S3_REGION
+  - yarn build --output-path=/tmp/dist
 
 deploy:
   provider: s3
   on:
     branch: master
   access_key_id: $AWS_S3_KEY
-  secret_access_key: $AWS_S3_KEY_SECRET
+  secret_access_key: $AWS_S3_SECRET_KEY
   bucket: $AWS_S3_BUCKET
   region: $AWS_S3_REGION
   acl: public_read
-  local_dir: dist
+  local_dir: /tmp/dist
+  skip_cleanup: true
