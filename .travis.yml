@@ -9,8 +9,6 @@ install:
   - yarn install
 
 before_deploy:
-  - echo $AWS_S3_BUCKET
-  - echo $AWS_S3_REGION
   - yarn build --output-path=/tmp/dist
 
 deploy:
@@ -24,3 +22,6 @@ deploy:
   acl: public_read
   local_dir: /tmp/dist
   skip_cleanup: true
+
+after_deploy:
+  - bash travis-update-cloudflare.sh
